@@ -1,0 +1,20 @@
+{
+  "short_name": "Landlord Properties Managment",
+  "name": "Landlord Properties Managment",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "93x93 64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "93x93"
+    }
+  ],
+  "start_url": "/landlord/activity",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
