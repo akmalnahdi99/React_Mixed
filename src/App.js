@@ -66,6 +66,16 @@ import ResetPassword from "./pages/Landlord/ResetPassword";
 import ForgotPassword from "./pages/Landlord/ForgotPassword";
 import Appointment from "./pages/Landlord/Appointment";
 import AppointmentDetails from "./pages/Landlord/AppointmentDetails";
+import InvoiceCabletv from "./pages/Landlord/InvoiceCabletv.js";
+import InvoiceElectricity from "./pages/Landlord/InvoiceElectricity.js";
+import InvoiceGas from "./pages/Landlord/InvoiceGas.js";
+import InvoiceInternet from "./pages/Landlord/InvoiceInternet.js";
+import InvoiceSewage from "./pages/Landlord/InvoiceSewage.js";
+import InvoiceWater from "./pages/Landlord/InvoiceWater.js";
+import RentalPayables from "./pages/Landlord/RentalPayables.js";
+import TenantInvoice from "./pages/Landlord/TenantInvoice.js";
+import PayCash from "./pages/Landlord/PayCash.js";
+import PayCDM from "./pages/Landlord/PayCDM.js";
 
 export default function App() {
   return (
@@ -301,6 +311,57 @@ export default function App() {
                 <Route path="/landlord/appointmentdetails">
                   <StandardPage>
                     <AppointmentDetails />
+                  </StandardPage>
+                </Route>
+
+                <Route path="/landlord/InvoiceWater">
+                  <StandardPage>
+                    <InvoiceWater />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/InvoiceCabletv">
+                  <StandardPage>
+                    <InvoiceCabletv />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/InvoiceElectricity">
+                  <StandardPage>
+                    <InvoiceElectricity />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/InvoiceGas">
+                  <StandardPage>
+                    <InvoiceGas />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/InvoiceInternet">
+                  <StandardPage>
+                    <InvoiceInternet />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/InvoiceSewage">
+                  <StandardPage>
+                    <InvoiceSewage />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/RentalPayables">
+                  <StandardPage>
+                    <RentalPayables />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/TenantInvoice">
+                  <StandardPage>
+                    <TenantInvoice />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/PayCash">
+                  <StandardPage>
+                    <PayCash />
+                  </StandardPage>
+                </Route>
+                <Route path="/landlord/PayCDM">
+                  <StandardPage>
+                    <PayCDM />
                   </StandardPage>
                 </Route>
 

@@ -326,7 +326,7 @@ ul.nav-second-level {
 }
 
 .textclr {
-  color: #999999;
+  color: #000;
 }
 
 .minimalize-styl-2 {
@@ -7377,7 +7377,7 @@ table.table-mail tr td {
 .progress-bar-navy-light {
   background-color: #3dc7ab;
 }
-
+ 
 .progress-bar-success {
   background-color: #1c84c6;
 }
@@ -7471,7 +7471,7 @@ table.table-mail tr td {
 }
 
 .text-doorcase3 {
-  color: #999999 !important;
+  color: #329d9c !important;
 }
 
 .text-doorcase4 {
@@ -13438,4 +13438,11 @@ transition: 0.1s ease-in-out;
   border-top-color: red;
   border-right-color: red;
   border-bottom-color: red;
+}
+
+.ibox-bill {
+  background-color: #ffffff;
+  color: inherit;
+  padding: 1px 5px 10px 10px;
+  min-height: 323px;
 }

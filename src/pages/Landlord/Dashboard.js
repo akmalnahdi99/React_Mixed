@@ -16,6 +16,7 @@ import PropertyInfo from "../../components/DashPropertyInfo.js";
 import RentalLeads from "../../components/DashRentalLeads";
 import DashboardPropertyViewing from "../../components/DashPropertyViewing";
 import DashboardRentalOffers from "../../components/DashRentalOffers";
+import DashAppointment from "../../components/DashAppointment";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -28,19 +29,19 @@ export default function Dashboard() {
             {/* <div key={"1"} className="col-lg-4 px-2">
             <Quicklinks title="Quick Links" />
           </div> */}
-            <div key={"2"} className="col-lg-4 px-2">
-              <Rental title="Rental" />
-            </div>
             <div key={"3"} className="col-lg-4 px-2">
               <TodoList title="To-Do List" />
             </div>
+            <div key={"2"} className="col-lg-4 px-2">
+              <Rental title="Rental" />
+            </div>
             <div className="col-lg-4 px-2">
-              <Maintenance title="Maintenance" />
+              <DashAppointment title="Appointment" />
             </div>
           </div>
           <div className="row">
             <div className="col-lg-4 px-2">
-              <TenantPayables title="Tenant Payables" />
+              <Maintenance title="Maintenance" />
             </div>
             <div className="col-lg-4 px-2">
               <Calendar title="Calendar" />
@@ -51,25 +52,11 @@ export default function Dashboard() {
           </div>
 
           <div className="row">
-            {/* <div className="col-lg-4 px-2">
-            <Financials title="Financials" />
-          </div> */}
-
             <div className="col-lg-4 px-2">
               <PropertyInfo title="Property Info" />
             </div>
-            <div className="col-lg-4 px-2">
-              <DashboardPropertyViewing title="Property Viewing" />
-            </div>
-            <div className="col-lg-4 px-2">
-              <DashboardRentalOffers title="Rental Offers" />
-            </div>
           </div>
-          <div className="row">
-            <div className="col-lg-4 px-2">
-              <RentalLeads />
-            </div>
-          </div>
+          
         </div>
         <br />
       </div>

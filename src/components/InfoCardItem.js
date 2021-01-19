@@ -1,42 +1,36 @@
+// #newPage
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function InfoCardItem({ title, body, color }) {
-  //TASK body & title text should trimmed to: 100 chars  for example
-
+export default function InfoCardItem({ title, body, color, link }) {
   if (!color) {
     color = "green";
   }
+  var element = "danger-element";
 
   if (color === "red") {
-    return (
-      <div>
-        <ul className="sortable-list connectList agile-list ui-sortable" id="todo">
-          <li className="danger-element ui-sortable-handle mb-0">
-            <div className="agile-detail">
-              <small className="text-danger">
-                <i className="fas fa-bell"></i> {title}
-              </small>
-            </div>
-            <p className="m-0 text-truncate">{body}</p>
-          </li>
-        </ul>
-      </div>
-    );
+    element = "danger-element";
   } else if (color === "green") {
-    return (
-      <div>
-        <ul className="sortable-list connectList agile-list ui-sortable" id="todo">
-          <li className="success-element ui-sortable-handle  mb-0">
+    element = "success-element";
+  } else if (color === "yellow") {
+    element = "warning-element";
+  } else if (color === "blue") {
+    element = "info-element";
+  }
+  return (
+    <div>
+      <ul className="sortable-list connectList agile-list ui-sortable" id="todo">
+        <li className={element + " ui-sortable-handle mb-0"}>
+          <Link to={"/landlord/" + link} style={{ color: "black" }}>
             <div className="agile-detail">
               <small className="text-darkblue">
                 <i className="fas fa-bell"></i> {title}
               </small>
             </div>
             <p className="m-0 text-truncate">{body}</p>
-          </li>
-        </ul>
-      </div>
-    );
-  }
-  
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
