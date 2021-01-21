@@ -1,5 +1,6 @@
 //TASK under Review
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -19,6 +20,14 @@ export default function Maintenance() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
+          <div className="row">
+                <div className="col-md-8  col-xs-0"></div>
+                <div className="col-md-4 col-xs-6 float-right">
+            <Link to="./RequestMaintenance"><button className="btn btn-primary mb-2 float-right">
+            <i class="fas fa-plus"></i> Request maintenance
+            </button></Link>
+            </div>
+            </div>
             <DividedHeader data={headerData} />
             <MaintenanceList />
           </div>

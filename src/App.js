@@ -38,6 +38,7 @@ import MaintenanceChatRequest from "./pages/Landlord/MaintenanceChatRequest";
 import MaintenanceChatPayment from "./pages/Landlord/MaintenanceChatPayment";
 import MaintenanceChatInteraction from "./pages/Landlord/MaintenanceChatInteraction";
 import Maintenance from "./pages/Landlord/Maintenance";
+import RequestMaintenance from "./pages/Landlord/RequestMaintenance.js";
 
 import Login from "./pages/Landlord/Login";
 // import Financials from "./pages/Landlord/Financials"; // for version2
@@ -235,6 +236,11 @@ export default function App() {
                     <MaintenanceDetails siteMap={"Maintenance Details"} />
                   </StandardPage>
                 </Route>
+                <Route path="/landlord/RequestMaintenance">
+                  <StandardPage>
+                    <RequestMaintenance siteMap={"Request Maintenance"} />
+                  </StandardPage>
+                </Route>
                 <Route path="/landlord/maintenancechatpayment">
                   <StandardPage>
                     <MaintenanceChatPayment siteMap={"Maintenance Chat"} />
@@ -305,12 +311,12 @@ export default function App() {
 
                 <Route path="/landlord/appointment">
                   <StandardPage>
-                    <Appointment />
+                    <Appointment siteMap={"Appointment"}/>
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/appointmentdetails">
                   <StandardPage>
-                    <AppointmentDetails />
+                    <AppointmentDetails siteMap={"Appointment Details"}/>
                   </StandardPage>
                 </Route>
 
