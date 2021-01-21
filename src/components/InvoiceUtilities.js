@@ -9,7 +9,7 @@ export default function InvoiceUtilities({month, status}){
       <div className="ibox-bill minhigh pt-0">
         <div className="row justify-content-center">
             <div className="col-sm-7 pt-3">
-              <h3 className="text-doorcase3">{month}</h3>
+              <h3 className="text-doorcase4">{month}</h3>
                 <p>Status : <span className="text-danger">{status}</span></p>
           </div>
           <div class="btn-res pt-2"><br/>
