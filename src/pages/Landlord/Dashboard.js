@@ -5,20 +5,16 @@ import React from "react";
 // import PostsListFilter from "../../components/PostsListFilter";
 
 // import Quicklinks from "../../components/DashQuicklinks";
-import Rental from "../../components/DashRentalGraph";
 import TodoList from "../../components/DashTodoList.js";
 import Maintenance from "../../components/DashMaintenance";
-import TenantPayables from "../../components/DashTenantPayables";
 import Calendar from "../../components/DashCalendar";
 // import Financials from "../../components/DashFinancials"; // for version 2
 import Bills from "../../components/DashBills";
 import PropertyInfo from "../../components/DashPropertyInfo.js";
-import RentalLeads from "../../components/DashRentalLeads";
-import DashboardPropertyViewing from "../../components/DashPropertyViewing";
-import DashboardRentalOffers from "../../components/DashRentalOffers";
 import DashAppointment from "../../components/DashAppointment";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
+import DashRentalGraph from "../../components/DashRentalGraph";
 
 export default function Dashboard() {
   return (
@@ -33,7 +29,7 @@ export default function Dashboard() {
               <TodoList title="To-Do List" />
             </div>
             <div key={"2"} className="col-lg-4 px-2">
-              <Rental title="Rental" />
+              <DashRentalGraph title="Rental" />
             </div>
             <div className="col-lg-4 px-2">
               <DashAppointment title="Appointment" />
