@@ -125,7 +125,7 @@ export default function LeftMenu() {
                 </Link>
               </li>
               <li>
-                <Link to="appointment">
+                <Link to="/landlord/appointment">
                   <FaIcons.FaCalendarCheck />
                   <span className="nav-label">Appointment</span>
                 </Link>

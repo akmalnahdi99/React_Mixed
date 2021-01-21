@@ -53,7 +53,7 @@ export default function Login() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email: userId, password }),
+      body: JSON.stringify({ email: userId, password , userType:"tenant"}),
     };
     setIsLoading(true);
     fetch(apiUrl + "/users/authenticate", requestOptions)

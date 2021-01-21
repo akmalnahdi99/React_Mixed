@@ -5,7 +5,6 @@ import { Redirect, useParams } from "react-router-dom";
 //TASK put all bills in this page
 
 import BillsUnpaid from "../../bills_component/BillsUnpaid";
-import BillPaid from "../../bills_component/BillPaid";
 
 import InfoWaterDetails from "../../propertyInfoComponent/InfoWaterDetails";
 import InfoElectricityDetails from "../../propertyInfoComponent/InfoElectricityDetails";
@@ -16,7 +15,6 @@ import InfoGasDetails from "../../propertyInfoComponent/InfoGasDetails";
 import Loading from "../../components/static/Loading";
 import { AppContext } from "../../context/settings";
 import { apiCall } from "../../utils/landlordHelper";
-import BillsPaid from "../../bills_component/BillPaid";
 
 export default function BillOf() {
   var t = useParams();
@@ -25,7 +23,7 @@ export default function BillOf() {
   const activeUnitId = appContext.settings.activeUnitId;
   const [isLoading, setIsLoading] = React.useState(true);
   const [utilityDetails, setUtilityDetails] = React.useState(true);
-  const [payments, setPayments] = React.useState([]);
+  const [setPayments] = React.useState([]);
 
   React.useEffect(() => {
     async function loadUtilityDetailsWrapper() {

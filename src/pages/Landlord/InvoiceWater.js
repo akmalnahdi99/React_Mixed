@@ -1,9 +1,6 @@
 // #newPage
 //under review
 import React from "react";
-import Header from "../../components/Header";
-import SiteMap from "../../components/SiteMap";
-import Footer from "../../components/static/Footer";
 import InvoiceWaterDetails from "../../components/InvoiceWaterDetails";
 import WaterDetails from "../../bills_component/WaterDetails";
 

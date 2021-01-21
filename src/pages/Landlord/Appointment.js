@@ -1,9 +1,6 @@
 // #newPage
 //under review
 import React from "react";
-import Header from "../../components/Header";
-import SiteMap from "../../components/SiteMap";
-import Footer from "../../components/static/Footer";
 import AppointmentListDetails from "../../components/AppointmentListDetails";
 import AppointmentFilter from "../../components/AppointmentFilter";
 
