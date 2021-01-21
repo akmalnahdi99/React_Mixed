@@ -1,9 +1,6 @@
 // #newPage
 import React from 'react'
 import RentalTable from '../../components/RentalTable';
-import Footer from "../../components/static/Footer";
-import Header from "../../components/Header";
-import SiteMap from "../../components/SiteMap";
 import TenantHeader from "../../components/TenantHeader";
 import RentalDetails from "../../components/RentalDetails";
 import { Link } from "react-router-dom";
@@ -12,11 +9,10 @@ import { Link } from "react-router-dom";
     return (
        
 
-        <div className="wrapper wrapper-content animated fadeInRight py-3 mb-0 gray-bg">
-      <div class="container">
-          
+        <div className="wrapper wrapper-content animated fadeInRight py-5 mb-0 gray-bg">
+     <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="col-lg-9">
+          <div className="col-lg-8 mb-3 px-0">
             <div class="ibox ">
               <div className="ibox-content mb-5">
             <TenantHeader title="Rental Payables" />
