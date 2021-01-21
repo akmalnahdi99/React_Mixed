@@ -3,11 +3,9 @@ import React from "react";
 
 export default function RentalDetails ({ title })  {
   var details = {
-    charge: "RM 40.01",
-    company: "Suez Domain Sdn Bhd",
+    name: "JANN Properties",
     bank: "CIMB",
     ref_no: "G-21-07",
-    contact: "03-7453 8045",
     account: "8009656480",
   };
   return (
@@ -21,8 +19,8 @@ export default function RentalDetails ({ title })  {
           <div className="col-sm-12">
             <div className="media">
               <div className="media-body">
-                <h4 className="grayText font-body">Annual charges</h4>
-                <p className="m-0">{details.charge}</p>
+                <h4 className="text-doorcase3">Name Payable charges</h4>
+                <p className="m-0">{details.name}</p>
               </div>
             </div>
             <hr />
@@ -30,17 +28,8 @@ export default function RentalDetails ({ title })  {
           <div className="col-sm-12">
             <div className="media">
               <div className="media-body">
-                <h4 className="grayText font-body">Bank name</h4>
+                <h4 className="text-doorcase3">Bank name</h4>
                 <p className="m-0">{details.bank}</p>
-              </div>
-            </div>
-            <hr />
-          </div>
-          <div className="col-sm-12">
-            <div className="media">
-              <div className="media-body">
-                <h4 className="grayText font-body">Contact Number</h4>
-                <p className="m-0">{details.contact}</p>
               </div>
             </div>
             <hr />
@@ -49,7 +38,7 @@ export default function RentalDetails ({ title })  {
           <div className="col-sm-12 font-body">
             <div className="media">
               <div className="media-body">
-                <h4 className="grayText font-body">Reference number</h4>
+                <h4 className="text-doorcase3">Reference number</h4>
                 <p className="m-0">{details.ref_no}</p>
               </div>
             </div>
@@ -58,8 +47,8 @@ export default function RentalDetails ({ title })  {
           <div className="col-sm-12 font-body">
             <div className="media">
               <div className="media-body">
-                <h4 className="grayText font-body">Company name</h4>
-                <p className="m-0">{details.company}</p>
+                <h4 className="text-doorcase3">Bank account number</h4>
+                <p className="m-0">{details.account}</p>
               </div>
             </div>
           </div>
