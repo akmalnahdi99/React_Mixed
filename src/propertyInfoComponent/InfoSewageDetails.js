@@ -1,16 +1,24 @@
-import React from "react";
+import { Collapse } from 'reactstrap';
+import * as FaIcons from "react-icons/fa";
+import React, { useState } from "react";
 
 export default function InfoSewageDetails  ({ title,...details }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
   return (
     <div className="ibox">
       <div className="ibox-title">
         <div style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
-          <img src="/imgs/sewage.svg" alt="..." className="utilityIconTitle"></img>
-          <h3>{title}</h3>
+        <h3><img src="/imgs/sewage.svg" alt="..." className="utilityIconTitle"></img>{title}</h3>
         </div>
-        <hr />
+        <div className="ibox-tools">
+          <p onClick={toggle}>
+            <FaIcons.FaInfoCircle className="fa-2x " />
+          </p>
+        </div>
       </div>
-      <div className="ibox-content minhigh pt-0">
+      <Collapse isOpen={isOpen} className="ibox-content minhigh pt-0">
         <div className="row pt-0">
           <div className="col-sm-6">
             <div className="media">
@@ -34,24 +42,25 @@ export default function InfoSewageDetails  ({ title,...details }) {
               </div>
             </div>
           </div>
+
           <div className="col-sm-6">
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Name payable</h4>
-                <p className="m-0">{details.payableName || "N/A"}</p>
+                <h4 className="text-doorcase3">Bank name</h4>
+                <p className="m-0">{details.bankName || "N/A"}</p>
               </div>
             </div>
             <hr />
             <div className="media">
               <div className="media-body">
-                <h4 className="text-doorcase3">Monthly charges</h4>
-                <p className="m-0">{details.monthlyCharge || "N/A"}</p>
+                <h4 className="text-doorcase3">Bank account number</h4>
+                <p className="m-0">{details.bankAccountNumber || "N/A"}</p>
               </div>
             </div>
             <hr />
           </div>
         </div>
-      </div>
+      </Collapse>
     </div>
   );
 };
