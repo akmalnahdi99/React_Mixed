@@ -10,9 +10,9 @@ import MaintenanceList from "../../components/MaintenanceList";
 export default function Maintenance() {
   // const { alert, hideAlert } = React.useContext(UserContext);
   const headerData = [
-    { name: "Past 30 days", value: 12 },
-    { name: "Today", value: 12 },
-    { name: "Future", value: 12 },
+    { name: "New", value: 12 },
+    { name: "Resolved", value: 12 },
+    { name: "In Progress", value: 12 },
   ];
 
   return (
