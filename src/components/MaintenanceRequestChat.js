@@ -30,7 +30,7 @@ const MaintenanceRequestChat = () => {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3> Oct 23 - Tenant request for a maintenance</h3>
+        <h3> 23/10/2020 - Tenant request for a maintenance</h3>
       </div>
       <div className="ibox-content minhigh">
         {data.length > 0 ? (

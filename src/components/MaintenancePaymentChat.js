@@ -33,7 +33,7 @@ const MaintenancePaymentChat = () =>  {
     <div className="ibox">
         <div className="ibox-content minhigh">
         <div className="ibox-title">
-            <h3> Oct 23 - Tenant made payment</h3>
+            <h3> 23/10/2020 - Tenant made payment</h3>
         </div>
         
                 {data.length > 0 ? (
