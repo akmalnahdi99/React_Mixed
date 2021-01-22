@@ -2,7 +2,7 @@
 //under review
 import React from "react";
 import InvoiceElectricityDetails from "../../components/InvoiceElectricityDetails";
-import ElectricityDetails from "../../bills_component/ElectricityDetails";
+import InfoElectricityDetails from "../../propertyInfoComponent/InfoElectricityDetails";
 
 export default function InvoiceElectricity() {
   return (
@@ -10,7 +10,7 @@ export default function InvoiceElectricity() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            <ElectricityDetails title=" Electricity" />
+            <InfoElectricityDetails title=" Electricity" />
             <InvoiceElectricityDetails />
           </div>
         </div>
