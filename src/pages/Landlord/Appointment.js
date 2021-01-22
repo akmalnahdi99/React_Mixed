@@ -6,19 +6,19 @@ import AppointmentFilter from "../../components/AppointmentFilter";
 
 const Appointment = () => {
   return (
-    
-      <div className="wrapper wrapper-content animated fadeInRight gray-bg">
-        <div className="container container-xs">
-          <div className="row justify-content-center">
-            <div className="col-lg-9 mb-3">
-              <AppointmentFilter />
-              <AppointmentListDetails />
-            </div>
+
+    <div className="wrapper wrapper-content animated fadeInRight gray-bg">
+      <div className="container-fluid">
+        <div className="row justify-content-center">
+          <div className="col-lg-8 mb-3 px-0">
+            <AppointmentFilter />
+            <AppointmentListDetails />
           </div>
         </div>
       </div>
+    </div>
 
-     
+
   );
 };
 

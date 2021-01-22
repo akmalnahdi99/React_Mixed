@@ -9,7 +9,6 @@ const AppointmentListItem = ({title, time, date, postType}) => {
     
       if (postType === "Cancelled") {
         return (
-          <div className="viewing-timeline">
           <div className="row">
           <div className="col-12 content">
           <ul className="sortable-list agile-list ui-sortable p-0" id="todo">
@@ -33,11 +32,9 @@ const AppointmentListItem = ({title, time, date, postType}) => {
             </ul>
           </div>
         </div>
-        </div>
         );
       } else if (postType === "Completed") {
         return (
-          <div className="viewing-timeline">
           <div className="row">
           <div className="col-12 content">
           <ul className="sortable-list agile-list ui-sortable p-0" id="todo">
@@ -61,12 +58,10 @@ const AppointmentListItem = ({title, time, date, postType}) => {
             </ul>
           </div>
         </div>
-        </div>
         );
       }
       else if (postType === "Scheduled") {
         return (
-          <div className="viewing-timeline">
           <div className="row">
           <div className="col-12 content ">
           <ul className="sortable-list agile-list ui-sortable p-0" id="todo">
@@ -89,7 +84,6 @@ const AppointmentListItem = ({title, time, date, postType}) => {
             </li>
             </ul>
           </div>
-        </div>
         </div>
         );
       }
