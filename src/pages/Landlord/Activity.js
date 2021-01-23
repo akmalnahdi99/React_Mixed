@@ -58,7 +58,7 @@ export default function Activity(props) {
     }
 
     console.log("2)Active unit is changed .. Load Financials");
-    var response = await apiCall("/units/financialsPerYearMonths/?unitId=" + unitId + "&year=" + new Date().getFullYear());
+    var response = await apiCall("/units/TenantFinancialsPerYearMonths/?unitId=" + unitId + "&year=" + new Date().getFullYear());
     if (response.status) {
       financials = response.data;
     }

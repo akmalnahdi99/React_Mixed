@@ -3,7 +3,7 @@
 import React from "react";
 
 import InvoiceSewageDetails from "../../components/InvoiceSewageDetails";
-import SewageDetails from "../../bills_component/SewageDetails";
+import InfoSewageDetails from "../../propertyInfoComponent/InfoSewageDetails";
 
 export default function InvoiceSeawage() {
   return (
@@ -11,7 +11,7 @@ export default function InvoiceSeawage() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            <SewageDetails title=" Sewage" />
+            <InfoSewageDetails title=" Sewage" />
             <InvoiceSewageDetails />
           </div>
         </div>

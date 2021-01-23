@@ -3,7 +3,7 @@
 
 import React from "react";
 import InvoiceGasDetails from "../../components/InvoiceGasDetails";
-import GasDetails from "../../bills_component/GasDetails";
+import InfoGasDetails from "../../propertyInfoComponent/InfoGasDetails";
 
 export default function InvoiceGas() {
   return (
@@ -11,7 +11,7 @@ export default function InvoiceGas() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            <GasDetails title=" Gas" />
+            <InfoGasDetails title=" Gas" />
             <InvoiceGasDetails />
           </div>
         </div>

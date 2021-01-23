@@ -2,7 +2,7 @@
 //under review
 import React from "react";
 import InvoiceCabletvDetails from "../../components/InvoiceCabletvDetails";
-import CabletvDetails from "../../bills_component/CabletvDetails";
+import InfoCableTvDetails from "../../propertyInfoComponent/InfoCableTvDetails";
 
 export default function InvoiceCabletv() {
   return (
@@ -10,7 +10,7 @@ export default function InvoiceCabletv() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            <CabletvDetails title=" Cable TV" />
+            <InfoCableTvDetails title=" Cable TV" />
             <InvoiceCabletvDetails />
           </div>
         </div>

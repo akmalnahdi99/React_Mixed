@@ -3,7 +3,7 @@
 import React from "react";
  
 import InvoiceInternetDetails from "../../components/InvoiceInternetDetails";
-import InternetDetails from "../../bills_component/InternetDetails";
+import InfoInternetDetails from "../../propertyInfoComponent/InfoInternetDetails";
 
 export default function InvoiceInternet() {
   return (
@@ -11,7 +11,7 @@ export default function InvoiceInternet() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            <InternetDetails title=" Internet" />
+            <InfoInternetDetails title=" Internet" />
             <InvoiceInternetDetails />
           </div>
         </div>

@@ -322,37 +322,37 @@ export default function App() {
 
                 <Route path="/landlord/InvoiceWater">
                   <StandardPage>
-                    <InvoiceWater />
+                    <InvoiceWater siteMap={"Invoice Water"}/>
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceCabletv">
                   <StandardPage>
-                    <InvoiceCabletv />
+                    <InvoiceCabletv siteMap={"Invoice Cable TV"}/>
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceElectricity">
                   <StandardPage>
-                    <InvoiceElectricity />
+                    <InvoiceElectricity siteMap={"Invoice Electricity"}/>
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceGas">
                   <StandardPage>
-                    <InvoiceGas />
+                    <InvoiceGas siteMap={"Invoice Gas"}/>
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceInternet">
                   <StandardPage>
-                    <InvoiceInternet />
+                    <InvoiceInternet siteMap={"Invoice Internet"}/>
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceSewage">
                   <StandardPage>
-                    <InvoiceSewage />
+                    <InvoiceSewage siteMap={"Invoice Sewage"}/>
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/RentalPayables">
                   <StandardPage>
-                    <RentalPayables />
+                    <RentalPayables siteMap={"Rental Payables"}/>
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/TenantInvoice">
@@ -362,12 +362,12 @@ export default function App() {
                 </Route>
                 <Route path="/landlord/PayCash">
                   <StandardPage>
-                    <PayCash />
+                    <PayCash siteMap={"Pay Cash"}/>
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/PayCDM">
                   <StandardPage>
-                    <PayCDM />
+                    <PayCDM siteMap={"Pay CDM"}/>
                   </StandardPage>
                 </Route>
 

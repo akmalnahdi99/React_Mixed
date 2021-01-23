@@ -18,7 +18,7 @@ const PostsList = (props, filterBy) => {
     console.log("in posts list");
     async function loadPostsWrapper() {
       setIsLoading(true);
-      var response = await apiCall("/posts/list");
+      var response = await apiCall("/units/listPosts");
       if (response.status) {
         var r = response.data;
         r = r.map((e) => {

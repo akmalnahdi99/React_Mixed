@@ -17,7 +17,7 @@ export default function Offers() {
     async function loadUserInfoAndTenancyDetails() {
       setIsLoading(true);
 
-      var response = await apiCall("/units/offers/" + activeUnitId);
+      var response = await apiCall("/units/tenantOffers/" + activeUnitId);
 
       if (response.status) {
         seOffers(response.data);

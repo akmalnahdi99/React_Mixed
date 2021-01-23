@@ -19,7 +19,7 @@ export default function ViewingDetails() {
     async function loadViewingDetailsWrapper() {
       setIsLoading(true);
  
-      var response = await apiCall("/units/AppointmentDetails/?unitId=" + activeUnitId + "&appointmentId=" + appointmentId);
+      var response = await apiCall("/units/tenantAppointmentDetails/?unitId=" + activeUnitId + "&appointmentId=" + appointmentId);
 
       if (response.status) {
         set_vieweingDetails(response.data);
