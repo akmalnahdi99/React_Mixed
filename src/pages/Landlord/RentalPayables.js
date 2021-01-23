@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
      <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            <div class="ibox ">
+            <div className="ibox ">
               <div className="ibox-content mb-5">
             <TenantHeader title="Rental Payables" />
             <RentalTable />

@@ -1,12 +1,11 @@
 // #newPage
 //under review
 import React from "react";
-import AppointmentListDetails from "../../components/AppointmentListDetails";
+import AppointmentListDetails from "../../components/AppointmentsList";
 import AppointmentFilter from "../../components/AppointmentFilter";
 
-const Appointment = () => {
+export default function Appointment() {
   return (
-
     <div className="wrapper wrapper-content animated fadeInRight gray-bg">
       <div className="container-fluid">
         <div className="row justify-content-center">
@@ -17,9 +16,5 @@ const Appointment = () => {
         </div>
       </div>
     </div>
-
-
   );
-};
-
-export default Appointment;
+}

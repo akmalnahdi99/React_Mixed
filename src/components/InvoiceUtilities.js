@@ -12,7 +12,7 @@ export default function InvoiceUtilities({month, status}){
               <h3 className="text-doorcase4">{month}</h3>
                 <p>Status : <span className="text-danger">{status}</span></p>
           </div>
-          <div class="btn-res pt-2"><br/>
+          <div className="btn-res pt-2"><br/>
             <Link to="/landlord/payonline" className="btn btn-primary width140 mr-2 mb-2">Upload Bill</Link>
             <Link to="/landlord/paybycash" className="btn btn-success width140 mb-2">Upload Receipt</Link>
           </div>

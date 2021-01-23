@@ -67,7 +67,7 @@ export default function MaintenanceListItem({id, date, category, applydate, imag
         </div>
         <div className="row">
           <div className="col-12">
-            <span style={{fontSize: "12px"}}><i class={latest}></i> {latesttext}</span>
+            <span style={{fontSize: "12px"}}><i className={latest}></i> {latesttext}</span>
           </div>
         </div>
         </Link>

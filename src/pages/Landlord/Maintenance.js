@@ -24,7 +24,7 @@ export default function Maintenance() {
                 <div className="col-md-8  col-xs-0"></div>
                 <div className="col-md-4 col-xs-6 float-right">
             <Link to="./RequestMaintenance"><button className="btn btn-primary mb-2 float-right">
-            <i class="fas fa-plus"></i> Request maintenance
+            <i className="fas fa-plus"></i> Request maintenance
             </button></Link>
             </div>
             </div>

@@ -14,9 +14,9 @@ const BillsPaid = ({ title }) => {
               <h3 className="text-doorcase3">{title}</h3>
                 <p>Status : <span className="textgrn">{invoice.status}</span></p>
           </div>
-          <div class="btn-res pt-2"><br/>
-            <Link to="/" class="btn btn-primary width140 mr-2 mb-2">View Bill</Link>
-            <Link to="/" class="btn btn-success width140 mb-2">View Receipt</Link>
+          <div className="btn-res pt-2"><br/>
+            <Link to="/" className="btn btn-primary width140 mr-2 mb-2">View Bill</Link>
+            <Link to="/" className="btn btn-success width140 mb-2">View Receipt</Link>
           </div>
         </div>
       </div>

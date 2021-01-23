@@ -10,11 +10,11 @@ const RequestMaintenance = () => {
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
             <div className="ibox">
-            <div class="ibox-title">
+            <div className="ibox-title">
             <h3>Select Catagory</h3>
             <hr/>
           <RequestMaintenanceCatagory/>
-          <div class="ibox-title p-0">
+          <div className="ibox-title p-0">
           <br/>
           <h3>Request Message</h3>
           </div>

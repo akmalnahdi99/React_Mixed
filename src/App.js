@@ -314,7 +314,7 @@ export default function App() {
                     <Appointment siteMap={"Appointment"}/>
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/appointmentdetails">
+                <Route path="/landlord/appointmentdetails/:appointmentId">
                   <StandardPage>
                     <AppointmentDetails siteMap={"Appointment Details"}/>
                   </StandardPage>

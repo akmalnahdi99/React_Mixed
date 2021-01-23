@@ -114,7 +114,7 @@ export default function LeftMenu() {
 
               <li>
                 <Link to="/landlord/bills">
-                  <i class="fas fa-file-invoice-dollar"></i>
+                  <i className="fas fa-file-invoice-dollar"></i>
                   <span className="nav-label">Bills</span>
                 </Link>
               </li>

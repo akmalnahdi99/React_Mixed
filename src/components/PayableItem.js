@@ -21,7 +21,7 @@ export default function PayableItem({ date, title, icon, color, redirect }) {
               </div>
               <div className="col-4">
                 <div className="forum-info">
-                  <i class="fas fa-arrow-right fa-lg text-completedtask"></i>
+                  <i className="fas fa-arrow-right fa-lg text-completedtask"></i>
                 </div>
               </div>
             </div>

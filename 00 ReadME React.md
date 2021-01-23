@@ -1,3 +1,6 @@
+[2021-01-23]
+- http://localhost:3000/landlord/appointmentdetails/11 pls check if the Image for agent require the name of agent
+
 [2021-01-15]
 - zero scrollbar :
 https://stackoverflow.com/questions/64361996/react-router-scroll-page-to-the-top-after-transition
