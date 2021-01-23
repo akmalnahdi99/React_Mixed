@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 
 
-export default function AppointmentFilter() {
+export default function AppointmentFilter({filterSelection}) {
   const appContext =   React.useContext(AppContext);
   const selectedFilter = appContext.settings.postsFilter;
   
@@ -35,21 +35,18 @@ export default function AppointmentFilter() {
   ];
    
  React.useEffect(() => {
-    console.log("call useEffect");
+   
   }, []);
 
-   const filterSelection = (filter) => {
-     console.log("set :" , filter);
-     appContext.setPostsFilter(filter);
-  };
+ 
 
   const settings = {
     dots: false,
     infinite: false,
     arrows: false,
     speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 5,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     centerMode: true,
     accessibility: false,
     responsive: [
@@ -85,7 +82,7 @@ export default function AppointmentFilter() {
       {Filters.map((filter) => {
         return (
           <div key={filter.id} className="widthfitcontent">
-            <div to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
+            <div   className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
               <i className={filter.iconClass}></i> {filter.name}
             </div>
           </div>

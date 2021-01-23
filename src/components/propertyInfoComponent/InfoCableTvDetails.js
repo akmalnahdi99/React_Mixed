@@ -3,7 +3,7 @@ import { Collapse } from 'reactstrap';
 import * as FaIcons from "react-icons/fa";
 
 export default function InfoCableTvDetails({ title, ...details }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggle = () => setIsOpen(!isOpen);
   return (

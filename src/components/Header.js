@@ -11,7 +11,7 @@ export default function Header() {
   const appContext = React.useContext(AppContext); // for reading login status
   const notificationsCount = appContext.settings.notificationsCount || "";
   function updateLeftMenu() {
-    console.log("show expanded");
+  
     appContext.updateAppContext({ leftMenu: "show", leftMenuExpanded: true });
   }
 

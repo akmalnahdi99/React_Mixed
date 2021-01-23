@@ -15,7 +15,7 @@ const PostsList = (props, filterBy) => {
   const [posts, setPosts] = React.useState(null);
 
   React.useEffect(() => {
-    console.log("in posts list");
+  
     async function loadPostsWrapper() {
       setIsLoading(true);
       var response = await apiCall("/units/listPosts");

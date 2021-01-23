@@ -36,7 +36,7 @@ export default function QuickLinks() {
   }, []);
 
   async function updateCell(index, Data) {
-    console.log("update cell", index, Data);
+   
     var key = Data.id;
     setIsLoading(true);
     var response = await apiCall("/units/updateQuickLink/?cellId=" + cellId + "&key=" + key);

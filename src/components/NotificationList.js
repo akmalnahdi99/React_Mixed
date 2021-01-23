@@ -7,7 +7,7 @@ import { apiCall } from "./../utils/landlordHelper";
 import { AppContext } from "../context/settings";
 
 const NotificationList = () => {
-  console.log("in notifications list");
+ 
   const appContext = React.useContext(AppContext); // for reading login status
   const notificationsCount = appContext.settings.notificationsCount || -1;
   const [isLoading, setIsLoading] = React.useState(true);

@@ -12,7 +12,7 @@ export default function LeftMenu() {
   const [leftMenuClass, set_leftMenuClass] = React.useState(["navbar-default navbar-static-side"]);
   const [expanded, set_expanded] = React.useState(appContext.settings.leftMenuExpanded || false);
   function toggle() {
-    console.log("in  left menu toggle");
+ 
     var n = !expanded;
     set_expanded(n);
     updateMenuClass(n);
@@ -20,13 +20,13 @@ export default function LeftMenu() {
   }
 
   function updateLeftMenu() {
-    console.log("in update left menu to hide");
+ 
     appContext.updateAppContext({ leftMenu: "", leftMenuExpanded: false });
      set_expanded(false);
   }
 
   function updateMenuClass(menuExpanded) {
-    console.log("in update menu class");
+   
     var index = -1;
     if (menuExpanded !== false && forceShow === "show") {
       set_leftMenuClass([leftMenuClass.push("menu-show")]);
@@ -57,12 +57,12 @@ export default function LeftMenu() {
   }
 
   React.useEffect(() => {
-    console.log("in  left menu use Effect");
+ 
     updateMenuClass(expanded);
     // eslint-disable-next-line
   }, [expanded]);
 
-  console.log("lmc1:", leftMenuClass);
+   
   return (
     <React.Fragment>
       <div>

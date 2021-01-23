@@ -5,7 +5,7 @@ import { AppContext } from "../context/settings";
 import { apiCall } from "../utils/landlordHelper";
 
 export default function BuildingFacilitiesCard() {
-  console.log("In Facilities");
+ 
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [buildingFacilities, setBuildingFacilities] = React.useState(true);
@@ -29,7 +29,7 @@ export default function BuildingFacilitiesCard() {
       var response = await apiCall("/buildings/facilities/" + buildingId);
       if (response.status) {
         setBuildingFacilities(response.data);
-        console.log(buildingFacilities);
+     
       }
       setIsLoading(false);
     }

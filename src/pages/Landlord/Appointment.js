@@ -5,13 +5,20 @@ import AppointmentListDetails from "../../components/AppointmentsList";
 import AppointmentFilter from "../../components/AppointmentFilter";
 
 export default function Appointment() {
+ 
+  const [filter, set_filter] = React.useState("all");
+
+  function filterSelection(filter) {
+    set_filter(filter);
+  }
+
   return (
     <div className="wrapper wrapper-content animated fadeInRight gray-bg">
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            <AppointmentFilter />
-            <AppointmentListDetails />
+            <AppointmentFilter filterSelection={filterSelection} />
+            <AppointmentListDetails activeFilter={filter} />
           </div>
         </div>
       </div>

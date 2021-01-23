@@ -22,7 +22,7 @@ export default function InventoryFilter({ updateFilter, selectedFilter }) {
   ];
 
   React.useEffect(() => {
-    console.log("call useEffect");
+  
   }, []);
 
   return (

@@ -61,9 +61,7 @@ export default function UtilitiesOf() {
     // if billtype is not exist we go back
     return <Redirect to="/landlord/propertyinfo" />;
   }
-
-  console.log("In Facilities");
-
+ 
   return isLoading === true ? (
     <Loading />
   ) : (

@@ -17,7 +17,7 @@ export default function EntranceCondition() {
   const [items, set_items] = React.useState([]); // condition report items
 
   React.useEffect(() => {
-    console.log("redraw");
+ 
     var it = getConditionReportsOflocation(conditionReports, inventoryOf, location);
     set_items(it);
 

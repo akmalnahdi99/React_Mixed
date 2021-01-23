@@ -21,7 +21,7 @@ export default function ResetPassword(props) {
   React.useEffect(() => {});
 
   if (!query.userId || !query.token) {
-    console.log("requied data is wrong so, redirect to login");
+  
     return <Redirect to="/login"></Redirect>;
   }
  
@@ -32,12 +32,12 @@ export default function ResetPassword(props) {
     var formData = { ...form, [name]: value };
     formData.userId = query.userId;
     formData.token = query.token;
-    console.log("formData", formData);
+ 
     set_form(formData);
   };
 
   const handleSubmit = async (e) => {
-    console.log("in handle sumbit");
+ 
     e.preventDefault();
     if (form.newPassword !== "" && form.newPasswordConfirmation !== "") {
       if (form.newPassword !== form.newPasswordConfirmation) {
@@ -60,7 +60,7 @@ export default function ResetPassword(props) {
   };
 
   if (isLogged === true) {
-    console.log("user is logged so goto login");
+    
     // updateAppContext({ accessToken: null, isLogged: false });
     return <Redirect to="/login"></Redirect>;
   }

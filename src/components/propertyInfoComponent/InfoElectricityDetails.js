@@ -2,15 +2,15 @@ import { Collapse } from 'reactstrap';
 import * as FaIcons from "react-icons/fa";
 import React, { useState } from "react";
 
-export default function InfoInternetDetails({ title, ...details }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function InfoElectricityDetails({ title, ...details }) {
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggle = () => setIsOpen(!isOpen);
   return (
     <div className="ibox">
       <div className="ibox-title">
         <div style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
-        <h3><img src="/imgs/wifi.svg" alt="..." className="utilityIconTitle"></img>{title}</h3>
+        <h3><img src="/imgs/electricity.svg" alt="..." className="utilityIconTitle"></img>{title}</h3>
         </div>
         <div className="ibox-tools">
           <p onClick={toggle}>

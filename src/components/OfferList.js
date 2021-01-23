@@ -7,7 +7,7 @@ import OfferListItem from "./OfferListItem";
 
 export default function OfferList  ({ offers })  {
  
-  console.log(offers);
+ 
   return (
     <div className="ibox mt-4">
       <div className="ibox-content paddingtop minhigh">

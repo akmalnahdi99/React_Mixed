@@ -39,7 +39,7 @@ export default function InventoryOfRoom() {
     set_items(it);
     set_inventoryOf(newInventoryOf);
   }
-console.log(items);
+ 
   return isLoading === true ? (
     <Loading />
   ) : (

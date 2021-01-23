@@ -22,7 +22,7 @@ export default function PayablesList() {
       }
     }
   }
-  console.log("All Resuls: ", result);
+  
 
   var overdue = [
     {

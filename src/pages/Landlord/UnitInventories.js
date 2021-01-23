@@ -18,7 +18,7 @@ export default function UnitInventories() {
 
   React.useEffect(() => {
     if (!storedInventoryItems) {
-      console.log("Inventory items not exists so load them");
+ 
       async function loadInventoryDataWrapper() {
         setIsLoading(true);
 
@@ -36,7 +36,7 @@ export default function UnitInventories() {
       loadInventoryDataWrapper();
       // eslint-disable-next-line
     } else {
-      console.log("Inventory items found");
+  
       set_inventoryData(storedInventoryItems);
       set_unitRoomsCategories(getUnitMainCategories(storedInventoryItems));
       setIsLoading(false);

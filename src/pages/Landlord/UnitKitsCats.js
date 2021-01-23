@@ -16,7 +16,7 @@ export default function UnitKits() {
 
   React.useEffect(() => {
     if (!storedKitsItems) {
-      console.log("Kits Items not exists so load them");
+ 
       async function loadInventoryDataWrapper() {
         setIsLoading(true);
 
@@ -33,7 +33,7 @@ export default function UnitKits() {
       loadInventoryDataWrapper();
       // eslint-disable-next-line
     } else {
-      console.log("Kits Items found");
+ 
    
       // set_kitsCats(getUnitMainKitsCats(storedKitsItems));
       setIsLoading(false);

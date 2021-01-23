@@ -31,11 +31,11 @@ export default function RequestMaintenanceFilter() {
   ];
 
   React.useEffect(() => {
-    console.log("call useEffect");
+     
   }, []);
 
   const filterSelection = (filter) => {
-    console.log("set :", filter);
+ 
     appContext.setPostsFilter(filter);
   };
 

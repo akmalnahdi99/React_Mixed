@@ -16,7 +16,7 @@ export default function PropertyCondition() {
   React.useEffect(() => {
   
     if (!storedConditionReports) {
-      console.log("Condition reports not exists so load them");
+  
       async function loadConditionReportsWrapper() {
         setIsLoading(true);
         var response = await apiCall("/units/getConditionReports?unitId=" + activeUnitId);
@@ -31,7 +31,7 @@ export default function PropertyCondition() {
       loadConditionReportsWrapper();
       // eslint-disable-next-line
     } else {
-      console.log("stored Condition Reports items found");
+   
       set_areaNames(getMainAreasFromConditionReports(storedConditionReports));
       setIsLoading(false);
     }

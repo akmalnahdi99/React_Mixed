@@ -8,15 +8,13 @@ import { Redirect, useParams } from "react-router-dom";
 
 import TenancyHome from "./TenancyHome";
 import Utilities from "./Utilities";
-
-import UnitServiceCharge from "../../propertyInfoComponent/UnitServiceCharge";
-import UnitAssessmentRateCard from "../../propertyInfoComponent/UnitAssessmentRateCard";
-import UnitQuitRentCard from "../../propertyInfoComponent/unitQuitRentCard";
+ 
 import UnitDetailsCard from "../../propertyInfoComponent/UnitDetailsCard";
 import InfoBuilding from "../../propertyInfoComponent/InfoBuilding";
 import HomeAppliance from "../../propertyInfoComponent/HomeAppliance";
 
-import BuildingInsuranceDetails from "../../propertyInfoComponent/BuildingInsuranceDetails";
+import BuildingInsuranceDetails from "../../components/propertyInfoComponent/BuildingInsuranceDetails";
+import InfoInspection from "../../propertyInfoComponent/InfoInspectionDetails";
 
 export default function PropertyInfoOf() {
   var t = useParams();
@@ -42,6 +40,7 @@ export default function PropertyInfoOf() {
     { key: "AssessmentRate", text: "Assessment Rate", icon: "/imgs/assessment.svg", url: "" },
     { key: "QuitRent", text: "Quit Rent", icon: "/imgs/quitrent.svg", url: "" },
     { key: "HomeAppliance", text: "Home Appliances", icon: "/imgs/guide.svg", url: "" },
+    { key: "Inspection", text: "Inspection", icon: "/imgs/quitrent.svg", url: "" },
   ];
 
   var allowed = false;
@@ -61,18 +60,16 @@ export default function PropertyInfoOf() {
     <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
       <div className="container-fluid">
         <div className="row justify-content-center">
-        <div className="col-lg-8 mb-3 px-0">
-          {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
-          {propertyinfoType === "Utilities" ? <Utilities /> : ""}
-          {propertyinfoType === "Insurance" ? <BuildingInsuranceDetails title="Insurance" /> : ""}
-          {propertyinfoType === "ServiceCharge" ? <UnitServiceCharge /> : ""}
-          {propertyinfoType === "AssessmentRate" ? <UnitAssessmentRateCard title="Assessment Rate" /> : ""}
-          {propertyinfoType === "QuitRent" ? <UnitQuitRentCard siteMap={"123"} title="Quit Rent" /> : ""}
-          {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
-          {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
-          {propertyinfoType === "HomeAppliance" ? <HomeAppliance /> : ""}
+          <div className="col-lg-8 mb-3 px-0">
+            {propertyinfoType === "Tenancy" ? <TenancyHome /> : ""}
+            {propertyinfoType === "Utilities" ? <Utilities /> : ""}
+            {propertyinfoType === "Insurance" ? <BuildingInsuranceDetails title="Insurance" /> : ""}
+   
+            {propertyinfoType === "Unit" ? <UnitDetailsCard /> : ""}
+            {propertyinfoType === "Building" ? <InfoBuilding /> : ""}
+            {propertyinfoType === "HomeAppliance" ? <HomeAppliance /> : ""}
+            {propertyinfoType === "Inspection" ? <InfoInspection title="Inspection" /> : ""}
           </div>
-
         </div>
       </div>
     </div>
