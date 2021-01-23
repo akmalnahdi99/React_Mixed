@@ -2,7 +2,7 @@
 //under review
 import React from "react";
 import InvoiceWaterDetails from "../../components/InvoiceWaterDetails";
-import InfoWaterDetails from "../../propertyInfoComponent/InfoWaterDetails";
+import InfoWaterDetails from "../../components/propertyInfoComponent/InfoWaterDetails";
 
 export default function InvoiceWater() {
   return (

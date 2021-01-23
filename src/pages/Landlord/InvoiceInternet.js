@@ -3,7 +3,7 @@
 import React from "react";
  
 import InvoiceInternetDetails from "../../components/InvoiceInternetDetails";
-import InfoInternetDetails from "../../propertyInfoComponent/InfoInternetDetails";
+import InfoInternetDetails from "../../components/propertyInfoComponent/InfoInternetDetails";
 
 export default function InvoiceInternet() {
   return (

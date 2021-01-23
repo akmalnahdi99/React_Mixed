@@ -1,7 +1,9 @@
 import React from "react";
-import Loading from "../components/static/Loading";
-import { AppContext } from "../context/settings";
-import { apiCall } from "../utils/landlordHelper";
+import { AppContext } from "../../context/settings";
+ 
+ 
+import Loading from "../static/Loading";
+import { apiCall } from "../../utils/landlordHelper";
  
 export default function InfoPropertyManagement ({title})  {
  

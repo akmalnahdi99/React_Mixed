@@ -6,12 +6,12 @@ import { Redirect, useParams } from "react-router-dom";
 import { AppContext } from "../../context/settings";
 import Loading from "../../components/static/Loading";
 import { apiCall } from "../../utils/landlordHelper";
-import InfoWaterDetails from "../../propertyInfoComponent/InfoWaterDetails";
-import InfoSewageDetails from "../../propertyInfoComponent/InfoSewageDetails";
-import InfoElectricityDetails from "../../propertyInfoComponent/InfoElectricityDetails";
-import InfoGasDetails from "../../propertyInfoComponent/InfoGasDetails";
-import InfoCableTvDetails from "../../propertyInfoComponent/InfoCableTvDetails";
-import InfoInternetDetails from "../../propertyInfoComponent/InfoInternetDetails";
+import InfoWaterDetails from "../../components/propertyInfoComponent//InfoWaterDetails";
+import InfoSewageDetails from "../../components/propertyInfoComponent//InfoSewageDetails";
+import InfoElectricityDetails from "../../components/propertyInfoComponent//InfoElectricityDetails";
+import InfoGasDetails from "../../components/propertyInfoComponent//InfoGasDetails";
+import InfoCableTvDetails from "../../components/propertyInfoComponent//InfoCableTvDetails";
+import InfoInternetDetails from "../../components/propertyInfoComponent//InfoInternetDetails";
 
 export default function UtilitiesOf() {
   const [isLoading, setIsLoading] = React.useState(true);

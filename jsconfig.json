@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./srs/",
+    "baseUrl": "./src",
     "checkJs": true,
     "jsx": "react"
   }

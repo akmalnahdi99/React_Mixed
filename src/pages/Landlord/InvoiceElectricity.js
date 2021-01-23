@@ -2,7 +2,7 @@
 //under review
 import React from "react";
 import InvoiceElectricityDetails from "../../components/InvoiceElectricityDetails";
-import InfoElectricityDetails from "../../propertyInfoComponent/InfoElectricityDetails";
+import InfoElectricityDetails from "../../components/propertyInfoComponent/InfoElectricityDetails";
 
 export default function InvoiceElectricity() {
   return (

@@ -2,7 +2,7 @@
 //under review
 import React from "react";
 import InvoiceCabletvDetails from "../../components/InvoiceCabletvDetails";
-import InfoCableTvDetails from "../../propertyInfoComponent/InfoCableTvDetails";
+import InfoCableTvDetails from "../../components/propertyInfoComponent/InfoCableTvDetails";
 
 export default function InvoiceCabletv() {
   return (

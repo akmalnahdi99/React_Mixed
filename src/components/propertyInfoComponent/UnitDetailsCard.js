@@ -1,10 +1,10 @@
 //TASK under Review
 import React from "react";
 
-import { apiCall } from "../utils/landlordHelper";
-import { AppContext } from "../context/settings";
+import { apiCall } from "../../utils/landlordHelper";
 import { Link } from "react-router-dom";
-import Loading from "../components/static/Loading";
+import Loading from "./../static/Loading";
+import { AppContext } from "../../context/settings";
 
 export default function UnitDetailsCard() {
   const [isLoading, setIsLoading] = React.useState(true);

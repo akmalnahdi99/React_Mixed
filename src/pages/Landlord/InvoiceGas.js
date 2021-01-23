@@ -3,7 +3,7 @@
 
 import React from "react";
 import InvoiceGasDetails from "../../components/InvoiceGasDetails";
-import InfoGasDetails from "../../propertyInfoComponent/InfoGasDetails";
+import InfoGasDetails from "../../components/propertyInfoComponent/InfoGasDetails";
 
 export default function InvoiceGas() {
   return (

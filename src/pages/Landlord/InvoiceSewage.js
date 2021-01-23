@@ -3,7 +3,7 @@
 import React from "react";
 
 import InvoiceSewageDetails from "../../components/InvoiceSewageDetails";
-import InfoSewageDetails from "../../propertyInfoComponent/InfoSewageDetails";
+import InfoSewageDetails from "../../components/propertyInfoComponent/InfoSewageDetails";
 
 export default function InvoiceSeawage() {
   return (

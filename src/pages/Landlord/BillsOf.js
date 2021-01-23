@@ -6,12 +6,12 @@ import { Redirect, useParams } from "react-router-dom";
 
 import BillsUnpaid from "../../bills_component/BillsUnpaid";
 
-import InfoWaterDetails from "../../propertyInfoComponent/InfoWaterDetails";
-import InfoElectricityDetails from "../../propertyInfoComponent/InfoElectricityDetails";
-import InfoSewageDetails from "../../propertyInfoComponent/InfoSewageDetails";
-import InfoInternetDetails from "../../propertyInfoComponent/InfoInternetDetails";
-import InfoCableTvDetails from "../../propertyInfoComponent/InfoCableTvDetails";
-import InfoGasDetails from "../../propertyInfoComponent/InfoGasDetails";
+import InfoWaterDetails from "../../components/propertyInfoComponent/InfoWaterDetails";
+import InfoElectricityDetails from "../../components/propertyInfoComponent//InfoElectricityDetails";
+import InfoSewageDetails from "../../components/propertyInfoComponent/InfoSewageDetails";
+import InfoInternetDetails from "../../components/propertyInfoComponent/InfoInternetDetails";
+import InfoCableTvDetails from "../../components/propertyInfoComponent/InfoCableTvDetails";
+import InfoGasDetails from "../../components/propertyInfoComponent/InfoGasDetails";
 import Loading from "../../components/static/Loading";
 import { AppContext } from "../../context/settings";
 import { apiCall } from "../../utils/landlordHelper";

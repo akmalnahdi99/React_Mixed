@@ -9,12 +9,12 @@ import { Redirect, useParams } from "react-router-dom";
 import TenancyHome from "./TenancyHome";
 import Utilities from "./Utilities";
  
-import UnitDetailsCard from "../../propertyInfoComponent/UnitDetailsCard";
-import InfoBuilding from "../../propertyInfoComponent/InfoBuilding";
-import HomeAppliance from "../../propertyInfoComponent/HomeAppliance";
+import UnitDetailsCard from "../../components/propertyInfoComponent/UnitDetailsCard";
+import InfoBuilding from "../../components/propertyInfoComponent/InfoBuilding";
+import HomeAppliance from "../../components/propertyInfoComponent/HomeAppliance";
 
 import BuildingInsuranceDetails from "../../components/propertyInfoComponent/BuildingInsuranceDetails";
-import InfoInspection from "../../propertyInfoComponent/InfoInspectionDetails";
+import InfoInspection from "../../components/propertyInfoComponent/InfoInspectionDetails";
 
 export default function PropertyInfoOf() {
   var t = useParams();
