@@ -101,15 +101,15 @@ export default function BillOf() {
         <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-lg-8 mb-3 px-0">
-              {billType === "Water" ? <InfoWaterDetails title="Water Rate" {...utilityDetails} /> : ""}
-              {billType === "Electricity" ? <InfoElectricityDetails title="Electricity Rate" {...utilityDetails} /> : ""}
-              {billType === "Sewage" ? <InfoSewageDetails title="Sewage" {...utilityDetails} /> : ""}
-              {billType === "Internet" ? <InfoInternetDetails title="Internet" {...utilityDetails} /> : ""}
-              {billType === "Cabletv" ? <InfoCableTvDetails title="Cable TV" {...utilityDetails} /> : ""}
-              {billType === "Gas" ? <InfoGasDetails title="Gas Rate" {...utilityDetails} /> : ""}
+              {billType === "Water" ? <InfoWaterDetails expand={false} title="Water Rate" {...utilityDetails} /> : ""}
+              {billType === "Electricity" ? <InfoElectricityDetails expand={false} title="Electricity Rate" {...utilityDetails} /> : ""}
+              {billType === "Sewage" ? <InfoSewageDetails expand={false} title="Sewage" {...utilityDetails} /> : ""}
+              {billType === "Internet" ? <InfoInternetDetails expand={false} title="Internet" {...utilityDetails} /> : ""}
+              {billType === "Cabletv" ? <InfoCableTvDetails expand={false} title="Cable TV" {...utilityDetails} /> : ""}
+              {billType === "Gas" ? <InfoGasDetails expand={false} title="Gas Rate" {...utilityDetails} /> : ""}
 
-              {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((x) => (
-                <React.Fragment>
+              {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((x,index) => (
+                <React.Fragment key={index}>
                   {billType === "Water" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
                   {billType === "Electricity" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
                   {billType === "Sewage" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}

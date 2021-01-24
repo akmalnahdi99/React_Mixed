@@ -1,15 +1,14 @@
 // #newPage
 //under review
 import React from "react";
-import { AppContext } from "../context/settings";
+ 
 import "slick-carousel/slick/slick.css"; 
 import Slider from "react-slick";
 
 
-export default function AppointmentFilter({filterSelection}) {
-  const appContext =   React.useContext(AppContext);
-  const selectedFilter = appContext.settings.postsFilter;
-  
+export default function AppointmentFilter({ activeFilter, updateFilter }) {
+ 
+  const selectedFilter = activeFilter;
 
   const Filters = [
     {
@@ -33,12 +32,8 @@ export default function AppointmentFilter({filterSelection}) {
       iconClass: "fas fa-bars",
     },
   ];
-   
- React.useEffect(() => {
-   
-  }, []);
 
- 
+  React.useEffect(() => {}, []);
 
   const settings = {
     dots: false,
@@ -51,30 +46,30 @@ export default function AppointmentFilter({filterSelection}) {
     accessibility: false,
     responsive: [
       {
-          breakpoint: 1300,
-          settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              centerMode: false,
-              dots: false,
-              infinite: false,
-              arrows: false,
-              accessibility: false,
-          }
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          centerMode: false,
+          dots: false,
+          infinite: false,
+          arrows: false,
+          accessibility: false,
+        },
       },
       {
-          breakpoint: 480,
-          settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              centerMode: false,
-              dots: false,
-              infinite: false,
-              arrows: false,
-              accessibility: false,
-          }
-      }
-  ]
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerMode: false,
+          dots: false,
+          infinite: false,
+          arrows: false,
+          accessibility: false,
+        },
+      },
+    ],
   };
 
   return (
@@ -82,7 +77,7 @@ export default function AppointmentFilter({filterSelection}) {
       {Filters.map((filter) => {
         return (
           <div key={filter.id} className="widthfitcontent">
-            <div   className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
+            <div className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => updateFilter(filter.name)}>
               <i className={filter.iconClass}></i> {filter.name}
             </div>
           </div>

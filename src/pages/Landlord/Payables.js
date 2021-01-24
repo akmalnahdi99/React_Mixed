@@ -1,6 +1,6 @@
 import React from "react";
 
-import Payables from "../../components/PayablesList";
+import PayablesList from "../../components/PayablesList";
 
 
 export default function LandLordPay() {
@@ -11,7 +11,7 @@ export default function LandLordPay() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            <Payables />
+            <PayablesList />
           </div>
         </div>
       </div>

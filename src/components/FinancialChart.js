@@ -5,9 +5,7 @@ import ChartistGraph from "react-chartist";
 //TASK This file need to be written the hooks way
 
 export default function LineChart({ labels,  Incomes, Expenses, netProfit }) {
-  // var currentMonth = new Date().getMonth();
- 
- 
+
   var data = {
     labels: labels,
     series: [Incomes, Expenses, netProfit],

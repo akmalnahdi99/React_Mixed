@@ -69,12 +69,12 @@ export default function UtilitiesOf() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            {utilityType === "Water" ? <InfoWaterDetails icon={selectedIcon} title="Water Rate" {...utilityDetails} /> : ""}
-            {utilityType === "Electricity" ? <InfoElectricityDetails icon={selectedIcon} title="Electricity Rate" {...utilityDetails} /> : ""}
-            {utilityType === "Sewage" ? <InfoSewageDetails icon={selectedIcon} title="Sewage" {...utilityDetails} /> : ""}
-            {utilityType === "Internet" ? <InfoInternetDetails icon={selectedIcon} title="Internet" {...utilityDetails} /> : ""}
-            {utilityType === "Cabletv" ? <InfoCableTvDetails icon={selectedIcon} title="Cable TV" {...utilityDetails} /> : ""}
-            {utilityType === "Gas" ? <InfoGasDetails icon={selectedIcon} title="Gas Rate" {...utilityDetails} /> : ""}
+            {utilityType === "Water" ? <InfoWaterDetails expand={true} icon={selectedIcon} title="Water Rate" {...utilityDetails} /> : ""}
+            {utilityType === "Electricity" ? <InfoElectricityDetails expand={true} icon={selectedIcon} title="Electricity Rate" {...utilityDetails} /> : ""}
+            {utilityType === "Sewage" ? <InfoSewageDetails expand={true} icon={selectedIcon} title="Sewage" {...utilityDetails} /> : ""}
+            {utilityType === "Internet" ? <InfoInternetDetails expand={true} icon={selectedIcon} title="Internet" {...utilityDetails} /> : ""}
+            {utilityType === "Cabletv" ? <InfoCableTvDetails expand={true} icon={selectedIcon} title="Cable TV" {...utilityDetails} /> : ""}
+            {utilityType === "Gas" ? <InfoGasDetails expand={true} icon={selectedIcon} title="Gas Rate" {...utilityDetails} /> : ""}
           </div>
         </div>
       </div>

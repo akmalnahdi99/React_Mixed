@@ -2,14 +2,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function PayableItem({ date, title, icon, color, redirect }) {
+export default function PayableItem({ date, title, icon, color, link }) {
   var colorClassName = "text-darkblue";
   if (color === "red") {
     colorClassName = "text-danger";
   }
+
   return (
     <div className="ibox mt-3" style={{ cursor: "pointer" }}>
-      <Link to={redirect}>
+      <Link to={link}>
         <div className="ibox-content pb-0" style={{ minHeight: "80px" }}>
           <div className="forum-item">
             <div className="row justify-content-center">

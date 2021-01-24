@@ -8,7 +8,7 @@ export default function Appointment() {
  
   const [filter, set_filter] = React.useState("all");
 
-  function filterSelection(filter) {
+  function updateFilter(filter) {
     set_filter(filter);
   }
 
@@ -17,7 +17,7 @@ export default function Appointment() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
-            <AppointmentFilter filterSelection={filterSelection} />
+            <AppointmentFilter activeFilter={filter} updateFilter={updateFilter} />
             <AppointmentListDetails activeFilter={filter} />
           </div>
         </div>
