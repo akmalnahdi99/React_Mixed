@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function InfoCardItem({ title, body, color, link }) {
+export default function InfoCardItem({ title, body, color, address }) {
   if (!color) {
     color = "green";
   }
@@ -21,7 +21,7 @@ export default function InfoCardItem({ title, body, color, link }) {
     <div>
       <ul className="sortable-list connectList agile-list ui-sortable" id="todo">
         <li className={element + " ui-sortable-handle mb-0"}>
-          <Link to={"/landlord/" + link} style={{ color: "black" }}>
+          <Link to={address} style={{ color: "black" }}>
             <div className="agile-detail">
               <small className="text-darkblue">
                 <i className="fas fa-bell"></i> {title}

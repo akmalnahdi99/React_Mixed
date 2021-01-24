@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function PayableItem({ date, title, icon, color, link }) {
+export default function PayableItem({ date, title, icon, color, address }) {
   var colorClassName = "text-darkblue";
   if (color === "red") {
     colorClassName = "text-danger";
@@ -10,7 +10,7 @@ export default function PayableItem({ date, title, icon, color, link }) {
 
   return (
     <div className="ibox mt-3" style={{ cursor: "pointer" }}>
-      <Link to={link}>
+      <Link to={address}>
         <div className="ibox-content pb-0" style={{ minHeight: "80px" }}>
           <div className="forum-item">
             <div className="row justify-content-center">

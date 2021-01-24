@@ -26,7 +26,7 @@ export default function DashRentalGraph({ title }) {
         <RentalDonut />
         {data.length > 0 ? (
           data.map((item, index) => {
-            return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} link={item.link} />;
+            return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} address={item.link} />;
           })
         ) : (
           <EmptyDashBoard title={"No Rental Data"} />

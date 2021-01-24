@@ -98,16 +98,22 @@ export const DateDiff = {
 
     return d2M + 12 * d2Y - (d1M + 12 * d1Y);
   },
-
+ 
   inYears: function (d1, d2) {
     return d2.getFullYear() - d1.getFullYear();
   },
 };
 
-
+export const appointment_status_scheduled = "Scheduled";
+export const appointment_status_completed = "Completed";
+export const appointment_status_cancelled = "Cancelled";
 export const overDueDaysThreshold = 15;
 export const role_tenant = "tenant";
 export const role_landlord = "landlord";
+
+
+
+
 // get financial value per month or per year
 export function getFinancialValueRoot(financialData, financialMonth, userRole, paymentOf) {
   if (financialData) {
@@ -255,7 +261,7 @@ export const allQuickLinks = {
 export const CompanyServicesIcons = {
   AssessmentRate: { img: "/imgs/assessment.svg" },
   CableTV: { img: "/imgs/tv.svg" },
-  CableTV: { img: "/imgs/tv.svg" },
+
   Rental: { img: "/imgs/subscription.svg" },
   Electricity: { img: "/imgs/electricity.svg" },
   Gas: { img: "/imgs/gas.svg" },

@@ -1,30 +1,59 @@
 // #newPage
 import React from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../context/settings";
+import { apiCall, appointment_status_cancelled, appointment_status_scheduled, appointment_status_completed } from "../../utils/landlordHelper";
 import EmptyDashboard from "../EmptyDashboard";
 import InfoCardItem from "../InfoCardItem";
+import Loading from "../static/Loading";
 
 export default function DashAppoinment() {
-  const data = [
-    {
-      title: "Date: 10/28/2020",
-      body: "Pipe leak maintenance",
-      color: "green",
-      link: "appointmentdetails",
-    },
-    {
-      title: "Date: 10/28/2020",
-      body: "Pay cash to agent",
-      color: "blue",
-      link: "appointmentdetails",
-    },
-    {
-      title: "Date: 10/28/2020",
-      body: "Meeting in Office",
-      color: "yellow",
-      link: "appointmentdetails",
-    },
-  ];
+  const appContext = React.useContext(AppContext);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [appointments, set_appointments] = React.useState({});
+  const activeUnitId = appContext.settings.activeUnitId;
+
+  React.useEffect(() => {
+    async function loadTenantAppointmenetsWrapper() {
+      setIsLoading(true);
+
+      var response = await apiCall("/units/tenantAppointments/" + activeUnitId);
+
+      if (response.status) {
+        set_appointments(response.data);
+      }
+      setIsLoading(false);
+    }
+    loadTenantAppointmenetsWrapper();
+    // eslint-disable-next-line
+  }, [activeUnitId]);
+
+  function convertAppointmentStatusToColor(appointment) {
+    if (appointment.status === "Completed") {
+      return "green";
+    } else if (appointment.status === "Scheduled") {
+      return "blue";
+    } else if (appointment.status === "Cancelled") {
+      return "yellow";
+    }
+  }
+
+  var data = [];
+  var counter = 0;
+  var statoos = [appointment_status_scheduled, appointment_status_cancelled, appointment_status_completed];
+  for (let i = 0; i < statoos.length; i++) {
+    const status = statoos[i];
+    var elements = appointments[status] || [];
+
+    for (let j = 0; j < elements.length; j++) {
+      const cur_appointment = elements[j];
+      data.push({ ...cur_appointment, title: "Date: " + cur_appointment.date, body: cur_appointment.purpose, color: convertAppointmentStatusToColor(cur_appointment), link: "/landlord/appointmentDetails/" + cur_appointment.appointmentId });
+      counter++;
+      if (counter >= 3) break;
+    }
+    if (counter >= 3) break;
+  }
+
   return (
     <div className="ibox">
       <div className="ibox-title bg-white">
@@ -40,7 +69,7 @@ export default function DashAppoinment() {
 
       <div className="ibox-content bg-white">
         <ul className="sortable-list connectList agile-list ui-sortable"></ul>
-        {data.length > 0 ? data.map((item, index) => <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} link={item.link} />) : <EmptyDashboard />}
+        {isLoading === true ? <Loading /> : data.length > 0 ? data.map((item, index) => <InfoCardItem key={index} {...item} />) : <EmptyDashboard />}
       </div>
     </div>
   );

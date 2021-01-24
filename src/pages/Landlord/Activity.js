@@ -48,8 +48,7 @@ export default function Activity(props) {
 
     setIsLoading(true);
 
-    var stats,
-      financials = {};
+    var financials = {};
 
     // var response2 = await apiCall("/units/AppointmentsAndOffersStats/?unitId=" + unitId);
     // if (response2.status) {
