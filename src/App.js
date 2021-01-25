@@ -180,7 +180,7 @@ export default function App() {
                     <Utilities siteMap={"Utilities"} />
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/bills/:billType">
+                <Route path="/landlord/bills/:billOf">
                   <StandardPage>
                     <BillOf siteMap={"Bills Details"} />
                   </StandardPage>

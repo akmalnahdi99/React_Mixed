@@ -28,31 +28,37 @@ export const loadNotifications = async (accessToken) => {
   return result;
 };
 
-export const apiCall = async (url, method, data) => {
+export const apiCall = async (url, method, data, processData) => {
   var jwtToken = Cookies.get("jwtToken") || null;
   var { apiUrl } = config;
 
+  if (!method) method = "Get";
+  if (!data) data = null;
+  if (processData === undefined || processData === null) processData = true;
+
   let headers = {
     Accept: "application/json",
-    "Content-Type": "application/json",
   };
+
+  if (processData === true) {
+    headers["Content-Type"] = "application/json";
+  }
 
   if (jwtToken) {
     headers.Authorization = `Bearer ${jwtToken}`;
   }
-  if (!method) method = "Get";
-  if (!data) data = null;
 
   const requestOptions = {
     method: method,
     headers: headers,
   };
 
-  if (data) {
+  if (data && processData === false) {
+    requestOptions["body"] = data;
+  } else if (data) {
     requestOptions["body"] = JSON.stringify(data);
   }
-  console.log(requestOptions);
-
+ 
   var apiResult = null;
   var result = { status: null, data: null };
   await fetch(apiUrl + url, requestOptions)
@@ -343,6 +349,7 @@ export function getTenantPayablesDetails(financials) {
 }
 
 // get tenant rental paid not paid count
+// return example for rental  {paid:2, notpaid:3}
 export function getTenantRentalPaymentStats(financials) {
   var paidCount = 0;
   var notPaidCount = 0;
@@ -362,4 +369,34 @@ export function getTenantRentalPaymentStats(financials) {
     }
   }
   return { paidCount, notPaidCount };
+}
+
+// get tenant unpaid bills
+export function getTenantUnpaidBills(financials, billsOf) {
+  var unpaidBills = [];
+
+  var paymentsData = financials[billsOf];
+  for (let i = 0; i < paymentsData.length; i++) {
+    const paymentData = paymentsData[i];
+
+    paymentData.icon = (CompanyServicesIcons[billsOf] && CompanyServicesIcons[billsOf].img) || "";
+
+    if (paymentData.status === "due" || paymentData.status === "overdue") {
+      if (paymentData.paid !== true) {
+        unpaidBills.push(paymentData);
+      }
+    }
+  }
+
+  return unpaidBills;
+}
+
+// APIs -----------------------------------
+
+export async function loadFinancials(unitId) {
+  var response = await apiCall("/units/TenantFinancialsPerYearMonths/?unitId=" + unitId);
+  if (response.status) {
+    return response.data;
+  }
+  return null;
 }

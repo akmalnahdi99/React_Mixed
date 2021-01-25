@@ -47,7 +47,7 @@ export default function DashAppoinment() {
 
     for (let j = 0; j < elements.length; j++) {
       const cur_appointment = elements[j];
-      data.push({ ...cur_appointment, title: "Date: " + cur_appointment.date, body: cur_appointment.purpose, color: convertAppointmentStatusToColor(cur_appointment), link: "/landlord/appointmentDetails/" + cur_appointment.appointmentId });
+      data.push({ ...cur_appointment, title: "Date: " + cur_appointment.date, body: cur_appointment.purpose, color: convertAppointmentStatusToColor(cur_appointment), address: "/landlord/appointmentDetails/" + cur_appointment.appointmentId });
       counter++;
       if (counter >= 3) break;
     }

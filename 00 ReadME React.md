@@ -1,7 +1,7 @@
 [2021-01-25]
 - http://localhost:3000/landlord/appointmentdetails/11 pls check if the Reak Image for agent and his name are required, currently we put an image sample
 - for tenant appointment pls remove slack library and center the Header of elements (All, Scheduled, Cancelled) using css or whatever you used previously
-
+- how to display bills cards (with upload bill, upload recipt) shoule we show (all, or unpaid only or ???) pls explain
 
 [2021-01-15]
 - zero scrollbar :

@@ -6,7 +6,7 @@ import * as FaIcons from "react-icons/fa";
 
 import { Button, Modal, ModalHeader, ModalBody, Media } from "reactstrap";
 import { AppContext } from "../../context/settings";
-import { apiCall } from "../../utils/landlordHelper";
+import { loadFinancials } from "../../utils/landlordHelper";
 import Loading from "../../components/static/Loading";
 import { Link } from "react-router-dom";
 
@@ -55,10 +55,8 @@ export default function Activity(props) {
     //   stats = response2.data;
     // }
 
-    var response = await apiCall("/units/TenantFinancialsPerYearMonths/?unitId=" + unitId + "&year=" + new Date().getFullYear());
-    if (response.status) {
-      financials = response.data;
-    }
+    financials = await loadFinancials(unitId);
+  
     // await new Promise((r) => setTimeout(r, 4000));
     //updateAppContext({ unitFinancials: {}, viewingAndOfferStats:{} });
 
