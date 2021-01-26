@@ -36,9 +36,12 @@ export default function Activity(props) {
   );
 
   React.useEffect(() => {
-    // async function loadFinancialsWrapper() {
-    // }
-    // loadFinancialsWrapper();
+    // update financial from backend
+    async function updateFinancials() {
+      var financials = await loadFinancials(activeUnitId);
+      updateAppContext({ unitFinancials: financials });
+    }
+    updateFinancials();
     // eslint-disable-next-line
   }, [activeUnitId]);
 
@@ -56,7 +59,7 @@ export default function Activity(props) {
     // }
 
     financials = await loadFinancials(unitId);
-  
+
     // await new Promise((r) => setTimeout(r, 4000));
     //updateAppContext({ unitFinancials: {}, viewingAndOfferStats:{} });
 
