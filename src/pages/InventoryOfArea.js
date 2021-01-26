@@ -63,7 +63,7 @@ export default function InventoryOfRoom() {
                       <div className="ibox-content minhigh mb-2">
                         <div className="row pt-3">
                                 <div className="col-12">
-                                  <h4 className="text-doorcase3">Item Name</h4>
+                                  <h4 className="text-doorcase3">Item name</h4>
                                   <p className="m-0">{item.itemName}</p>
                                 </div>
                                 
@@ -89,7 +89,7 @@ export default function InventoryOfRoom() {
                           <div className="col-md-12">
                             <div className="media">
                               <div className="media-body">
-                                <h4 className="text-doorcase3">Model Number</h4>
+                                <h4 className="text-doorcase3">Model number</h4>
                                 <p className="m-0">{item.itemModel}</p>
                               </div>
                             </div>

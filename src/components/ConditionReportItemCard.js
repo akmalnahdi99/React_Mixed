@@ -21,7 +21,7 @@ export default function ConditionReportItemCard({ data }) {
         <div className="col-md-12">
           <div className="media">
             <div className="media-body">
-              <h4 className="text-doorcase3">Date of Condition</h4>
+              <h4 className="text-doorcase3">Date of condition</h4>
               <p className="m-0">{data.dateOfCondition}</p>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function ConditionReportItemCard({ data }) {
         <div className="col-md-12">
           <div className="media">
             <div className="media-body">
-              <h4 className="text-doorcase3">Description of Condition</h4>
+              <h4 className="text-doorcase3">Description of condition</h4>
               <p className="m-0">{data.description}</p>
             </div>
           </div>

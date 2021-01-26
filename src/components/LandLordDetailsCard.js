@@ -13,22 +13,22 @@ const LandLordDetailsCard = ({ title }) => {
       <div className="ibox-content">
         <div className="row text-left">
           <div className="col-12">
-            <h5 className="font-bold text-completedtask ">Full Name</h5>
+            <h5 className="font-bold text-doorcase3 ">Full name</h5>
             <span className="mb-3 font-normal">{userInfo.userName}</span>
             <hr />
-            <h5 className="font-bold text-completedtask ">Citizen</h5>
+            <h5 className="font-bold text-doorcase3 ">Citizen</h5>
             <span className="mb-3 font-normal">{userInfo.nationality || "N/A"}</span>
             <hr />
-            <h5 className="font-bold text-completedtask ">Phone Number</h5>
+            <h5 className="font-bold text-doorcase3 ">Phone number</h5>
             <span className="mb-3 font-normal">{userInfo.phoneNumber || "N/A"}</span>
             <hr />
-            <h5 className="font-bold text-completedtask ">Email</h5>
+            <h5 className="font-bold text-doorcase3 ">Email</h5>
             <span className="mb-3 font-normal">{userInfo.email}</span>
             <hr />
-            <h5 className="font-bold text-completedtask ">NRIC No</h5>
+            <h5 className="font-bold text-doorcase3 ">NRIC no</h5>
             <span className="mb-3 font-normal">{userInfo.nricNumber || "N/A"}</span>
             <hr />
-            <h5 className="font-bold text-completedtask ">Passport Number</h5>
+            <h5 className="font-bold text-doorcase3 ">Passport number</h5>
             <span className="mb-3 font-normal">{userInfo.passportNumber || "N/A"}</span>
         
           </div>

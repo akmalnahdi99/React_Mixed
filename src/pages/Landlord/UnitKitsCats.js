@@ -56,7 +56,7 @@ export default function UnitKits() {
               <Link to="/landlord/checkinleaflet" className="btn btn-dashboardicon  btn-default width180 btn-lg m-2">
                 <img src="/imgs/write-letter.svg" width="30px" alt="" />
                 <br />
-                <span>Information leaflet</span>
+                <span>Information Leaflet</span>
               </Link>
               <Link to={"/landlord/unitKits/Details/" + inventoryOf + "/Key"} className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
                 <img src="/imgs/key.svg" width="30px" alt="" />

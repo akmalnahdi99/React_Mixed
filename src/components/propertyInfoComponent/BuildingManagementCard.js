@@ -42,7 +42,7 @@ export default function InfoPropertyManagement ({title})  {
         ) : (
           <div className="row text-left">
             <div className="col-6">
-              <h5 className="font-bold text-doorcase3 ">Company Name</h5>
+              <h5 className="font-bold text-doorcase3 ">Company name</h5>
               <span className="mb-3 font-normal">{buildingManagement.companyName || "N/A"}</span>
               <hr />
               <h5 className="font-bold text-doorcase3 ">Building address</h5>

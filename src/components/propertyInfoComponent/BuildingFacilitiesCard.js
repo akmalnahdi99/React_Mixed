@@ -79,7 +79,7 @@ export default function BuildingFacilitiesCard() {
               <div className="col-md-4 p-0 col-12">
                 <ul className="folder-list">
                   <li className={"py-3" + inBuildingFacilities("PerimeterFencing")}>
-                    <img src="/imgs/boundaries.svg" width="24px" alt="name" /> Perimeter Fencing
+                    <img src="/imgs/boundaries.svg" width="24px" alt="name" /> Perimeter fencing
                 </li>
 
                   <li className={"py-3" + inBuildingFacilities("GamesRoom")}>
@@ -122,7 +122,7 @@ export default function BuildingFacilitiesCard() {
                 </li>
 
                   <li className={"py-3" + inBuildingFacilities("SaunaAndSteam")}>
-                    <img src="/imgs/hot.svg" width="24px" alt="name" /> Sauna and Steam
+                    <img src="/imgs/hot.svg" width="24px" alt="name" /> Sauna and steam
                 </li>
                 </ul>
               </div>

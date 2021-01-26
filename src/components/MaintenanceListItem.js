@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-export default function MaintenanceListItem({id, date, category, applydate, images, status, media }) {
+export default function MaintenanceListItem({id, date, category, time, status, media }) {
   if (!status) {
     status = "new";
   }
@@ -35,14 +35,15 @@ export default function MaintenanceListItem({id, date, category, applydate, imag
 
   return (
     <div className="row">
-      <div className="col-1 date active p-0">
+      <div className="col-1 date active p-0 mt-1">
         <i className="fas fa-circle"></i>
         
         <br />
       </div>
-      <div className="col-11 content pb-5">
+      <div className="col-11 content pb-3">
+        <div className="timeline-link p-3">
         <Link to={"/landlord/maintenancedetails/"+ id} style={{color: "#000"}}>
-      <p style={{fontSize: "12px"}}>{date}</p>
+      <p style={{fontSize: "12px"}}>{date} | {time}</p>
         <div className="row">
           <div className="col-9 mb-2">
             <div className="media">
@@ -50,11 +51,6 @@ export default function MaintenanceListItem({id, date, category, applydate, imag
                 <h5 className="mt-0 mb-0">Category: {category}</h5>
               </div>
             </div>
-          </div>
-          <div className="col-3 text-right">
-            <Link to={"/landlord/maintenancedetails/"+ id} alt="">
-                  <i className="fas fa-arrow-right fa-lg text-completedtask"></i>
-            </Link>
           </div>
         </div>
         <div className="row">
@@ -71,6 +67,7 @@ export default function MaintenanceListItem({id, date, category, applydate, imag
           </div>
         </div>
         </Link>
+        </div>
       </div>
     </div>
   );

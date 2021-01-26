@@ -37,10 +37,11 @@ export default function OfferListItem({ id, offerDate, tenantName, urlThumb, sta
       <div className="col-1 date active p-0 ">
         <i className="fas fa-circle"></i>
       </div>
-      <div className="col-11 content pb-5 ">
+      <div className="col-11 content pb-3">
+      <div className="timeline-link p-3">
         <Link to={"/landlord/offerdetails/" + id} style={{color: "black"}}>
         <div className="row">
-          <div className="col-10 mb-2 px-0">
+          <div className="col-10 mb-2">
           <p style={{fontSize: "12px"}}>{offerDate}</p>
             <div className="media">
               <img className="align-self-center mr-3" src="/imgs/avatar.svg" width="40px" alt="Generic placeholder" />
@@ -54,13 +55,9 @@ export default function OfferListItem({ id, offerDate, tenantName, urlThumb, sta
               <span className={"ml-2 font-body " + statusClassName}>{statusText}</span>
             </h4>
           </div>
-          <div className="col-2 text-right">
-         
-              <i className="fas fa-arrow-right fa-lg text-completedtask"></i>
-          
-          </div> 
         </div>
         </Link>
+        </div>
       </div>
     </div>
   );
