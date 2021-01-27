@@ -16,6 +16,7 @@ import Loading from "../../components/static/Loading";
 import { AppContext } from "../../context/settings";
 import { apiCall, getTenantUnpaidBills, loadFinancials } from "../../utils/landlordHelper";
 import RentalPayables from "./../../bills_component/RentalPayables";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
 export default function BillOf() {
   var t = useParams();
@@ -26,6 +27,17 @@ export default function BillOf() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [utilityDetails, setUtilityDetails] = React.useState(true);
   const [unpaidBills, set_unpaidBills] = React.useState([]);
+  const [modalData, set_modalData] = React.useState({ modal: false, title: "", message: "", error: false });
+
+  // modal stuff
+  const toggle = () => set_modalData({ ...modalData, modal: !modalData.modal });
+  const updateModal = (title, message,error, show) => set_modalData({ ...modalData, title, message, error,modal: show });
+
+  const closeBtn = (
+    <button className="close" onClick={toggle}>
+      &times;
+    </button>
+  );
 
   React.useEffect(() => {
     async function loadUtilityDetailsWrapper() {
@@ -97,12 +109,12 @@ export default function BillOf() {
     var title = unpaidBill.monthName;
     return (
       <React.Fragment key={index}>
-        {billOf === "Water" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} /> : ""}
-        {billOf === "Electricity" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} /> : ""}
-        {billOf === "Sewage" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} /> : ""}
-        {billOf === "Internet" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} /> : ""}
-        {billOf === "CableTV" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} /> : ""}
-        {billOf === "Gas" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} /> : ""}
+        {billOf === "Water" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} updateModal={updateModal} /> : ""}
+        {billOf === "Electricity" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} updateModal={updateModal} /> : ""}
+        {billOf === "Sewage" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} updateModal={updateModal} /> : ""}
+        {billOf === "Internet" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} updateModal={updateModal} /> : ""}
+        {billOf === "CableTV" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} updateModal={updateModal} /> : ""}
+        {billOf === "Gas" ? <BillsUnpaid title={title} paymentOf={billOf} {...unpaidBill} updateAfterUpload={updateAfterUpload} updateModal={updateModal} /> : ""}
       </React.Fragment>
     );
   });
@@ -132,6 +144,29 @@ export default function BillOf() {
           </div>
         </div>
       </div>
+
+      <Modal isOpen={modalData.modal} toggle={toggle} className="" centered={true}>
+        <ModalHeader toggle={toggle} close={closeBtn} className="text-completedtask text-left font-title ml-3">
+          <h2> {modalData.title}</h2>
+        </ModalHeader>
+
+        <ModalBody
+          className="pt-0"
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <div style={{ textAlign: "center" }}>
+            {modalData.error ===false ? (
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyjk0fmIT2rp4Xzw85URtLtcMPNiKqSOrI_Q&usqp=CAU" style={{ width: "50px", height: "50px" }} alt="..." />
+            ) : (
+              <img src="https://icon-library.com/images/failed-icon/failed-icon-7.jpg" style={{ width: "50px", height: "50px" }} alt="..." />
+            )}
+          </div>
+
+          <h4>{modalData.message}</h4>
+        </ModalBody>
+      </Modal>
     </React.Fragment>
   );
 }
