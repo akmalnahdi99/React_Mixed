@@ -147,7 +147,7 @@ export default function BillOf() {
 
       <Modal isOpen={modalData.modal} toggle={toggle} className="" centered={true}>
         <ModalHeader toggle={toggle} close={closeBtn} className="text-completedtask text-left font-title ml-3">
-          <h2> {modalData.title}</h2>
+          <h3> {modalData.title}</h3>
         </ModalHeader>
 
         <ModalBody
@@ -163,8 +163,9 @@ export default function BillOf() {
               <img src="https://icon-library.com/images/failed-icon/failed-icon-7.jpg" style={{ width: "50px", height: "50px" }} alt="..." />
             )}
           </div>
-
-          <h4>{modalData.message}</h4>
+          <div className="row text-center mt-3">
+            <div className="col-12 text-doorcase3"><h4>{modalData.message}</h4></div>
+          </div>
         </ModalBody>
       </Modal>
     </React.Fragment>
