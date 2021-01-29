@@ -2633,6 +2633,18 @@ a.list-group-item.active:focus {
   padding-inline-start: 0;
 }
 
+.timeline-link {
+  
+  border-width: 1px;
+  border-radius: 20px;
+}
+
+.timeline-link:hover,
+.timeline-link:active
+{
+  background-color: rgb(240, 240, 240);
+}
+
 /* Profile container */
 
 .profile {
@@ -9222,12 +9234,12 @@ dd.project-people {
 }
 
 .chat-discussion .chat-message.left .message-avatar {
-  float: left;
+  float: right;
   margin-right: 10px;
 }
 
 .chat-discussion .chat-message.right .message-avatar {
-  float: right;
+  float: left;
   margin-left: 10px;
 }
 
@@ -9250,13 +9262,13 @@ dd.project-people {
 }
 
 .chat-discussion .chat-message.left .message {
-  text-align: left;
-  margin-left: 55px;
+  text-align: right;
+  margin-left: 30px;
 }
 
 .chat-discussion .chat-message.right .message {
-  text-align: right;
-  margin-right: 55px;
+  text-align: left;
+  margin-right: 30px;
 }
 
 .message-date {

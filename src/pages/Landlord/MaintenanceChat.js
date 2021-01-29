@@ -4,7 +4,7 @@ import React from "react";
 
 
 import MaintenanceDetailsList from "../../components/MaintenanceDetailsList";
-import MaintenanceRequestChat from "../../components/MaintenanceRequestChat";
+import MaintenancePaymentChat from "../../components/MaintenanceChat";
 
 export default function Maintenance() {
   // const { alert, hideAlert } = React.useContext(UserContext);
@@ -15,8 +15,7 @@ export default function Maintenance() {
         <div className="row justify-content-center">
           <div className="col-lg-8 mb-3 px-0">
             <MaintenanceDetailsList />
-
-            <MaintenanceRequestChat />
+            <MaintenancePaymentChat />
           </div>
         </div>
       </div>

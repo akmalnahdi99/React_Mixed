@@ -4,7 +4,7 @@ import React from "react";
 
 
 import MaintenanceDetailsList from "../../components/MaintenanceDetailsList";
-import MaintenanceInteractionChat from "../../components/MaintenanceInteractionChat";
+import MaintenanceRequestChat from "../../components/MaintenancePrivateChat";
 
 export default function Maintenance() {
   // const { alert, hideAlert } = React.useContext(UserContext);
@@ -16,7 +16,7 @@ export default function Maintenance() {
           <div className="col-lg-8 mb-3 px-0">
             <MaintenanceDetailsList />
 
-            <MaintenanceInteractionChat />
+            <MaintenanceRequestChat />
           </div>
         </div>
       </div>
