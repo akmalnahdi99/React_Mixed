@@ -75,11 +75,16 @@ import InvoiceWater from "./pages/Landlord/InvoiceWater.js";
 import TenantInvoice from "./pages/Landlord/TenantInvoice";
 import PayCash from "./bills_component/PayCash";
 import PayCDM from "./bills_component/PayCDM";
+import ReactGA from "react-ga";
+  
+const trackingId = "UA-188481373-1"; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
+
 
 export default function App() {
   return (
     <AppProvider>
-      <Router>
+      <Router  >
         <Switch>
           <Route exact path="/">
             <Redirect to="/login" />
@@ -244,7 +249,7 @@ export default function App() {
                     <MaintenanceChatPrivate siteMap={"Maintenance Private Chat"} />
                   </StandardPage>
                 </Route>
-                
+
                 {/*  <Route path="/landlord/tenancydocs">
               <StandardPage>
                 <TenancyDocs siteMap={"Tenancy Documents"} />
@@ -303,7 +308,7 @@ export default function App() {
                     <AppointmentDetails siteMap={"Appointment Details"} />
                   </StandardPage>
                 </Route>
- 
+
                 <Route path="/landlord/InvoiceWater">
                   <StandardPage>
                     <InvoiceWater siteMap={"Invoice Water"} />

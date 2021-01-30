@@ -2,6 +2,7 @@
 import React from "react";
 import { AppContext } from "../context/settings";
 import "slick-carousel/slick/slick.css"; 
+import ReactGA from "react-ga";
 export default function PostsListFilter() {
   const appContext =   React.useContext(AppContext);
   const selectedFilter = appContext.settings.postsFilter;
@@ -46,6 +47,7 @@ export default function PostsListFilter() {
 
    const filterSelection = (filter) => {
  
+    ReactGA.event({ category: "Event", action: "Posts changed to " + filter });
      appContext.setPostsFilter(filter);
   };
 

@@ -9,6 +9,7 @@ import { AppContext } from "../../context/settings";
 import { loadFinancials } from "../../utils/landlordHelper";
 import Loading from "../../components/static/Loading";
 import { Link } from "react-router-dom";
+import ReactGA from "react-ga";
 
 export default function Activity(props) {
   const { className } = props;
@@ -46,6 +47,7 @@ export default function Activity(props) {
   }, [activeUnitId]);
 
   async function setActiveUnit(unitId) {
+    ReactGA.event({ category: "Event", action: "Unit Changed" });
     set_activeUnitId(unitId);
     setModal(false);
 
