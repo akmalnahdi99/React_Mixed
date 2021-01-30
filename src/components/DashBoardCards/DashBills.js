@@ -20,7 +20,7 @@ export default function DashBills({ title }) {
      },
      {
        icon: "/imgs/sewage.svg",
-       text: "Seawage",
+       text: "Sewage",
        url: "/landlord/bills/Sewage",
      },
      {

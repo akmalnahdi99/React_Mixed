@@ -13,7 +13,6 @@ export default function PaymentChatItem({ datetime, name, text, type }) {
       <div className="col-12">
         <div className="chat-discussion minhigh py-0">
           <div className={"chat-message " + userClassName}>
-            <img className="message-avatar" src="/imgs/a4.jpg" alt="" />
             <div className="message">
               <p className="message-author text-truncate text-completedtask font-title mb-0"> {name}</p>
               <span className="message-content">{text}</span>

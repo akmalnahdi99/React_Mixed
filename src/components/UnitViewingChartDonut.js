@@ -48,7 +48,7 @@ export default function UnitViewingChartDonut({ viewingStats }) {
         titleComponent={<ChartLabel y={110} style={[{ fontWeight: "600", fontSize: 36 }]} />}
         subTitleComponent={<ChartLabel y={140} style={[{ fontSize: "15px", fontWeight: "400", fill: "#666" }]} />}
         innerRadius={80}
-        subTitle="total"
+        subTitle="Total"
         style={{
           data: {
             fill: (d) => d.slice.data.fill,

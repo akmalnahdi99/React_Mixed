@@ -34,9 +34,8 @@ import OfferDetails from "./pages/Landlord/OfferDetails";
 import Notifications from "./pages/Landlord/Notifications.js";
 
 import MaintenanceDetails from "./pages/Landlord/MaintenanceDetails";
-import MaintenanceChatRequest from "./pages/Landlord/MaintenanceChatRequest";
-import MaintenanceChatPayment from "./pages/Landlord/MaintenanceChatPayment";
-import MaintenanceChatInteraction from "./pages/Landlord/MaintenanceChatInteraction";
+import MaintenanceChatPrivate from "./pages/Landlord/MaintenanceChatPrivate";
+import MaintenanceChat from "./pages/Landlord/MaintenanceChat";
 import Maintenance from "./pages/Landlord/Maintenance";
 import RequestMaintenance from "./pages/Landlord/RequestMaintenance.js";
 
@@ -235,19 +234,14 @@ export default function App() {
                     <RequestMaintenance siteMap={"Request Maintenance"} />
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/maintenancechatpayment">
+                <Route path="/landlord/MaintenanceChat">
                   <StandardPage>
-                    <MaintenanceChatPayment siteMap={"Maintenance Chat"} />
+                    <MaintenanceChat siteMap={"Maintenance Chat"} />
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/MaintenanceChatRequest">
+                <Route path="/landlord/MaintenanceChatPrivate">
                   <StandardPage>
-                    <MaintenanceChatRequest siteMap={"Maintenance Chat"} />
-                  </StandardPage>
-                </Route>
-                <Route path="/landlord/maintenancechatinteraction">
-                  <StandardPage>
-                    <MaintenanceChatInteraction siteMap={"Maintenance Chat"} />
+                    <MaintenanceChatPrivate siteMap={"Maintenance Private Chat"} />
                   </StandardPage>
                 </Route>
                 
@@ -309,7 +303,7 @@ export default function App() {
                     <AppointmentDetails siteMap={"Appointment Details"} />
                   </StandardPage>
                 </Route>
-
+ 
                 <Route path="/landlord/InvoiceWater">
                   <StandardPage>
                     <InvoiceWater siteMap={"Invoice Water"} />

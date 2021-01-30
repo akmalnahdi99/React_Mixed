@@ -8,6 +8,7 @@ const MaintenanceList = () => {
     {
       id: 0,
       date: "23/10/2020",
+      time: "18:02",
       category: "Plumbing",
       status: "resolved",
       applydate: "XX-XX-XXXX",
@@ -30,6 +31,7 @@ const MaintenanceList = () => {
     {
       id: 1,
       date: "23/10/2020",
+      time: "18:02",
       category: "Appliance",
       status: "new",
       applydate: "XX-XX-XXXX",
@@ -52,6 +54,7 @@ const MaintenanceList = () => {
     {
       id: 2,
       date: "23/10/2020",
+      time: "18:02",
       category: "Household",
       status: "new",
       applydate: "XX-XX-XXXX",
@@ -74,6 +77,7 @@ const MaintenanceList = () => {
     {
       id: 3,
       date: "19/10/2020",
+      time: "18:02",
       category: "Plumbing",
       status: "inprogress",
       applydate: "XX-XX-XXXX",
@@ -96,6 +100,7 @@ const MaintenanceList = () => {
     {
       id: 4,
       date: "23/10/2020",
+      time: "18:02",
       category: "Electrical",
       status: "in progress",
       applydate: "XX-XX-XXXX",

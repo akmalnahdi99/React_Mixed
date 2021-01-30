@@ -21,7 +21,7 @@ export default function InfoCableTvDetails({ title,expand, ...details }) {
       <Collapse isOpen={isOpen} className="ibox-content minhigh pt-0">
         <div className="media">
           <div className="media-body">
-            <h4 className="text-doorcase3">Company Name</h4>
+            <h4 className="text-doorcase3">Company name</h4>
             <p className="m-0">{details.companyName || "N/A"}</p>
           </div>
         </div>

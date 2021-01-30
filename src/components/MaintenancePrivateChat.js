@@ -30,7 +30,7 @@ const MaintenanceRequestChat = () => {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3> 23/10/2020 - Tenant request for a maintenance</h3>
+        <h3> Maintenance Private Chat</h3>
       </div>
       <div className="ibox-content minhigh">
         {data.length > 0 ? (
@@ -45,12 +45,12 @@ const MaintenanceRequestChat = () => {
           <div className="col-12">
             <form id="contact-form" className="contact-form">
               <div className="row">
-                <div className="col-11 pr-0">
+                <div className="col-10 pr-0">
                   <div className="form-group m-0">
                     <textarea className="form-control textarea" rows="1" name="Comment" id="Message" placeholder="Comment"></textarea>
                   </div>
                 </div>
-                <div className="col-1 pl-4">
+                <div className="col-2 text-center">
                   <div className="form-group">
                     <button type="submit" className="btn pl-0">
                       <i className="fas fa-play-circle fa-lg text-center text-completedtask"></i>

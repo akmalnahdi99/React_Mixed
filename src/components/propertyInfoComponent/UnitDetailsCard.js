@@ -159,7 +159,7 @@ export default function UnitDetailsCard() {
                 </div>
                 <hr />
               </div>
-              <div className="col-sm-4 col-6">
+              {/* <div className="col-sm-4 col-6">
                 <div className="media">
                   <div className="media-body">
                     <h4 className="text-doorcase3">Service charges</h4>
@@ -183,7 +183,7 @@ export default function UnitDetailsCard() {
                     <p className="m-0">{unitDetails.insuranceAmount || "N/A"}</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </React.Fragment>
         )}
