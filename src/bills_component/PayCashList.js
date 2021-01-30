@@ -39,7 +39,7 @@ export default function PayCashList(props) {
                     </div>
                   </div>
                   <div className="row justify-content-center mt-5">
-                    <Link to="/landlord/bills/rental">
+                    <Link to="/landlord/payables">
                       <button className="btn btn-primary">Return to rental payables page</button>
                     </Link>
                   </div>
