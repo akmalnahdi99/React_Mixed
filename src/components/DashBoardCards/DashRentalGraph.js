@@ -1,35 +1,70 @@
 import React from "react";
 import RentalDonut from "../RentalDonut";
 import InfoCardItem from "../InfoCardItem";
-import EmptyDashBoard from "./../../components/EmptyDashboard";
+import { action_level_danger, apiLoadData } from "./../../utils/landlordHelper";
 import { Link } from "react-router-dom";
+// import { apiCall } from "../../utils/landlordHelper";
+import { AppContext } from "../../context/settings";
+// import Loading  from "components/static/Loading";
+import NoOverdue from "components/EmptyOverDue";
+import Loading from "components/static/Loading";
 
 export default function DashRentalGraph({ title }) {
-  const data = [
-    {
-      title: "Due On: 10/28/2020",
-      body: "Rent overdue",
-      link: "rentalpayables",
-      color: "red",
-    },
-  ];
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [tenantRentalPaymentStats, set_tenantRentalPaymentStats] = React.useState({});
+  var appContext = React.useContext(AppContext);
+  const activeUnitId = appContext.settings.activeUnitId;
+
+  React.useEffect(() => {
+    async function loadTodoList() {
+      setIsLoading(true);
+
+      var response = await apiLoadData("loadRentalStatsPerYear", { activeUnitId });
+      set_tenantRentalPaymentStats(response);
+      setIsLoading(false);
+    }
+    loadTodoList();
+
+    // eslint-disable-next-line
+  }, [activeUnitId]);
+
+  var infoCardData = {
+    title: "Overdue Payments",
+    body: "",
+    address: "/landlord/payables",
+    level: action_level_danger,
+  };
+
+  if (tenantRentalPaymentStats) {
+    var previousYearNotPaidCount = tenantRentalPaymentStats.previousYearNotPaidCount || 0;
+    var overDueCount = tenantRentalPaymentStats.overDueCount || 0;
+
+    if (overDueCount > 0) {
+      infoCardData.body = `${overDueCount} overdue payment${overDueCount > 0 ? "s" : ""}`;
+    }
+
+    if (previousYearNotPaidCount > 0) {
+      infoCardData.title = "Previous Payments";
+      if (infoCardData.body !== "") infoCardData.body += ", ";
+      infoCardData.body += `You have ${previousYearNotPaidCount} unpaid payment${previousYearNotPaidCount > 0 ? "s" : ""} from previous year`;
+    }
+  }
+ 
   return (
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-          <Link Link to="/landlord/bills/rental">
-            {title}
-          </Link>
+          <Link to="/landlord/bills/rental">{title}</Link>
         </h5>
       </div>
       <div className="ibox-content">
-        <RentalDonut />
-        {data.length > 0 ? (
-          data.map((item, index) => {
-            return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} address={item.link} />;
-          })
+        {isLoading === true ? (
+          <Loading />
         ) : (
-          <EmptyDashBoard title={"No Rental Data"} />
+          <React.Fragment>
+            <RentalDonut {...tenantRentalPaymentStats} />
+            {infoCardData.body !== "" ? <InfoCardItem address="/landlord/payables" {...infoCardData} /> : <NoOverdue title="No Overdue" />}
+          </React.Fragment>
         )}
       </div>
     </div>

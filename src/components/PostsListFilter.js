@@ -48,15 +48,16 @@ export default function PostsListFilter() {
    const filterSelection = (filter) => {
  
     ReactGA.event({ category: "Event", action: "Posts changed to " + filter });
-     appContext.setPostsFilter(filter);
+ 
+     appContext.updateAppContext({postsFilter:filter});
   };
-
+ 
   return (
     <div id="FilterContainer" className="mb-2 mt-2 multiple-items sorterslide" style={{ display: "flex" }}>
       {Filters.map((filter) => {
         return (
           <div key={filter.id} className="widthfitcontent">
-            <div to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
+            <div   className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
               <i className={filter.iconClass}></i> {filter.name}
             </div>
           </div>

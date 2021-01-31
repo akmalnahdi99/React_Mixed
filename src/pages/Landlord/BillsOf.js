@@ -14,7 +14,7 @@ import InfoCableTvDetails from "../../components/propertyInfoComponent/InfoCable
 import InfoGasDetails from "../../components/propertyInfoComponent/InfoGasDetails";
 import Loading from "../../components/static/Loading";
 import { AppContext } from "../../context/settings";
-import { apiCall, getTenantUnpaidBills, loadFinancials } from "../../utils/landlordHelper";
+import { apiCall, apiLoadData, getTenantUnpaidBills   } from "../../utils/landlordHelper";
 import RentalPayables from "./../../bills_component/RentalPayables";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
@@ -57,7 +57,7 @@ export default function BillOf() {
   }, [activeUnitId]);
 
   async function updateAfterUpload() {
-    var financials = await loadFinancials(activeUnitId);
+    var financials = await apiLoadData("loadFinancials", {activeUnitId});
     appContext.updateAppContext({ unitFinancials: financials });
 
     var bills = getTenantUnpaidBills(financials, billOf);

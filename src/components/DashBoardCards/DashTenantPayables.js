@@ -42,10 +42,10 @@ export default function DashTenantPayables() {
         <ul className="sortable-list connectList agile-list">
           {data.length > 0 ? (
             data.map((item, index) => {
-              return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} />;
+              return <InfoCardItem key={index} title={item.title} body={item.body} level={item.color} />;
             })
           ) : (
-            <NoOverdue />
+            <NoOverdue title="No Items found" />
           )}
         </ul>
       </div>

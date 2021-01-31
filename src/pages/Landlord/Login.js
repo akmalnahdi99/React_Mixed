@@ -54,8 +54,7 @@ export default function Login() {
       .then(async (resp) => {
         if (resp.status === 200) {
           var token = await resp.json();
-          Cookies.set("jwtToken", token);
-
+          Cookies.set("jwtToken", token.token);
           var response = await apiCall("/users/info");
 
           var activeUnitId = null;
@@ -76,7 +75,7 @@ export default function Login() {
             action: "User logged in",
           });
 
-          updateAppContext({ accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
+          updateAppContext({ postsFilter: "All", accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
         } else {
           throw new Error(resp.statusText);
         }

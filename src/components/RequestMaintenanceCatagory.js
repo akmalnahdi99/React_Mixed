@@ -36,7 +36,7 @@ export default function RequestMaintenanceFilter() {
 
   const filterSelection = (filter) => {
  
-    appContext.setPostsFilter(filter);
+    appContext.updateAppContext({ postsFilter: filter });
   };
 
   const settings = {

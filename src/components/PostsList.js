@@ -8,7 +8,7 @@ import Loading from "./static/Loading";
 
 const PostsList = (props, filterBy) => {
   const appContext = React.useContext(AppContext);
-  const activeFilter = appContext.settings.postsFilter;
+  const activeFilter = appContext.settings.postsFilter || "All";
   const activeUnitId = appContext.settings.activeUnitId;
 
   const [isLoading, setIsLoading] = React.useState(true);

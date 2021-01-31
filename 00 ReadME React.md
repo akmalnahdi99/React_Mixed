@@ -1,3 +1,9 @@
+[2021-01-30]
+- I changed the Rental Dash to inlcude a way to notify about previous year payments
+- please notice that the port number for landlord (in development only fixed to 3000)
+- please notice that the port number for landlord_mixed (tenant) (in development only fixed to 3001)
+
+
 [2021-01-25]
 - http://localhost:3000/landlord/appointmentdetails/11 pls check if the Reak Image for agent and his name are required, currently we put an image sample
 - for tenant appointment pls remove slack library and center the Header of elements (All, Scheduled, Cancelled) using css or whatever you used previously

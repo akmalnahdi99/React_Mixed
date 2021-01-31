@@ -28,7 +28,7 @@ export const loadNotifications = async (accessToken) => {
   return result;
 };
 
-export const apiCall = async (url, method, data, processData) => {
+export const apiCall = async (url, method, data, processData,appContext) => {
   var jwtToken = Cookies.get("jwtToken") || null;
   var { apiUrl } = config;
 
@@ -58,7 +58,7 @@ export const apiCall = async (url, method, data, processData) => {
   } else if (data) {
     requestOptions["body"] = JSON.stringify(data);
   }
- 
+
   var apiResult = null;
   var result = { status: null, data: null };
   await fetch(apiUrl + url, requestOptions)
@@ -66,6 +66,9 @@ export const apiCall = async (url, method, data, processData) => {
       if (resp.status === 200) {
         apiResult = await resp.json();
         result.status = true;
+      } else if (resp.status === 401) {
+        appContext && appContext.updateAppContext({ isLogged: false });
+        result.status = false;
       } else {
         apiResult = await resp.json();
         result.status = false;
@@ -115,6 +118,13 @@ export const appointment_status_cancelled = "Cancelled";
 export const overDueDaysThreshold = 15;
 export const role_tenant = "tenant";
 export const role_landlord = "landlord";
+
+// Action Levels
+ export const action_level_info = "info";
+ export const action_level_warning = "warning";
+ export const action_level_danger = "danger";
+ export const action_level_waiting = "waiting";
+
 
 // get financial value per month or per year
 export function getFinancialValueRoot(financialData, financialMonth, userRole, paymentOf) {
@@ -348,29 +358,6 @@ export function getTenantPayablesDetails(financials) {
   return { overDuePayments, duePayments };
 }
 
-// get tenant rental paid not paid count
-// return example for rental  {paid:2, notpaid:3}
-export function getTenantRentalPaymentStats(financials) {
-  var paidCount = 0;
-  var notPaidCount = 0;
-  for (const paymentName in financials) {
-    if (paymentName.toLowerCase() === "rental".toLowerCase()) {
-      const payments = financials[paymentName];
-
-      for (let i = 0; i < payments.length; i++) {
-        const paymentData = payments[i];
-
-        if (paymentData.paid === true) {
-          paidCount++;
-        } else {
-          notPaidCount++;
-        }
-      }
-    }
-  }
-  return { paidCount, notPaidCount };
-}
-
 // get tenant unpaid bills
 export function getTenantUnpaidBills(financials, billsOf) {
   var unpaidBills = [];
@@ -393,8 +380,28 @@ export function getTenantUnpaidBills(financials, billsOf) {
 
 // APIs -----------------------------------
 
-export async function loadFinancials(unitId) {
-  var response = await apiCall("/units/TenantFinancialsPerYearMonths/?unitId=" + unitId);
+export async function apiLoadData(endpointName, data) {
+   console.log("Entering API load data : " + endpointName + " with ", data);
+  endpointName = endpointName.toLowerCase();
+  var response = null;
+  switch (endpointName) {
+    case "loadFinancials".toLowerCase():
+      response = await apiCall("/units/TenantFinancialsPerYearMonths/?unitId=" + data.activeUnitId);
+      break;
+    case "loadRentalStatsPerYear".toLowerCase():
+      response = await apiCall("/units/tenantRentalStatsPerYear?unitId=" + data.activeUnitId);
+      break;
+    case "tenantAppointments".toLowerCase():
+      response = await apiCall("/units/tenantAppointments/" + data.activeUnitId);
+      break;
+    case "tenantTodoList".toLowerCase():
+      response = await apiCall("/units/tenantTodoList?unitId=" + data.activeUnitId);
+      break;
+    default:
+      break;
+  }
+
+  console.log("Exiting Api load data : with ",response.data);
   if (response.status) {
     return response.data;
   }

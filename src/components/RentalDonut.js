@@ -1,18 +1,17 @@
 //under review
 import React from "react";
 import { ChartDonut, ChartLabel } from "@patternfly/react-charts";
-import { AppContext } from "../context/settings";
-import { getTenantRentalPaymentStats } from "../utils/landlordHelper";
-
-export default function RentalDonut() {
-  //TASK pls put colors in variables here example : var red = #329f9d
-  const appContext = React.useContext(AppContext);
-
-  var financialData = appContext.settings.unitFinancials;
-
-  const { paidCount, notPaidCount } = getTenantRentalPaymentStats(financialData);
  
+
+
+export default function RentalDonut({ paidCount, notPaidCount, previousYearNotPaidCount }) {
+  //TASK pls put colors in variables here example : var red = #329f9d
+  
   var t = Array(12);
+       for (let i = 0; i < 12; i++) {
+         t[i] = "future";
+       }
+
   for (let i = 0; i < paidCount; i++) {
     t[i] = "paid";
   }
@@ -21,11 +20,11 @@ export default function RentalDonut() {
     t[i] = "due";
   }
 
- for (let i = notPaidCount + paidCount; i < 12; i++) {
-   t[i] = "future";
- }
+  for (let i = notPaidCount + paidCount; i < 12; i++) {
+    t[i] = "future";
+  }
 
-  var paid = paidCount;
+  var paid = paidCount  ;
 
   return (
     <div style={{ height: "auto", width: "210px", margin: "0 auto" }}>
@@ -54,7 +53,7 @@ export default function RentalDonut() {
           right: 0,
           top: 0,
         }}
-        title={paid + "/"}
+        title={(paid || 0) + "/"}
         titleComponent={<ChartLabel y={115} x={100} style={[{ fontWeight: "600", fontSize: 40 }]} />}
         subTitle="12"
         subTitleComponent={<ChartLabel y={130} x={130} style={[{ fontWeight: "400", fontSize: 30 }]} />}

@@ -6,7 +6,7 @@ import * as FaIcons from "react-icons/fa";
 
 import { Button, Modal, ModalHeader, ModalBody, Media } from "reactstrap";
 import { AppContext } from "../../context/settings";
-import { loadFinancials } from "../../utils/landlordHelper";
+import { apiLoadData } from "../../utils/landlordHelper";
 import Loading from "../../components/static/Loading";
 import { Link } from "react-router-dom";
 import ReactGA from "react-ga";
@@ -27,6 +27,8 @@ export default function Activity(props) {
   const [modal, setModal] = useState(false);
   const [activeUnitId, set_activeUnitId] = useState(settings.activeUnitId);
   const [isLoading, setIsLoading] = useState(false);
+  // var tenantRentalPaymentStats = settings.tenantRentalPaymentStats || null;
+  // var unitFinancials = settings.unitFinancials || null;
 
   // toggle modal
   const toggle = () => setModal(!modal);
@@ -38,11 +40,25 @@ export default function Activity(props) {
 
   React.useEffect(() => {
     // update financial from backend
-    async function updateFinancials() {
-      var financials = await loadFinancials(activeUnitId);
-      updateAppContext({ unitFinancials: financials });
+
+    async function loadRequiredUnitData() {
+      setIsLoading(true);
+
+         console.log("Load Financials, Rental stats");
+        var financials = await apiLoadData("loadFinancials", { activeUnitId });
+    
+        var stats = await apiLoadData("loadRentalStatsPerYear", { activeUnitId });
+        
+        
+        // var tenantAppointments = await apiLoadData("tenantAppointments", { activeUnitId });
+        console.log("update with", stats, financials);
+        updateAppContext({ tenantRentalPaymentStats: stats, unitFinancials: financials });
+   
+
+      setIsLoading(false);
     }
-    updateFinancials();
+    loadRequiredUnitData();
+
     // eslint-disable-next-line
   }, [activeUnitId]);
 
@@ -60,7 +76,7 @@ export default function Activity(props) {
     //   stats = response2.data;
     // }
 
-    financials = await loadFinancials(unitId);
+    financials = await apiLoadData("loadFinancials", { activeUnitId });
 
     // await new Promise((r) => setTimeout(r, 4000));
     //updateAppContext({ unitFinancials: {}, viewingAndOfferStats:{} });
