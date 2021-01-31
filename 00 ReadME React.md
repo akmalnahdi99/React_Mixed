@@ -1,5 +1,7 @@
 [2021-01-30]
 - I changed the Rental Dash to inlcude a way to notify about previous year payments
+- please notice that the port number for landlord (in development only fixed to 3000)
+- please notice that the port number for landlord_mixed (tenant) (in development only fixed to 3001)
 
 
 [2021-01-25]

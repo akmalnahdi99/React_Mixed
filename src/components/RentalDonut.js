@@ -4,7 +4,7 @@ import { ChartDonut, ChartLabel } from "@patternfly/react-charts";
  
 
 
-export default function RentalDonut({ paidCount, notPaidCount, previousNotPaidCount }) {
+export default function RentalDonut({ paidCount, notPaidCount, previousYearNotPaidCount }) {
   //TASK pls put colors in variables here example : var red = #329f9d
   
   var t = Array(12);

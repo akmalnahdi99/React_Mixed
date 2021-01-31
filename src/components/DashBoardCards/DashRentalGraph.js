@@ -7,31 +7,35 @@ import { Link } from "react-router-dom";
 import { AppContext } from "../../context/settings";
 // import Loading  from "components/static/Loading";
 import NoOverdue from "components/EmptyOverDue";
- 
 
 export default function DashRentalGraph({ title }) {
   //const [isLoading, setIsLoading] = React.useState(false);
   // const [rentalStats, set_rentalStats] = React.useState(null);
   const appContext = React.useContext(AppContext);
-  
-    var tenantRentalPaymentStats = appContext.settings.tenantRentalPaymentStats;
- 
+
+  var tenantRentalPaymentStats = appContext.settings.tenantRentalPaymentStats;
+
   var infoCardData = {
     title: "Overdue Payments",
     body: "",
     address: "payables",
     color: "red",
   };
- 
-  if (tenantRentalPaymentStats) {
-    var previousNotPaidCount = tenantRentalPaymentStats.previousNotPaidCount;
 
-    if (previousNotPaidCount > 0) {
+  if (tenantRentalPaymentStats) {
+    var previousYearNotPaidCount = tenantRentalPaymentStats.previousYearNotPaidCount;
+    var overDueCount = tenantRentalPaymentStats.overDueCount;
+ 
+    if (overDueCount > 0) {
+      infoCardData.body = `${overDueCount} overdue payment${overDueCount > 0 ? "s" : ""}`;
+    }
+
+    if (previousYearNotPaidCount > 0) {
       infoCardData.title = "Previous Payments";
-      infoCardData.body = `Tenant have ${previousNotPaidCount} unpaid payment${previousNotPaidCount > 0 ? "s" : ""} from previous year`;
+      infoCardData.body += `,You have ${previousYearNotPaidCount} unpaid payment${previousYearNotPaidCount > 0 ? "s" : ""} from previous year`;
     }
   }
- 
+
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -43,10 +47,10 @@ export default function DashRentalGraph({ title }) {
         {/* {isLoading === true ? (
           <Loading />
         ) : ( */}
-          <React.Fragment>
-            <RentalDonut {...tenantRentalPaymentStats} />
-            {infoCardData.body !== "" ? <InfoCardItem {...infoCardData} /> : <NoOverdue title="No Overdue" />}
-          </React.Fragment>
+        <React.Fragment>
+          <RentalDonut {...tenantRentalPaymentStats} />
+          {infoCardData.body !== "" ? <InfoCardItem {...infoCardData} /> : <NoOverdue title="No Overdue" />}
+        </React.Fragment>
         {/* )} */}
       </div>
     </div>

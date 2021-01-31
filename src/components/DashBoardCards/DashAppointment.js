@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../context/settings";
-import {  appointment_status_cancelled, appointment_status_scheduled, appointment_status_completed, apiLoadData } from "../../utils/landlordHelper";
+import { appointment_status_cancelled, appointment_status_scheduled, appointment_status_completed, apiLoadData } from "../../utils/landlordHelper";
 import EmptyDashboard from "../EmptyDashboard";
 import InfoCardItem from "../InfoCardItem";
 import Loading from "../static/Loading";
@@ -17,9 +17,9 @@ export default function DashAppoinment() {
     async function loadTenantAppointmenetsWrapper() {
       setIsLoading(true);
 
-      var response = await apiLoadData("tenantAppointments", {activeUnitId});
- 
-        set_appointments(response); 
+      var response = await apiLoadData("tenantAppointments", { activeUnitId });
+
+      set_appointments(response);
       setIsLoading(false);
     }
     loadTenantAppointmenetsWrapper();
@@ -39,12 +39,11 @@ export default function DashAppoinment() {
   var data = [];
   var counter = 0;
   var statoos = [appointment_status_scheduled, appointment_status_cancelled, appointment_status_completed];
-  if (isLoading === false){
- 
+  if (isLoading === false) {
     for (let i = 0; i < statoos.length; i++) {
       const status = statoos[i];
-      var elements = appointments && appointments[status] || [];
-      
+      var elements = (appointments && appointments[status]) || [];
+
       for (let j = 0; j < elements.length; j++) {
         const cur_appointment = elements[j];
         data.push({ ...cur_appointment, title: "Date: " + cur_appointment.date, body: cur_appointment.purpose, color: convertAppointmentStatusToColor(cur_appointment), address: "/landlord/appointmentDetails/" + cur_appointment.appointmentId });

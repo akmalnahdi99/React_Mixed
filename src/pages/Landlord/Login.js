@@ -53,8 +53,8 @@ export default function Login() {
       .then(async (resp) => {
         if (resp.status === 200) {
           var token = await resp.json();
-          Cookies.set("jwtToken", token);
-
+          Cookies.set("jwtToken", token.token);
+console.log(token.token);
           var response = await apiCall("/users/info");
 
           var activeUnitId = null;

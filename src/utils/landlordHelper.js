@@ -28,7 +28,7 @@ export const loadNotifications = async (accessToken) => {
   return result;
 };
 
-export const apiCall = async (url, method, data, processData) => {
+export const apiCall = async (url, method, data, processData,appContext) => {
   var jwtToken = Cookies.get("jwtToken") || null;
   var { apiUrl } = config;
 
@@ -66,6 +66,9 @@ export const apiCall = async (url, method, data, processData) => {
       if (resp.status === 200) {
         apiResult = await resp.json();
         result.status = true;
+      } else if (resp.status === 401) {
+        appContext && appContext.updateAppContext({ isLogged: false });
+        result.status = false;
       } else {
         apiResult = await resp.json();
         result.status = false;
