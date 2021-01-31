@@ -1,31 +1,28 @@
+import { AppContext } from "context/settings";
 import React from "react";
+import { apiLoadData } from "utils/landlordHelper";
 import Empty from "./Empty";
-import TodoListItem from "./TodoListItem";
+import InfoCardItem from "./InfoCardItem";
+import Loading from "./static/Loading";
+ 
 
-const TodoListDetails = () => {
-  var notificatins = [
-    {
-      id: 0,
-      date: "2 days ago",
-      time: "5:51pm",
-      title: "Toilet Repairing Start Today",
-      color: "green",
-    },
-    {
-      id: 1,
-      date: "2 days ago",
-      time: "5:51pm",
-      title: "Payment For Rental Due Soon",
-      color: "yellow",
-    },
-    {
-      id: 2,
-      date: "2 days ago",
-      time: "5:51pm",
-      title: "Master Bedroom Pipe Burst",
-      color: "yellow",
-    },
-  ];
+export default function TodoListDetails() {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [todoList, set_todoList] = React.useState([]);
+  var appContext = React.useContext(AppContext);
+  const activeUnitId = appContext.settings.activeUnitId;
+
+  React.useEffect(() => {
+    async function loadTodoList() {
+      setIsLoading(true);
+      var response = await apiLoadData("tenantTodoList", { activeUnitId });
+      set_todoList(response);
+      setIsLoading(false);
+    }
+    loadTodoList();
+
+    // eslint-disable-next-line
+  }, [activeUnitId]);
 
   return (
     <div className="ibox">
@@ -35,18 +32,18 @@ const TodoListDetails = () => {
       <div className="ibox-content minhigh">
         <div className="row">
           <div className="col-sm-12">
-            {notificatins.length > 0 ? (
-              notificatins.map((item) => {
-                return <TodoListItem key={item.id} {...item} />;
+            {isLoading === true ? (
+              <Loading />
+            ) : todoList && todoList.length > 0 ? (
+              todoList.map((item) => {
+                return <InfoCardItem key={item.id} {...item} />; 
               })
             ) : (
-              <Empty />
+              <Empty title="No items found" />
             )}
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default TodoListDetails;
+}

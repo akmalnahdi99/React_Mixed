@@ -119,6 +119,13 @@ export const overDueDaysThreshold = 15;
 export const role_tenant = "tenant";
 export const role_landlord = "landlord";
 
+// Action Levels
+ export const action_level_info = "info";
+ export const action_level_warning = "warning";
+ export const action_level_danger = "danger";
+ export const action_level_waiting = "waiting";
+
+
 // get financial value per month or per year
 export function getFinancialValueRoot(financialData, financialMonth, userRole, paymentOf) {
   if (financialData) {
@@ -374,6 +381,7 @@ export function getTenantUnpaidBills(financials, billsOf) {
 // APIs -----------------------------------
 
 export async function apiLoadData(endpointName, data) {
+   console.log("Entering API load data : " + endpointName + " with ", data);
   endpointName = endpointName.toLowerCase();
   var response = null;
   switch (endpointName) {
@@ -386,13 +394,14 @@ export async function apiLoadData(endpointName, data) {
     case "tenantAppointments".toLowerCase():
       response = await apiCall("/units/tenantAppointments/" + data.activeUnitId);
       break;
-    case "xx".toLowerCase():
-      response = await apiCall("/units/tenantAppointments/" + data.activeUnitId);
+    case "tenantTodoList".toLowerCase():
+      response = await apiCall("/units/tenantTodoList?unitId=" + data.activeUnitId);
       break;
     default:
       break;
   }
 
+  console.log("Exiting Api load data : with ",response.data);
   if (response.status) {
     return response.data;
   }

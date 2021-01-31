@@ -1,41 +1,55 @@
 import React from "react";
 import RentalDonut from "../RentalDonut";
 import InfoCardItem from "../InfoCardItem";
-
+import { action_level_danger, apiLoadData } from "./../../utils/landlordHelper";
 import { Link } from "react-router-dom";
 // import { apiCall } from "../../utils/landlordHelper";
 import { AppContext } from "../../context/settings";
 // import Loading  from "components/static/Loading";
 import NoOverdue from "components/EmptyOverDue";
+import Loading from "components/static/Loading";
 
 export default function DashRentalGraph({ title }) {
-  //const [isLoading, setIsLoading] = React.useState(false);
-  // const [rentalStats, set_rentalStats] = React.useState(null);
-  const appContext = React.useContext(AppContext);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [tenantRentalPaymentStats, set_tenantRentalPaymentStats] = React.useState({});
+  var appContext = React.useContext(AppContext);
+  const activeUnitId = appContext.settings.activeUnitId;
 
-  var tenantRentalPaymentStats = appContext.settings.tenantRentalPaymentStats;
+  React.useEffect(() => {
+    async function loadTodoList() {
+      setIsLoading(true);
+
+      var response = await apiLoadData("loadRentalStatsPerYear", { activeUnitId });
+      set_tenantRentalPaymentStats(response);
+      setIsLoading(false);
+    }
+    loadTodoList();
+
+    // eslint-disable-next-line
+  }, [activeUnitId]);
 
   var infoCardData = {
     title: "Overdue Payments",
     body: "",
-    address: "payables",
-    color: "red",
+    address: "/landlord/payables",
+    level: action_level_danger,
   };
 
   if (tenantRentalPaymentStats) {
-    var previousYearNotPaidCount = tenantRentalPaymentStats.previousYearNotPaidCount;
-    var overDueCount = tenantRentalPaymentStats.overDueCount;
- 
+    var previousYearNotPaidCount = tenantRentalPaymentStats.previousYearNotPaidCount || 0;
+    var overDueCount = tenantRentalPaymentStats.overDueCount || 0;
+
     if (overDueCount > 0) {
       infoCardData.body = `${overDueCount} overdue payment${overDueCount > 0 ? "s" : ""}`;
     }
 
     if (previousYearNotPaidCount > 0) {
       infoCardData.title = "Previous Payments";
-      infoCardData.body += `,You have ${previousYearNotPaidCount} unpaid payment${previousYearNotPaidCount > 0 ? "s" : ""} from previous year`;
+      if (infoCardData.body !== "") infoCardData.body += ", ";
+      infoCardData.body += `You have ${previousYearNotPaidCount} unpaid payment${previousYearNotPaidCount > 0 ? "s" : ""} from previous year`;
     }
   }
-
+ 
   return (
     <div className="ibox">
       <div className="ibox-title">
@@ -44,14 +58,14 @@ export default function DashRentalGraph({ title }) {
         </h5>
       </div>
       <div className="ibox-content">
-        {/* {isLoading === true ? (
+        {isLoading === true ? (
           <Loading />
-        ) : ( */}
-        <React.Fragment>
-          <RentalDonut {...tenantRentalPaymentStats} />
-          {infoCardData.body !== "" ? <InfoCardItem {...infoCardData} /> : <NoOverdue title="No Overdue" />}
-        </React.Fragment>
-        {/* )} */}
+        ) : (
+          <React.Fragment>
+            <RentalDonut {...tenantRentalPaymentStats} />
+            {infoCardData.body !== "" ? <InfoCardItem address="/landlord/payables" {...infoCardData} /> : <NoOverdue title="No Overdue" />}
+          </React.Fragment>
+        )}
       </div>
     </div>
   );
