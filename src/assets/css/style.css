@@ -7016,7 +7016,7 @@ code {
 }
 
 .ibox-title {
-  background-color: #ffffff;
+  background-color: #fff;
   color: inherit;
   margin-bottom: 0;
   padding: 20px 20px 8px 20px;
@@ -7128,7 +7128,6 @@ table.table-mail tr td {
 }
 
 .ibox-title h5 {
-  display: inline-block;
   font-size: 20px;
   margin: 0 0 7px;
   padding: 0;
@@ -7153,6 +7152,13 @@ table.table-mail tr td {
   position: absolute;
   right: 15px;
   top: 15px;
+}
+.dash-link {
+  color: #329d9c;
+}
+
+.dash-box {
+  background-color: #fff;
 }
 
 .ibox-tools {
@@ -7180,7 +7186,11 @@ table.table-mail tr td {
   color: rgb(50, 159, 157);
 }
 
-.ibox-tools a:hover {
+.dash-title {
+  background-color: #ffffff00;
+}
+
+.dash-title:hover {
   color: #0081bd !important;
   background-color: rgba(0, 0,0,0.05);
 }

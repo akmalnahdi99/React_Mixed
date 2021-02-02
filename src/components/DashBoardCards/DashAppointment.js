@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../context/settings";
-import { action_level_info, action_level_warning,  action_level_waiting } from "./../../utils/landlordHelper";
+import { action_level_info, action_level_warning, action_level_waiting } from "./../../utils/landlordHelper";
 import { appointment_status_cancelled, appointment_status_scheduled, appointment_status_completed, apiLoadData } from "../../utils/landlordHelper";
 import EmptyDashboard from "../EmptyDashboard";
 import InfoCardItem from "../InfoCardItem";
@@ -56,18 +56,15 @@ export default function DashAppoinment() {
   }
 
   return (
-    <div className="ibox">
-      <div className="ibox-title bg-white">
-        <h5>
-          <Link to="/landlord/appointment">Appointment</Link>
-        </h5>
-        <div className="ibox-tools">
-          <Link to="/landlord/appointment">
+    <div className="ibox dash-box">
+      <Link className="dash-link" to="/landlord/appointment">
+        <div className="ibox-title dash-title">
+          <h5>Appointment</h5>
+          <div className="ibox-tools">
             <i className="fas fa-arrow-right"></i>
-          </Link>
+          </div>
         </div>
-      </div>
-
+      </Link>
       <div className="ibox-content bg-white">
         <ul className="sortable-list connectList agile-list ui-sortable"></ul>
         {isLoading === true ? <Loading /> : data.length > 0 ? data.map((item, index) => <InfoCardItem key={index} {...item} />) : <EmptyDashboard title="No Appointments found" />}
