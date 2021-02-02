@@ -31,7 +31,7 @@ export default function InfoCardItem({ title, body, level, address }) {
                   <i className="fas fa-bell"></i> {title}
                 </small>
               </div>
-              <p className="m-0 text-truncate">{body}</p>
+              <p className="m-0">{body}</p>
             </Link>
           ) : (
             <React.Fragment>
