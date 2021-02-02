@@ -21,17 +21,17 @@ const DashMaintenance = ({ title }) => {
 
 
   return (
-    <div className="ibox">
-      <div className="ibox-title">
-        <h5>
-          <Link to="/landlord/maintenance">{title}</Link>
-        </h5>
-        <div className="ibox-tools">
-          <Link to="/landlord/maintenance">
+    <div className="ibox dash-box">
+      <Link className="dash-link" to="/landlord/maintenance">
+        <div className="ibox-title dash-title">
+          <h5>
+            {title}
+          </h5>
+          <div className="ibox-tools">
             <i className="fas fa-arrow-right"></i>
-          </Link>
+          </div>
         </div>
-      </div>
+      </Link>
       <DashChart data={data} />
     </div>
   );

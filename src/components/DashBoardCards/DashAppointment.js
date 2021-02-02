@@ -56,18 +56,19 @@ export default function DashAppoinment() {
   }
 
   return (
-    <div className="ibox">
-      <div className="ibox-title bg-white">
-        <h5>
-          <Link to="/landlord/appointment">Appointment</Link>
+    <div className="ibox dash-box">
+      <Link className="dash-link" to="/landlord/appointment">
+      <div className="ibox-title dash-title">
+        
+          <h5>
+          Appointment
         </h5>
         <div className="ibox-tools">
-          <Link to="/landlord/appointment">
             <i className="fas fa-arrow-right"></i>
-          </Link>
         </div>
+        
       </div>
-
+      </Link>
       <div className="ibox-content bg-white">
         <ul className="sortable-list connectList agile-list ui-sortable"></ul>
         {isLoading === true ? <Loading /> : data.length > 0 ? data.map((item, index) => <InfoCardItem key={index} {...item} />) : <EmptyDashboard title="No Appointments found" />}

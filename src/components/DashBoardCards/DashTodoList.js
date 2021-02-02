@@ -30,16 +30,16 @@ export default function DashTodoList() {
 
   return (
     <div className="ibox illustrated2">
-      <div className="ibox-title bg-transparent">
-        <h5>
-          <Link to="/landlord/todolist">To-do List</Link>
+      <Link className="dash-link" to="/landlord/todolist">
+      <div className="ibox-title dash-title">
+          <h5>
+          To-do List
         </h5>
         <div className="ibox-tools">
-          <Link to="/landlord/todolist">
             <i className="fas fa-arrow-right"></i>
-          </Link>
         </div>
       </div>
+      </Link>
 
       <div className="ibox-content bg-transparent">
         <ul className="sortable-list connectList agile-list ui-sortable"></ul>

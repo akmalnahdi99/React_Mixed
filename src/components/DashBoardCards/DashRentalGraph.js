@@ -51,12 +51,14 @@ export default function DashRentalGraph({ title }) {
   }
  
   return (
-    <div className="ibox">
-      <div className="ibox-title">
-        <h5>
-          <Link to="/landlord/bills/rental">{title}</Link>
+    <div className="ibox dash-box">
+      <Link className="dash-link" to="/landlord/bills/rental">
+      <div className="ibox-title dash-title">
+          <h5>
+          {title}
         </h5>
       </div>
+      </Link>
       <div className="ibox-content">
         {isLoading === true ? (
           <Loading />

@@ -9,17 +9,18 @@ import 'react-calendar/dist/Calendar.css';
 const DashCalendar = ({ title }) => {
   const [value, onChange] = useState(new Date());
   return (
-    <div className="ibox">
-      <div className="ibox-title">
-        <h5>
-          <Link to="/landlord/calendars">{title}</Link>
+    <div className="ibox dash-box">
+       <Link className="dash-link" to="/landlord/calendars">
+      <div className="ibox-title dash-title">
+          <h5>
+          {title}
         </h5>
         <div className="ibox-tools">
-          <Link to="/landlord/calendars">
             <i className="fas fa-arrow-right"></i>
-          </Link>
         </div>
+        
       </div>
+      </Link>
       <div className="ibox-content">
         <Calendar
           onChange={onChange}

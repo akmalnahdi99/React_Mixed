@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 //TASK check links
 export default function DashIconsBox({ title, data, returnLink }) {
   return (
-    <div className="ibox">
-      <div className="ibox-title">
-        <h5>
-          <Link to={returnLink}>{title}</Link>
+    <div className="ibox dash-box">
+      <Link className="dash-link" to={returnLink}>
+      <div className="ibox-title dash-title">
+        
+      <h5>
+          {title}
         </h5>
         <div className="ibox-tools">
-          <Link to={returnLink}>
             <i className="fas fa-arrow-right"></i>
-          </Link>
         </div>
+        
       </div>
+      </Link>
       <div className="ibox-content pt-0">
         <div className="row text-center">
           {data.map((item, index) => {
