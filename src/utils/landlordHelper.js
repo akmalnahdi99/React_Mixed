@@ -58,7 +58,7 @@ export const apiCall = async (url, method, data, processData) => {
   } else if (data) {
     requestOptions["body"] = JSON.stringify(data);
   }
- 
+
   var apiResult = null;
   var result = { status: null, data: null };
   await fetch(apiUrl + url, requestOptions)
@@ -349,26 +349,42 @@ export function getTenantPayablesDetails(financials) {
 }
 
 // get tenant rental paid not paid count
-// return example for rental  {paid:2, notpaid:3}
+// return example for rental  {paid:2, notpaid:3, previousNotPaidCount:1 // for last year}
 export function getTenantRentalPaymentStats(financials) {
   var paidCount = 0;
   var notPaidCount = 0;
+  var previousNotPaidCount = 0;
+
+  var date = new Date();
+  var firstDay = new Date(date.getFullYear(), 0, 1); // 1/1/currentYear
+  var lastDay = new Date(date.getFullYear(), 13, 0); // lastday/12/currentyear
+
+  console.log("Seek Tenant Payments between ", firstDay, lastDay);
   for (const paymentName in financials) {
     if (paymentName.toLowerCase() === "rental".toLowerCase()) {
       const payments = financials[paymentName];
 
       for (let i = 0; i < payments.length; i++) {
         const paymentData = payments[i];
-
-        if (paymentData.paid === true) {
-          paidCount++;
-        } else {
-          notPaidCount++;
+        // handle rentals between first day and last day of this year
+        if (paymentData.paymentDueMillis > firstDay.getTime() && paymentData.paymentDueMillis < lastDay.getTime()) {
+          if (paymentData.paid === true) {
+            paidCount++;
+          } else {
+            notPaidCount++;
+          }
+        }
+        // handle last year non paid invoices
+        else if (paymentData.paymentDueMillis < firstDay.getTime()) {
+          if (paymentData.paid !== true) {
+            previousNotPaidCount++;
+          }
         }
       }
     }
   }
-  return { paidCount, notPaidCount };
+    console.log("found:", { paidCount, notPaidCount, previousNotPaidCount });
+  return { paidCount, notPaidCount, previousNotPaidCount };
 }
 
 // get tenant unpaid bills

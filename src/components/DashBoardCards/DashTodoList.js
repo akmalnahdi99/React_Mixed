@@ -38,7 +38,7 @@ export default function DashTodoList() {
         <ul className="sortable-list connectList agile-list ui-sortable"></ul>
         {data.length > 0 ? (
           data.map((item, index) => {
-            return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} />;
+            return <InfoCardItem key={index} {...item} />;
           })
         ) : (
           <EmptyDashboard />

@@ -7167,9 +7167,12 @@ table.table-mail tr td {
 }
 
 .ibox-tools a {
-  cursor: pointer;
-  margin-left: 5px;
-  color: rgb(50, 159, 157);
+    cursor: pointer;
+    margin-left: 5px;
+    color: rgb(50, 159, 157);
+    padding: 11px 20px 15px 34px;  /*adding this padding will increase the area that the user can click on please increase the area and keep the design look nice */
+ 
+    border-radius: 4px;
 }
 .ibox-tools p {
   cursor: pointer;
@@ -7179,6 +7182,7 @@ table.table-mail tr td {
 
 .ibox-tools a:hover {
   color: #0081bd !important;
+  background-color: rgba(0, 0,0,0.05);
 }
 
 .ibox-tools a.btn-primary {

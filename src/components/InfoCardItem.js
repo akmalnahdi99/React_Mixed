@@ -21,7 +21,7 @@ export default function InfoCardItem({ title, body, color, address }) {
     <div>
       <ul className="sortable-list connectList agile-list ui-sortable" id="todo">
         <li className={element + " ui-sortable-handle mb-0"}>
-          <Link to={address} style={{ color: "black" }}>
+          <Link to={""+ address} style={{ color: "black" }}>
             <div className="agile-detail">
               <small className="text-darkblue">
                 <i className="fas fa-bell"></i> {title}

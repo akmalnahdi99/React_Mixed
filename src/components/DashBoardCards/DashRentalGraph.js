@@ -1,36 +1,43 @@
 import React from "react";
 import RentalDonut from "../RentalDonut";
 import InfoCardItem from "../InfoCardItem";
-import EmptyDashBoard from "./../../components/EmptyDashboard";
+
 import { Link } from "react-router-dom";
+import { getTenantRentalPaymentStats } from "../../utils/landlordHelper";
+import { AppContext } from "../../context/settings";
 
 export default function DashRentalGraph({ title }) {
-  const data = [
-    {
-      title: "Due On: 10/28/2020",
-      body: "Rent overdue",
-      link: "rentalpayables",
-      color: "red",
-    },
-  ];
+  var data = {
+    title: "Previous Payments",
+    body: "",
+    address: "payables",
+    color: "red",
+  };
+
+  const appContext = React.useContext(AppContext);
+  var financialData = appContext.settings.unitFinancials;
+  const result = getTenantRentalPaymentStats(financialData);
+
+  if (result) {
+    var previousNotPaidCount = result.previousNotPaidCount;
+
+    if (previousNotPaidCount > 0) {
+      data.body = `You have ${previousNotPaidCount} payment${previousNotPaidCount > 0 ? "s" : ""} from previous year`;
+    }
+  }
+
   return (
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-          <Link Link to="/landlord/bills/rental">
+          <Link  to="/landlord/bills/rental">
             {title}
           </Link>
         </h5>
       </div>
       <div className="ibox-content">
-        <RentalDonut />
-        {data.length > 0 ? (
-          data.map((item, index) => {
-            return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} address={item.link} />;
-          })
-        ) : (
-          <EmptyDashBoard title={"No Rental Data"} />
-        )}
+        <RentalDonut {...result} />
+        {data.body !== "" ? <InfoCardItem {...data} /> : ""}
       </div>
     </div>
   );
