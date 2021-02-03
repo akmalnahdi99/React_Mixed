@@ -44,7 +44,6 @@ const NotificationList = () => {
     <div className="ibox">
       <div className="ibox-title">
         <h3>Notifications </h3>
-        <hr />
       </div>
 
       <div className="ibox-content minhigh">
@@ -63,7 +62,6 @@ const NotificationList = () => {
                 )}
               </ul>
             )}
-            <hr />
           </div>
         </div>
       </div>

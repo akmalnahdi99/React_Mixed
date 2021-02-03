@@ -5,56 +5,49 @@ import TenantHeader from "../components/TenantHeader";
 import RentalDetails from "../components/RentalDetails";
 import { Link } from "react-router-dom";
 
- export default function Financials() {
-    return (
-       
+export default function Financials() {
+  return (
+    <div className="wrapper wrapper-content animated fadeInRight">
+          <RentalDetails />
 
-        <div className="wrapper wrapper-content animated fadeInRight py-5 mb-0 gray-bg">
-     <div className="container-fluid">
-        <div className="row justify-content-center">
-          <div className="col-lg-8 mb-3 px-0">
-            <div className="ibox ">
-              <div className="ibox-content mb-5">
-            <TenantHeader title="Rental Payables" />
-            <RentalTable />
-            <div className="row">
-              <div className="col-md-7 col-xs-12">
+      <div className="ibox ">
+        <div className="ibox-content mb-5">
+          <TenantHeader title="Rental Payables" />
+          <RentalTable />
+          <div className="row">
+            <div className="col-md-7 col-xs-12">
 
-              </div>
-              <div className="col-md-5 col-xs-12">
-                <div className="row">
-                  <div className="col-md-6 col-xs-12">
-                <Link to="#"><button className="btn btn-primary mr-3 mb-3" style={{width: "100%"}}>
-                  Pay Online
+            </div>
+            <div className="col-md-5 col-xs-12">
+              <div className="row">
+                <div className="col-md-6 col-xs-12">
+                  <Link to="#"><button className="btn btn-primary mr-3 mb-3" style={{ width: "100%" }}>
+                    Pay Online
                 </button>
-                </Link>
+                  </Link>
                 </div>
                 <div className="col-md-6 col-xs-12">
-                <Link to="/landlord/payRentalCash"><button className="btn btn-primary float-right" style={{width: "100%"}}>
-                  Pay Cash
+                  <Link to="/landlord/payRentalCash"><button className="btn btn-primary float-right" style={{ width: "100%" }}>
+                    Pay Cash
                 </button>
-                </Link>
-                </div>
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-12">
+          </div>
+          <div className="row">
+            <div className="col-12">
               <h2 className="float-right"><strong>Status</strong></h2>
-              </div>
             </div>
-            <div className="row">
-              <div className="col-12">
+          </div>
+          <div className="row">
+            <div className="col-12">
               <h2 className="float-right text-danger"><strong>Unpaid</strong></h2>
-              </div>
             </div>
-            <RentalDetails />
-            </div>
-        </div>
           </div>
         </div>
-        </div>
       </div>
-    
-    );
+    </div>
+
+  );
 }

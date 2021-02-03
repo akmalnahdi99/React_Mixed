@@ -11,13 +11,12 @@ export default function TenantHeader({ title }) {
   
   return (
     <div>
-      <div className="ibox-content minhigh">
         <div className="ibox-title pl-0 pr-0">
           <div className="row">
             <div className="col-6">
                 <h3>{title}</h3>
             </div>
-            <div className="col-6 text-right pr-0">
+            <div className="col-6 text-right">
                 <h1><strong>Invoice</strong></h1>
             </div>
           </div>
@@ -58,7 +57,6 @@ export default function TenantHeader({ title }) {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }
