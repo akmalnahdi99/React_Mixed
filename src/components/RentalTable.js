@@ -2,50 +2,50 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 
-const RentalTable = () => {
-    const info = [
-        {SI: "1", Itemsdesc: "October Rental", amount: "2,0000.00"},
-        {SI: "2", Itemsdesc: "Additional Fees", amount: "1,800.00"},
-        {SI: "3", Itemsdesc: "", amount: ""},
-        {SI: "4", Itemsdesc: "", amount: ""},
-        {SI: "5", Itemsdesc: "", amount: ""},
-        {SItotal: "Total", total: "", amounttotal: "3,800.00"},
-    ]
+export default function InvoiceTable({ data }) {
+ 
+  var totalAmount = 0;
 
-    const renderInfo = (table, index) => {
-        return(
-            <tr key={index}>
-                <td>{table.SI}
-                <strong>{table.SItotal}</strong>
-                </td>
-                <td>{table.Itemsdesc}
-                <strong>{table.total}</strong>
-                </td>
-                <td>{table.amount}
-                <strong>{table.amounttotal}</strong>
-                </td>
-            </tr>
-        )
-    }
+  var a1 = data.map((x, index) => {
+    
+    totalAmount =   x.value   ;
+    return { SI: index + 1, Itemsdesc: x.item, amount: "RM " + x.value };
+  });
 
-    return(
+  const info = [...a1, { SItotal: "Total", total: "", amounttotal: "RM " + totalAmount }];
 
-        <div>
-            <br/>
-        <ReactBootstrap.Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th className="text-doorcase3">SI.No</th>
-                    <th className="text-doorcase3">Items and Description</th>
-                    <th className="text-doorcase3">Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                {info.map(renderInfo)}
-            </tbody>
-        </ReactBootstrap.Table>
-        </div>
+  function renderInfo(table, index) {
+    return (
+      <tr key={index}>
+        <td>
+          {table.SI}
+          <strong>{table.SItotal}</strong>
+        </td>
+        <td>
+          {table.Itemsdesc}
+          <strong>{table.total}</strong>
+        </td>
+        <td>
+          {table.amount}
+          <strong>{table.amounttotal}</strong>
+        </td>
+      </tr>
     );
-}
+  }
 
-export default RentalTable;
+  return (
+    <div>
+      <br />
+      <ReactBootstrap.Table striped bordered hover>
+        <thead>
+          <tr>
+            <th className="text-doorcase3">SI.No</th>
+            <th className="text-doorcase3">Items and Description</th>
+            <th className="text-doorcase3">Amount</th>
+          </tr>
+        </thead>
+        <tbody>{info.map(renderInfo)}</tbody>
+      </ReactBootstrap.Table>
+    </div>
+  );
+}

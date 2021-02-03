@@ -12,7 +12,7 @@ export default function RentalDetails ({ title })  {
       <div>
         <div className="ibox-content">
       <div className="ibox-title pl-0">
-        <h3>Payable to</h3>
+        <h3>{title}</h3>
         <hr />
       </div>
         <div className="row pt-2 ">

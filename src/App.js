@@ -50,7 +50,7 @@ import UnitKitsCats from "./pages/Landlord/UnitKitsCats";
 import UnitCheckInOut from "./pages/Landlord/UnitCheckInOut";
 import Calendars from "./pages/Landlord/Calendars";
 import Bills from "./pages/Landlord/Bills";
-import BillOf from "./pages/Landlord/BillsOf";
+import BillsOf from "./pages/Landlord/BillsOf";
 
 import Activity from "./pages/Landlord/Activity.js";
 import Logout from "./pages/Landlord/Logout";
@@ -186,7 +186,7 @@ export default function App() {
                 </Route>
                 <Route path="/landlord/bills/:billOf">
                   <StandardPage>
-                    <BillOf siteMap={"Bills Details"} />
+                    <BillsOf siteMap={"Bills Details"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/utilities/:utilityType">
