@@ -17,8 +17,8 @@ export default function InvoiceCard({paymentFor, payOnline, paid, paymentDue, am
       <div className="ibox ">
         <div className="ibox-content mb-5">
           <div>
-            <div className="ibox-content minhigh">
-              <div className="ibox-title pl-0 pr-0">
+            
+              <div className="ibox-title pl-0">
                 <div className="row">
                   <div className="col-6">
                     <h3>Rental Payables</h3>
@@ -65,7 +65,7 @@ export default function InvoiceCard({paymentFor, payOnline, paid, paymentDue, am
                   </div>
                 </div>
               </div>
-            </div>
+        
           </div>
           <RentalTable data={data} />
           {paid === true ? (

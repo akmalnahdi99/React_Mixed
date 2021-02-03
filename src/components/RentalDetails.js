@@ -1,20 +1,33 @@
 // #newPage
-import React from "react";
+import React, { useState } from "react";
+import { Collapse } from "reactstrap";
+import * as FaIcons from "react-icons/fa";
 
-export default function RentalDetails ({ title })  {
+export default function RentalDetails({ title, expand }) {
   var details = {
     name: "JANN Properties",
     bank: "CIMB",
     ref_no: "G-21-07",
     account: "8009656480",
   };
+  const [isOpen, setIsOpen] = useState(expand);
+
+  const toggle = () => setIsOpen(!isOpen);
   return (
-      <div>
-        <div className="ibox-content">
-      <div className="ibox-title pl-0">
-        <h3>{title}</h3>
-        <hr />
+    <div className="ibox">
+      <div className="ibox-title">
+        <div style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
+          <h3>
+            <img src="/imgs/subscription.svg" alt="..." className="utilityIconTitle"></img>Rental Payables
+          </h3>
+        </div>
+        <div className="ibox-tools">
+          <p onClick={toggle}>
+            <FaIcons.FaInfoCircle className="fa-2x " />
+          </p>
+        </div>
       </div>
+      <Collapse isOpen={isOpen} className="ibox-content minhigh">
         <div className="row pt-2 ">
           <div className="col-sm-12">
             <div className="media">
@@ -53,7 +66,7 @@ export default function RentalDetails ({ title })  {
             </div>
           </div>
         </div>
-        </div>
-      </div>
+      </Collapse>
+    </div>
   );
-}; 
+}
