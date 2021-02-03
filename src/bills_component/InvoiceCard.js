@@ -3,7 +3,7 @@ import RentalTable from "../components/RentalTable";
 import RentalDetails from "../components/RentalDetails";
 import { Link } from "react-router-dom";
 
-export default function InvoiceCard({paymentFor, payOnline, paid, paymentDue, amountRequired, paidAt, payableId, monthName }) {
+export default function InvoiceCard({ paymentFor, payOnline, paid, paymentDue, amountRequired, paidAt, payableId, monthName }) {
   // TASK there is a problem when having multiple items which is concatinating texts 2,300.00 wont convert to number
   var data = [
     {
@@ -17,55 +17,53 @@ export default function InvoiceCard({paymentFor, payOnline, paid, paymentDue, am
       <div className="ibox ">
         <div className="ibox-content mb-5">
           <div>
-            
-              <div className="ibox-title pl-0">
-                <div className="row">
-                  <div className="col-6">
-                    <h3>Rental Payables</h3>
-                  </div>
-                  <div className="col-6 text-right pr-0">
-                    <h1>
-                      <strong>Invoice</strong>
-                    </h1>
+            <div className="ibox-title pl-0 pr-0">
+              <div className="row">
+                <div className="col-6">
+                  <h3>Rental Payables</h3>
+                </div>
+                <div className="col-6 text-right">
+                  <h1>
+                    <strong>Invoice</strong>
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div className="row pt-2 mb-2">
+              <div className="col-sm-9 col-xs-12 pb-3">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3">Due date</h4>
+                    <p className="m-0">{paymentDue}</p>
                   </div>
                 </div>
               </div>
-              <div className="row pt-2 mb-2">
-                <div className="col-sm-9 col-xs-12 pb-3">
-                  <div className="media">
-                    <div className="media-body">
-                      <h4 className="text-doorcase3">Due date</h4>
-                      <p className="m-0">{paymentDue}</p>
-                    </div>
+              <div className="col-sm-3 col-xs-12 pb-3">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3 grayText">Date of payment</h4>
+                    <p className="m-0">{paidAt || "-"}</p>
                   </div>
                 </div>
-                <div className="col-sm-3 col-xs-12 pb-3">
-                  <div className="media">
-                    <div className="media-body">
-                      <h4 className="text-doorcase3 grayText">Date of payment</h4>
-                      <p className="m-0">{paidAt || "-"}</p>
-                    </div>
+              </div>
+              <div className="col-sm-9 col-xs-12 pb-3">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3 grayText">Invoice number</h4>
+                    <p className="m-0">{payableId}</p>
                   </div>
                 </div>
-                <div className="col-sm-9 col-xs-12 pb-3">
-                  <div className="media">
-                    <div className="media-body">
-                      <h4 className="text-doorcase3 grayText">Invoice number</h4>
-                      <p className="m-0">{payableId}</p>
-                    </div>
-                  </div>
-                </div>
+              </div>
 
-                <div className="col-sm-3 col-xs-12">
-                  <div className="media">
-                    <div className="media-body">
-                      <h4 className="text-doorcase3 grayText">Date of issue</h4>
-                      <p className="m-0">{paymentDue}</p>
-                    </div>
+              <div className="col-sm-3 col-xs-12">
+                <div className="media">
+                  <div className="media-body">
+                    <h4 className="text-doorcase3 grayText">Date of issue</h4>
+                    <p className="m-0">{paymentDue}</p>
                   </div>
                 </div>
               </div>
-        
+            </div>
           </div>
           <RentalTable data={data} />
           {paid === true ? (
@@ -105,7 +103,6 @@ export default function InvoiceCard({paymentFor, payOnline, paid, paymentDue, am
               <h2 className="float-right ">{paid === true ? <strong className="text-success"> Paid </strong> : <strong className="text-danger"> Unpaid </strong>}</h2>
             </div>
           </div>
-          <RentalDetails title="Payable to" />
         </div>
       </div>
     </React.Fragment>

@@ -7,6 +7,7 @@ import Empty from "components/Empty";
 import { apiCall, apiLoadData } from "utils/landlordHelper";
 import Loading from "components/static/Loading";
 import { config } from "./../constants";
+import RentalDetails from "components/RentalDetails";
 
 export default function Financials() {
   var appContext = React.useContext(AppContext);
@@ -42,12 +43,10 @@ export default function Financials() {
   }, [activeUnitId]);
 
   return (
-    <div className="wrapper wrapper-content animated fadeInRight py-5 mb-0 gray-bg">
-      <div className="container-fluid">
-        <div className="row justify-content-center">
-          <div className="col-lg-8 mb-3 px-0">{isLoading === true ? <Loading /> : Invoices.length > 0 ? Invoices : <Empty title="No invoices found" />}</div>
-        </div>
-      </div>
+    <div className="wrapper wrapper-content animated fadeInRight">
+      <RentalDetails title="Payable to" />
+
+      <div className="col-lg-8 mb-3 px-0">{isLoading === true ? <Loading /> : Invoices.length > 0 ? Invoices : <Empty title="No invoices found" />}</div>
     </div>
   );
 }
