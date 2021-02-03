@@ -46,7 +46,7 @@ export default function Financials() {
     <div className="wrapper wrapper-content animated fadeInRight">
       <RentalDetails title="Payable to" />
 
-      <div className="col-lg-8 mb-3 px-0">{isLoading === true ? <Loading /> : Invoices.length > 0 ? Invoices : <Empty title="No invoices found" />}</div>
+      {isLoading === true ? <Loading /> : Invoices.length > 0 ? Invoices : <Empty title="No invoices found" />}
     </div>
   );
 }
