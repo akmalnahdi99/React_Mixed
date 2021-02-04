@@ -50,11 +50,11 @@ export default function MaintenanceDetailsList() {
               <ul id="lightgallery" className="list-unstyled row">
                 <li
                   className="col-xl-3 col-sm-4 col-md-2 col-lg-2 p-2"
-                  data-responsive="https://sachinchoolur.github.io/lightgallery.js/static/img/2-1600.jpg"
-                  data-src="https://sachinchoolur.github.io/lightgallery.js/static/img/2-1600.jpg"
+                  data-responsive="/imgs/maintenance.jpg"
+                  data-src="/imgs/maintenance.jpg"
                 >
                   <Link to="">
-                    <img className="img-responsive" src="https://sachinchoolur.github.io/lightgallery.js/static/img/thumb-2.jpg" alt="" />
+                    <img className="img-responsive" src="/imgs/maintenance.jpg" alt="" />
                   </Link>
                 </li>
               </ul>
