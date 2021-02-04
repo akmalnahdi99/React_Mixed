@@ -1,7 +1,7 @@
 // #newPage
 //TASK under Review
 import React from "react";
-import PayCashList from "../bills_component/PayCashList";
+import PayCashList from "./PayCashList";
 
 export default function UnitInfo() {
   return (

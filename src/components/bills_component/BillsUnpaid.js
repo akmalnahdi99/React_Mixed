@@ -1,9 +1,9 @@
 // #newPage
 import React from "react";
 
-import { LoadingSmall } from "../components/static/Loading";
-import { AppContext } from "../context/settings";
-import { apiCall } from "../utils/landlordHelper";
+import { LoadingSmall } from "../static/Loading";
+import { AppContext } from "../../context/settings";
+import { apiCall } from "../../utils/landlordHelper";
 
 export default function BillsUnpaid({ title, updateAfterUpload, updateModal, ...payableData }) {
   console.log("in unpaid", payableData);
