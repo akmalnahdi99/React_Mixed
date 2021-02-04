@@ -5,7 +5,7 @@ export default function InsuranceDetails ({ title }) {
   return (
     <div className="ibox">
       <div className="ibox-title">
-        <h3>{title}</h3>
+        <h3><img src="/imgs/insurance.svg" alt="..." className="utilityIconTitle" />{title}</h3>
         <hr />
       </div>
       <div className="ibox-content minhigh pt-0">

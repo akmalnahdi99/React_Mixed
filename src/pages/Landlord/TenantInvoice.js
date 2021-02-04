@@ -1,7 +1,7 @@
 // #newPage
 //under review
 import React from "react";
-import Invoice from "../../bills_component/Invoice";
+import Invoice from "../../components/bills_component/Invoice";
 
 export default function TenantInvoice() {
   return (
