@@ -6,7 +6,7 @@ import InvoiceCard from "./InvoiceCard";
 import Empty from "components/Empty";
 import { apiCall, apiLoadData } from "utils/landlordHelper";
 import Loading from "components/static/Loading";
-import { config } from "./../constants";
+import { config } from "../../constants";
 import RentalDetails from "components/RentalDetails";
 
 export default function Financials() {
