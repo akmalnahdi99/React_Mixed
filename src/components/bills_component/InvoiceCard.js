@@ -81,7 +81,7 @@ export default function InvoiceCard({ paymentFor, payOnline, paid, paymentDue, a
                     </Link>
                   </div>
                   <div className="col-md-6 col-xs-12">
-                    <Link to="/landlord/payRentalCash">
+                    <Link to={"/landlord/payRentalCash/" + payableId}>
                       <button className="btn btn-primary float-right" style={{ width: "100%" }}>
                         Pay Cash
                       </button>

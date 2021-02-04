@@ -345,7 +345,7 @@ export default function App() {
                     <TenantInvoice />
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/PayRentalCash">
+                <Route path="/landlord/PayRentalCash/:payableId">
                   <StandardPage>
                     <PayCash siteMap={"Pay Cash"} />
                   </StandardPage>
