@@ -31,7 +31,7 @@ export default function DashRentalGraph({ title }) {
   var infoCardData = {
     title: "Overdue Payments",
     body: "",
-    address: "/landlord/payables",
+    address: "/landlord/bills/Rental",
     level: action_level_danger,
   };
 
