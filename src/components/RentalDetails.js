@@ -10,9 +10,10 @@ export default function RentalDetails({ title, expand }) {
     ref_no: "G-21-07",
     account: "8009656480",
   };
-  const [isOpen, setIsOpen] = useState(expand);
 
+  const [isOpen, setIsOpen] = useState(expand);
   const toggle = () => setIsOpen(!isOpen);
+
   return (
     <div className="ibox">
       <div className="ibox-title">

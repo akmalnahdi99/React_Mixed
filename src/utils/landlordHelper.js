@@ -28,7 +28,7 @@ export const loadNotifications = async (accessToken) => {
   return result;
 };
 
-export const apiCall = async (url, method, data, processData,appContext) => {
+export const apiCall = async (url, method, data, processData, appContext) => {
   var jwtToken = Cookies.get("jwtToken") || null;
   var { apiUrl } = config;
 
@@ -120,11 +120,10 @@ export const role_tenant = "tenant";
 export const role_landlord = "landlord";
 
 // Action Levels
- export const action_level_info = "info";
- export const action_level_warning = "warning";
- export const action_level_danger = "danger";
- export const action_level_waiting = "waiting";
-
+export const action_level_info = "info";
+export const action_level_warning = "warning";
+export const action_level_danger = "danger";
+export const action_level_waiting = "waiting";
 
 // get financial value per month or per year
 export function getFinancialValueRoot(financialData, financialMonth, userRole, paymentOf) {
@@ -381,7 +380,7 @@ export function getTenantUnpaidBills(financials, billsOf) {
 // APIs -----------------------------------
 
 export async function apiLoadData(endpointName, data) {
-   console.log("Entering API load data : " + endpointName + " with ", data);
+  console.log("Entering API load data : " + endpointName + " with ", data);
   endpointName = endpointName.toLowerCase();
   var response = null;
   switch (endpointName) {
@@ -401,9 +400,9 @@ export async function apiLoadData(endpointName, data) {
       break;
   }
 
-  console.log("Exiting Api load data : with ",response.data);
-  if (response.status) {
-    return response.data;
-  }
+   if (response && response.status) {
+     console.log("Exiting Api load data : with ", response.data);
+     return response.data;
+   }
   return null;
 }

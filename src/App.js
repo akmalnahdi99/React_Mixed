@@ -77,7 +77,7 @@ import PayCash from "./bills_component/PayCash";
 import PayCDM from "./bills_component/PayCDM";
 import ReactGA from "react-ga";
   
-const trackingId = "UA-188481373-1"; // Replace with your Google Analytics tracking ID
+const trackingId = "UA-188481373-1";  
 ReactGA.initialize(trackingId);
 
 
