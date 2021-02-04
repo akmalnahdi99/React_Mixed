@@ -158,7 +158,7 @@ export default function BillsOf() {
         >
           <div style={{ textAlign: "center" }}>
             {modalData.error === false ? (
-              <img src="/imgs/check.svg"" style={{ width: "50px", height: "50px" }} alt="..." />
+              <img src="/imgs/check.svg" style={{ width: "50px", height: "50px" }} alt="..." />
             ) : (
               <img src="/imgs/close.svg" style={{ width: "50px", height: "50px" }} alt="..." />
             )}
