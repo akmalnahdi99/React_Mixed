@@ -66,15 +66,15 @@ import ResetPassword from "./pages/Landlord/ResetPassword";
 import ForgotPassword from "./pages/Landlord/ForgotPassword";
 import Appointment from "./pages/Landlord/Appointment";
 import AppointmentDetails from "./pages/Landlord/AppointmentDetails";
-import InvoiceCableTV from "./pages/Landlord/InvoiceCableTV";
+import InvoiceCableTV from "./pages/Landlord/InvoiceCabletv";
 import InvoiceElectricity from "./pages/Landlord/InvoiceElectricity.js";
 import InvoiceGas from "./pages/Landlord/InvoiceGas.js";
 import InvoiceInternet from "./pages/Landlord/InvoiceInternet.js";
 import InvoiceSewage from "./pages/Landlord/InvoiceSewage.js";
 import InvoiceWater from "./pages/Landlord/InvoiceWater.js"; 
 import TenantInvoice from "./pages/Landlord/TenantInvoice";
-import PayCash from "./bills_component/PayCash";
-import PayCDM from "./bills_component/PayCDM";
+import PayCash from "./components/bills_component/PayCash";
+import PayCDM from "./components/bills_component/PayCDM";
 import ReactGA from "react-ga";
   
 const trackingId = "UA-188481373-1";  

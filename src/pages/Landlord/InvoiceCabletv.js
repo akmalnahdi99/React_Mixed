@@ -13,7 +13,7 @@ export default function InvoiceCableTV() {
             <InfoCableTvDetails title=" Cable TV" />
             <InvoiceCableTVDetails />
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   );

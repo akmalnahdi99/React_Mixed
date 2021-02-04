@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../components/static/Footer";
+import Footer from "../static/Footer";
 
 import CableTVDetails from "./CableTVDetails";
 

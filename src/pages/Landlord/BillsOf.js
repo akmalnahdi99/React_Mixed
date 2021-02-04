@@ -4,7 +4,7 @@ import { Redirect, useParams } from "react-router-dom";
 
 //TASK put all bills in this page
 
-import BillsUnpaid from "../../bills_component/BillsUnpaid";
+import BillsUnpaid from "../../components/bills_component/BillsUnpaid";
 
 import InfoWaterDetails from "../../components/propertyInfoComponent/InfoWaterDetails";
 import InfoElectricityDetails from "../../components/propertyInfoComponent//InfoElectricityDetails";
@@ -15,7 +15,7 @@ import InfoGasDetails from "../../components/propertyInfoComponent/InfoGasDetail
 import Loading from "../../components/static/Loading";
 import { AppContext } from "../../context/settings";
 import { apiCall, apiLoadData, getTenantUnpaidBills   } from "../../utils/landlordHelper";
-import RentalPayables from "./../../bills_component/RentalPayables";
+import RentalPayables from "../../components/bills_component/RentalPayables";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
 export default function BillsOf() {
@@ -31,7 +31,7 @@ export default function BillsOf() {
 
   // modal stuff
   const toggle = () => set_modalData({ ...modalData, modal: !modalData.modal });
-  const updateModal = (title, message,error, show) => set_modalData({ ...modalData, title, message, error,modal: show });
+  const updateModal = (title, message,error, show) => set_modalData({ ...modalData, title, message, error,modal: show }); 
 
   const closeBtn = (
     <button className="close" onClick={toggle}>
@@ -158,9 +158,9 @@ export default function BillsOf() {
         >
           <div style={{ textAlign: "center" }}>
             {modalData.error === false ? (
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyjk0fmIT2rp4Xzw85URtLtcMPNiKqSOrI_Q&usqp=CAU" style={{ width: "50px", height: "50px" }} alt="..." />
+              <img src="/imgs/check.svg" style={{ width: "50px", height: "50px" }} alt="..." />
             ) : (
-              <img src="https://icon-library.com/images/failed-icon/failed-icon-7.jpg" style={{ width: "50px", height: "50px" }} alt="..." />
+              <img src="/imgs/close.svg" style={{ width: "50px", height: "50px" }} alt="..." />
             )}
           </div>
           <div className="row text-center mt-3">
