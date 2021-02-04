@@ -22,6 +22,7 @@ export default function PayablesList() {
           return overDuePayments[paymentName].map((paymentData, index) => {
             var link = "";
             if (paymentName.toLowerCase() === "rental".toLocaleLowerCase()) {
+              //TFIXME Clean up this, and the duplicate below make the code symetric
               link = "/landlord/bills/" + paymentName;
             } else {
               link = "/landlord/bills/" + paymentName;

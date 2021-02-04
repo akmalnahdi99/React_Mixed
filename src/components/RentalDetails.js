@@ -1,9 +1,9 @@
 // #newPage
-import React, {useState} from "react";
-import { Collapse } from 'reactstrap';
+import React, { useState } from "react";
+import { Collapse } from "reactstrap";
 import * as FaIcons from "react-icons/fa";
 
-export default function RentalDetails ({ title,expand })  {
+export default function RentalDetails({ title, expand }) {
   var details = {
     name: "JANN Properties",
     bank: "CIMB",
@@ -14,10 +14,12 @@ export default function RentalDetails ({ title,expand })  {
 
   const toggle = () => setIsOpen(!isOpen);
   return (
-        <div className="ibox">
+    <div className="ibox">
       <div className="ibox-title">
         <div style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
-        <h3><img src="/imgs/subscription.svg" alt="..." className="utilityIconTitle"></img>Rental Payables</h3>
+          <h3>
+            <img src="/imgs/subscription.svg" alt="..." className="utilityIconTitle"></img>Rental Payables
+          </h3>
         </div>
         <div className="ibox-tools">
           <p onClick={toggle}>
@@ -64,7 +66,7 @@ export default function RentalDetails ({ title,expand })  {
             </div>
           </div>
         </div>
-        </Collapse>
-        </div>
+      </Collapse>
+    </div>
   );
-}; 
+}

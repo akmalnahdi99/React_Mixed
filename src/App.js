@@ -50,7 +50,7 @@ import UnitKitsCats from "./pages/Landlord/UnitKitsCats";
 import UnitCheckInOut from "./pages/Landlord/UnitCheckInOut";
 import Calendars from "./pages/Landlord/Calendars";
 import Bills from "./pages/Landlord/Bills";
-import BillOf from "./pages/Landlord/BillsOf";
+import BillsOf from "./pages/Landlord/BillsOf";
 
 import Activity from "./pages/Landlord/Activity.js";
 import Logout from "./pages/Landlord/Logout";
@@ -75,11 +75,16 @@ import InvoiceWater from "./pages/Landlord/InvoiceWater.js";
 import TenantInvoice from "./pages/Landlord/TenantInvoice";
 import PayCash from "./components/bills_component/PayCash";
 import PayCDM from "./components/bills_component/PayCDM";
+import ReactGA from "react-ga";
+  
+const trackingId = "UA-188481373-1"; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
+
 
 export default function App() {
   return (
     <AppProvider>
-      <Router>
+      <Router  >
         <Switch>
           <Route exact path="/">
             <Redirect to="/login" />
@@ -181,7 +186,7 @@ export default function App() {
                 </Route>
                 <Route path="/landlord/bills/:billOf">
                   <StandardPage>
-                    <BillOf siteMap={"Bills Details"} />
+                    <BillsOf siteMap={"Bills Details"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/utilities/:utilityType">
@@ -244,7 +249,7 @@ export default function App() {
                     <MaintenanceChatPrivate siteMap={"Maintenance Private Chat"} />
                   </StandardPage>
                 </Route>
-                
+
                 {/*  <Route path="/landlord/tenancydocs">
               <StandardPage>
                 <TenancyDocs siteMap={"Tenancy Documents"} />
@@ -303,7 +308,7 @@ export default function App() {
                     <AppointmentDetails siteMap={"Appointment Details"} />
                   </StandardPage>
                 </Route>
- 
+
                 <Route path="/landlord/InvoiceWater">
                   <StandardPage>
                     <InvoiceWater siteMap={"Invoice Water"} />

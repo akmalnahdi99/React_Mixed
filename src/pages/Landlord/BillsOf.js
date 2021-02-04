@@ -18,7 +18,7 @@ import { apiCall, apiLoadData, getTenantUnpaidBills   } from "../../utils/landlo
 import RentalPayables from "../../components/bills_component/RentalPayables";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
-export default function BillOf() {
+export default function BillsOf() {
   var t = useParams();
   var billOf = t.billOf;
   const appContext = React.useContext(AppContext);
@@ -105,7 +105,7 @@ export default function BillOf() {
   }
 
   var bills = unpaidBills.map((unpaidBill, index) => {
-    console.log("went -----------------------------------");
+ 
     var title = unpaidBill.monthName;
     return (
       <React.Fragment key={index}>
@@ -128,9 +128,9 @@ export default function BillOf() {
           <div className="row justify-content-center">
             <div className="col-lg-8 mb-3 px-0">
               {billOf === "Rental" ? (
-                <RentalPayables siteMap={"Rental Payables"} />
+                <RentalPayables  />
               ) : (
-                <React.Fragment>
+                <React.Fragment  >
                   {billOf === "Water" ? <InfoWaterDetails expand={false} title="Water Rate" {...utilityDetails} /> : ""}
                   {billOf === "Electricity" ? <InfoElectricityDetails expand={false} title="Electricity Rate" {...utilityDetails} /> : ""}
                   {billOf === "Sewage" ? <InfoSewageDetails expand={false} title="Sewage" {...utilityDetails} /> : ""}
@@ -157,14 +157,16 @@ export default function BillOf() {
           }}
         >
           <div style={{ textAlign: "center" }}>
-            {modalData.error ===false ? (
-              <img src="/imgs/check.svg" style={{ width: "50px", height: "50px" }} alt="..." />
+            {modalData.error === false ? (
+              <img src="/imgs/check.svg"" style={{ width: "50px", height: "50px" }} alt="..." />
             ) : (
               <img src="/imgs/close.svg" style={{ width: "50px", height: "50px" }} alt="..." />
             )}
           </div>
           <div className="row text-center mt-3">
-            <div className="col-12 text-doorcase3"><h4>{modalData.message}</h4></div>
+            <div className="col-12 text-doorcase3">
+              <h4>{modalData.message}</h4>
+            </div>
           </div>
         </ModalBody>
       </Modal>

@@ -4,6 +4,7 @@ import { AppContext } from "../../context/settings";
 import { apiCall } from "./../../utils/landlordHelper";
 import { config } from "./../../constants";
 import Cookies from "js-cookie";
+import ReactGA from "react-ga";
 
 export default function Login() {
   const { updateAppContext, settings } = React.useContext(AppContext);
@@ -54,7 +55,6 @@ export default function Login() {
         if (resp.status === 200) {
           var token = await resp.json();
           Cookies.set("jwtToken", token.token);
-console.log(token.token);
           var response = await apiCall("/users/info");
 
           var activeUnitId = null;
@@ -65,6 +65,16 @@ console.log(token.token);
             quickLinks = response.data.quickLinks;
             notificationsCount = response.data.notificationsCount;
           }
+          
+          ReactGA.set({
+            userId: response.data.userName,
+          });
+
+          ReactGA.event({
+            category: "Login",
+            action: "User logged in",
+          });
+
           updateAppContext({ postsFilter: "All", accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
         } else {
           throw new Error(resp.statusText);

@@ -1,54 +1,52 @@
 // #newPage
-import React from 'react'
-import RentalTable from '../RentalTable';
-import TenantHeader from "../TenantHeader";
-import RentalDetails from "../RentalDetails";
-import { Link } from "react-router-dom";
+import React from "react";
+
+import { AppContext } from "context/settings";
+import InvoiceCard from "./InvoiceCard";
+import Empty from "components/Empty";
+import { apiCall, apiLoadData } from "utils/landlordHelper";
+import Loading from "components/static/Loading";
+import { config } from "./../constants";
+import RentalDetails from "components/RentalDetails";
 
 export default function Financials() {
+  var appContext = React.useContext(AppContext);
+  var financials = appContext.settings.unitFinancials;
+  var activeUnitId = appContext.settings.activeUnitId;
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  var Invoices = [];
+
+  if (financials && financials["Rental"]) {
+    Invoices = financials["Rental"].map((invoice, index) => {
+      return <InvoiceCard key={index} paymentFor="Rental" payOnline={payOnline} {...invoice} />;
+    });
+  }
+
+  async function payOnline(paymentFor, payableId) {
+    var response = await apiCall(`/units/tenantGetPaymentRecord?unitId=${activeUnitId}&paymentFor=${paymentFor}&payableId=${payableId}`);
+    if (response.status) {
+      if (response.data && response.data.paymentUrl && response.data.paymentUrl.startsWith(config.paymentUrl)) {
+        window.location.href = response.data.paymentUrl;
+      }
+    }
+  }
+  React.useEffect(() => {
+    async function updateFinancials() {
+      setIsLoading(true);
+      var financials = await apiLoadData("loadFinancials", { activeUnitId });
+      appContext.updateAppContext({ unitFinancials: financials });
+      setIsLoading(false);
+    }
+    updateFinancials();
+    // eslint-disable-next-line
+  }, [activeUnitId]);
+
   return (
     <div className="wrapper wrapper-content animated fadeInRight">
-      <RentalDetails />
+      <RentalDetails title="Payable to" />
 
-      <div className="ibox ">
-        <div className="ibox-content mb-5">
-          <TenantHeader title="Rental Payables" />
-          <RentalTable />
-          <div className="row">
-            <div className="col-md-7 col-xs-12">
-            </div>
-            <div className="col-md-5 col-xs-12">
-              <div className="row">
-                <div className="col-md-6 col-xs-12">
-                  <Link to="#">
-                    <button className="btn btn-primary mr-3 mb-3" style={{ width: "100%" }}>
-                      Pay Online
-                </button>
-                  </Link>
-                </div>
-                <div className="col-md-6 col-xs-12">
-                  <Link to="/landlord/payRentalCash">
-                    <button className="btn btn-primary float-right" style={{ width: "100%" }}>
-                      Pay Cash
-                </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <h2 className="float-right"><strong>Status</strong></h2>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <h2 className="float-right text-danger"><strong>Unpaid</strong></h2>
-            </div>
-          </div>
-        </div>
-      </div>
+      {isLoading === true ? <Loading /> : Invoices.length > 0 ? Invoices : <Empty title="No invoices found" />}
     </div>
-
   );
 }

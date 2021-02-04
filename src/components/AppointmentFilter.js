@@ -25,9 +25,7 @@ export default function InventoryFilter({ updateFilter, selectedFilter }) {
     },
   ];
 
-  React.useEffect(() => {
-  
-  }, []);
+  React.useEffect(() => {}, []);
 
   return (
     <div id="FilterContainer" className="mb-2 mt-2 multiple-items sorterslide" style={{ display: "flex" }}>

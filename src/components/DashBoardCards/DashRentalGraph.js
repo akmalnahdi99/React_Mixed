@@ -49,15 +49,13 @@ export default function DashRentalGraph({ title }) {
       infoCardData.body += `You have ${previousYearNotPaidCount} unpaid payment${previousYearNotPaidCount > 0 ? "s" : ""} from previous year`;
     }
   }
- 
+
   return (
     <div className="ibox dash-box">
       <Link className="dash-link" to="/landlord/bills/rental">
-      <div className="ibox-title dash-title">
-          <h5>
-          {title}
-        </h5>
-      </div>
+        <div className="ibox-title dash-title">
+          <h5>{title}</h5>
+        </div>
       </Link>
       <div className="ibox-content">
         {isLoading === true ? (
