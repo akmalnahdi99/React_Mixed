@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 //Images
 import logo from "../assets/imgs/doorcase-logo.png";
 import logolight from "../assets/imgs/doorcase-lightlogo.png";
-import profileSmall from "../assets/imgs/profile_small.jpg";
+import profileSmall from "../assets/imgs/avatar.svg";
 import { AppContext } from "../context/settings";
 //import { AppContext } from "../context/settings";
 
