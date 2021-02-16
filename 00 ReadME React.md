@@ -1,3 +1,8 @@
+[2021-02-16]
+- changing dev to prod in constant.js
+- fix error file name matching for local env in InvoiceCableTV.js
+- Edits profile in LandLordDetailsCard.js && Profile.js 
+
 [2021-01-30]
 - I changed the Rental Dash to inlcude a way to notify about previous year payments
 - please notice that the port number for landlord (in development only fixed to 3000)
