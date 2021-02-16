@@ -8,8 +8,5 @@ const dev = {
   paymentUrl: "https://www.billplz-sandbox.com",
 };
 
-
-//Devs should add this file to .gitIgnore and modify it as they wish
-//Devs do not commit this file if you change it
-//TASK-TO-WAN Please revert this line and commit it, 
-export const config = process.env.NODE_ENV === "development" ? prod : prod;
+//TASK-TO-WAN [done] Please revert this line and commit it, 
+export const config = process.env.NODE_ENV === "development" ? dev : prod;

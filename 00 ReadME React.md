@@ -1,6 +1,7 @@
 [2021-02-16]
 #By Wan Afnan
 - PLEASE DISABLE Enable Local Overides in your DevTools or else it will mess up the css and other functionality, pls Check: devTools -> Sources -> Overrides -> (disable this)Enable Local Overrides  
+- revert back using dev instead of prod in constraint.js
 - Changing dev to prod in constant.js
 - Fix error file name matching for local env in InvoiceCableTV.js
 - Edits profile in LandLordDetailsCard.js && Profile.js
