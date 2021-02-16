@@ -4,6 +4,7 @@ import PostCard from "./PostCard";
 import { AppContext } from "../context/settings";
 import { apiCall } from "./../utils/landlordHelper";
 import Loading from "./static/Loading";
+
 //import postIcon from "img/money-bag.svg";
 
 const PostsList = (props, filterBy) => {
@@ -23,15 +24,20 @@ const PostsList = (props, filterBy) => {
         var r = response.data;
         r = r.map((e) => {
           if (e.postType === "maintenance") {
-            e.postIcon = "/imgs/settings.svg";
+            e.to = "/landlord/maintenance"
+            e.postIcon = "/imgs/settings.svg"
           } else if (e.postType === "overdue") {
-            e.postIcon = "/imgs/schedule.svg";
+            e.to = "/landlord/payables"
+            e.postIcon = "/imgs/schedule.svg"
           } else if (e.postType === "offer") {
-            e.postIcon = "/imgs/handshake.svg";
+            e.to = "/landlord/offers"
+            e.postIcon = "/imgs/handshake.svg"
           } else if (e.postType === "viewing") {
-            e.postIcon = "/imgs/eye.svg";
+            e.to = "/landlord/unitviewings"
+            e.postIcon = "/imgs/eye.svg"
           } else if (e.postType === "payment") {
-            e.postIcon = "/imgs/money-bag.svg";
+            e.to = "/landlord/payables"
+            e.postIcon = "/imgs/money-bag.svg"
           }
           return e;
         });

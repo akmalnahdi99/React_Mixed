@@ -1,7 +1,10 @@
 [2021-02-16]
-- changing dev to prod in constant.js
-- fix error file name matching for local env in InvoiceCableTV.js
-- Edits profile in LandLordDetailsCard.js && Profile.js 
+#By Wan Afnan
+- PLEASE DISABLE Enable Local Overides in your DevTools or else it will mess up the css and other functionality, pls Check: devTools -> Sources -> Overrides -> (disable this)Enable Local Overrides  
+- Changing dev to prod in constant.js
+- Fix error file name matching for local env in InvoiceCableTV.js
+- Edits profile in LandLordDetailsCard.js && Profile.js
+- Add e.to property inside r object at PostLists.js and pass into PostCard.js for <Link>
 
 [2021-01-30]
 - I changed the Rental Dash to inlcude a way to notify about previous year payments
