@@ -20,8 +20,8 @@ export default function InfoCardItem({ title, body, level, address }) {
 
   return (
     <div>
-      <ul className="sortable-list connectList agile-list ui-sortable" id="todo">
-        <li className={element + " ui-sortable-handle mb-0"}>
+      <ul className="sortable-list connectList agile-list ui-sortable" id="todo" style={{ }}>
+        <li className={element + " ui-sortable-handle mb-0"} style={{ zIndex:5,position:"relative" }} >
           {address && address !== "" ? (
             <Link to={address} style={{ color: "black" }}>
               <div className="agile-detail">

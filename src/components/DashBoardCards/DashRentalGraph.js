@@ -51,7 +51,8 @@ export default function DashRentalGraph({ title }) {
   }
 
   return (
-    <div className="ibox dash-box">
+    <div className="ibox dash-box" style={{ position: "relative" }}>
+      <Link to="/landlord/bills/rental" className="dashboard-link" style={{ zIndex: 2 }}></Link>
       <Link className="dash-link" to="/landlord/bills/rental">
         <div className="ibox-title dash-title">
           <h5>{title}</h5>

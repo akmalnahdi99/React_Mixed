@@ -47,7 +47,13 @@ export default function DashAppoinment() {
 
       for (let j = 0; j < elements.length; j++) {
         const cur_appointment = elements[j];
-        data.push({ ...cur_appointment, title: "Date: " + cur_appointment.date, body: cur_appointment.purpose, level: convertAppointmentStatusToColor(cur_appointment), address: "/landlord/appointmentDetails/" + cur_appointment.appointmentId });
+        data.push({
+          ...cur_appointment,
+          title: "Date: " + cur_appointment.date,
+          body: cur_appointment.purpose,
+          level: convertAppointmentStatusToColor(cur_appointment),
+          address: "/landlord/appointmentDetails/" + cur_appointment.appointmentId,
+        });
         counter++;
         if (counter >= 3) break;
       }
@@ -56,13 +62,14 @@ export default function DashAppoinment() {
   }
 
   return (
-    <div className="ibox dash-box">
+    <div className="ibox dash-box" style={{ position: "relative" }}>
+      <Link to="/landlord/appointment" className="dashboard-link" style={{ zIndex: 2 }}></Link>
       <Link className="dash-link" to="/landlord/appointment">
         <div className="ibox-title dash-title">
           <h5>Appointment</h5>
-          <div className="ibox-tools">
+          {/* <div className="ibox-tools">
             <i className="fas fa-arrow-right"></i>
-          </div>
+          </div> */}
         </div>
       </Link>
       <div className="ibox-content bg-white">

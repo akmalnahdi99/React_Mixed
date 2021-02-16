@@ -20,12 +20,13 @@ const DashMaintenance = ({ title }) => {
   // }
 
   return (
-    <div className="ibox dash-box">
+    <div className="ibox dash-box" style={{position:"relative"}}>
+      <Link to="/landlord/maintenance" className="dashboard-link" style={{zIndex:2}}></Link>
       <Link className="dash-link" to="/landlord/maintenance">
         <div className="ibox-title dash-title">
           <h5>{title}</h5>
           <div className="ibox-tools">
-            <i className="fas fa-arrow-right"></i>
+            {/* <i className="fas fa-arrow-right"></i> */}
           </div>
         </div>
       </Link>

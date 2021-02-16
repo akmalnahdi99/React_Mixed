@@ -1,5 +1,15 @@
 [2021-02-16]
- 
+ - Wan Afnan: Cards in Dashboard were made clickable outside the buttons and other inner clickable items, arrows removed:
+        components/DashBoardCards/DashAppointment.js
+        components/DashBoardCards/DashBills.js
+        components/DashBoardCards/DashCalendar.js
+        components/DashBoardCards/DashIconsBox.js
+        components/DashBoardCards/DashMaintenance.js
+        components/DashBoardCards/DashRentalGraph.js
+        components/DashBoardCards/DashTodoList.js
+        components/InfoCardItem.js
+        pages/Landlord/Dashboard.js
+- created css file for local use only for dashboard -src/components/DashBoardCards/dashboard.css
 - When doing in-browser development Make sure to Disable 'Enable Local Overides' Option in DevTools of browser or else it will mess up the css and other  functionality, pls Check: devTools -> Sources -> Overrides -> (Uncheck)Enable Local Overrides  
 - Wan Afnan:  revert back using dev instead of prod in constraint.js
 - Wan Afnan:  Changing dev to prod in constant.js
