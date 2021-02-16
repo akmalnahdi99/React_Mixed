@@ -1,5 +1,5 @@
 {
-  "name": "LandLordApp",
+  "name": "Tenant App",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
