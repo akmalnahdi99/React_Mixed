@@ -8,4 +8,4 @@ const dev = {
   paymentUrl: "https://www.billplz-sandbox.com",
 };
 
-export const config = process.env.NODE_ENV === "development" ? dev : prod;
+export const config = process.env.NODE_ENV === "development" ? prod : prod;
