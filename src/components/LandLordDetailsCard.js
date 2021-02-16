@@ -25,7 +25,7 @@ const LandLordDetailsCard = ({ title }) => {
             <h5 className="font-bold text-doorcase3 ">Email</h5>
             <span className="mb-3 font-normal">{userInfo.email}</span>
             <hr />
-            <h5 className="font-bold text-doorcase3 ">NRIC no</h5>
+            <h5 className="font-bold text-doorcase3 ">Nric no</h5>
             <span className="mb-3 font-normal">{userInfo.nricNumber || "N/A"}</span>
             <hr />
             <h5 className="font-bold text-doorcase3 ">Passport number</h5>

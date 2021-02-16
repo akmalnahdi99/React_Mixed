@@ -1,3 +1,12 @@
+[2021-02-16]
+ 
+- When doing in-browser development Make sure to Disable 'Enable Local Overides' Option in DevTools of browser or else it will mess up the css and other  functionality, pls Check: devTools -> Sources -> Overrides -> (Uncheck)Enable Local Overrides  
+- Wan Afnan:  revert back using dev instead of prod in constraint.js
+- Wan Afnan:  Changing dev to prod in constant.js
+- Wan Afnan:  Fix error file name matching for local env in InvoiceCableTV.js
+- Wan Afnan:  Edits profile in LandLordDetailsCard.js && Profile.js
+- Wan Afnan:  Add e.to property inside r object at PostLists.js and pass into PostCard.js for <Link>
+
 [2021-01-30]
 - I changed the Rental Dash to inlcude a way to notify about previous year payments
 - please notice that the port number for landlord (in development only fixed to 3000)

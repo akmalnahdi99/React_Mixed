@@ -23,7 +23,7 @@ export default function Profile({canUpload}) {
             <UserPhotoCard {...userInfo} canUpload= {canUpload}>  </UserPhotoCard>
           </div>
           <div className="col-md-8 px-2">
-            <LandLordDetailsCard title="Owner's Details" />
+            <LandLordDetailsCard title="Tenant details" />
           </div>
         </div>
       </div>

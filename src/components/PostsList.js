@@ -20,22 +20,27 @@ const PostsList = (props, filterBy) => {
       setIsLoading(true);
       var response = await apiCall("/units/listPosts");
       if (response.status) {
-        var r = response.data;
-        r = r.map((e) => {
-          if (e.postType === "maintenance") {
-            e.postIcon = "/imgs/settings.svg";
-          } else if (e.postType === "overdue") {
-            e.postIcon = "/imgs/schedule.svg";
-          } else if (e.postType === "offer") {
-            e.postIcon = "/imgs/handshake.svg";
-          } else if (e.postType === "viewing") {
-            e.postIcon = "/imgs/eye.svg";
-          } else if (e.postType === "payment") {
-            e.postIcon = "/imgs/money-bag.svg";
+        var posts = response.data;
+        posts = posts.map((item) => {
+          if (item.postType === "maintenance") {
+            item.address = "/landlord/maintenance"
+            item.postIcon = "/imgs/settings.svg"
+          } else if (item.postType === "overdue") {
+            item.address = "/landlord/payables";
+            item.postIcon = "/imgs/schedule.svg"
+          } else if (item.postType === "offer") {
+            item.address = "/landlord/offers";
+            item.postIcon = "/imgs/handshake.svg"
+          } else if (item.postType === "viewing") {
+            item.address = "/landlord/unitviewings";
+            item.postIcon = "/imgs/eye.svg"
+          } else if (item.postType === "payment") {
+            item.address = "/landlord/payables";
+            item.postIcon = "/imgs/money-bag.svg"
           }
-          return e;
+          return item;
         });
-        setPosts(r);
+        setPosts(posts);
       }
       setIsLoading(false);
     }
