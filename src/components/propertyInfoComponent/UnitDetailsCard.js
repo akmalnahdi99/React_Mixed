@@ -33,9 +33,9 @@ export default function UnitDetailsCard() {
     imageGallery = unitDetails.images.map((image, index) => {
       return (
         <li className="col-6 col-sm-4 col-md-2 col-lg-2 p-2" key={index}>
-          <Link to={image.urlThumb}>
+          <a target="_blank" rel="noopener noreferrer" href={image.urlImage}>
             <img className="img-responsive" src={image.urlThumb} alt="post som" />
-          </Link>
+          </a>
         </li>
       );
     });
