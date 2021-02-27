@@ -8,6 +8,10 @@ export default function RentalDonut({ paidCount, notPaidCount, previousNotPaidCo
   //TASK pls put colors in variables here example : var red = #329f9d
   
   var t = Array(12);
+       for (let i = 0; i < 12; i++) {
+         t[i] = "future";
+       }
+
   for (let i = 0; i < paidCount; i++) {
     t[i] = "paid";
   }
@@ -20,7 +24,7 @@ export default function RentalDonut({ paidCount, notPaidCount, previousNotPaidCo
     t[i] = "future";
   }
 
-  var paid = paidCount;
+  var paid = paidCount  ;
 
   return (
     <div style={{ height: "auto", width: "210px", margin: "0 auto" }}>
@@ -49,7 +53,7 @@ export default function RentalDonut({ paidCount, notPaidCount, previousNotPaidCo
           right: 0,
           top: 0,
         }}
-        title={paid + "/"}
+        title={(paid || 0) + "/"}
         titleComponent={<ChartLabel y={115} x={100} style={[{ fontWeight: "600", fontSize: 40 }]} />}
         subTitle="12"
         subTitleComponent={<ChartLabel y={130} x={130} style={[{ fontWeight: "400", fontSize: 30 }]} />}

@@ -3,41 +3,51 @@ import RentalDonut from "../RentalDonut";
 import InfoCardItem from "../InfoCardItem";
 
 import { Link } from "react-router-dom";
-import { getTenantRentalPaymentStats } from "../../utils/landlordHelper";
+// import { apiCall } from "../../utils/landlordHelper";
 import { AppContext } from "../../context/settings";
+// import Loading  from "components/static/Loading";
+import NoOverdue from "components/EmptyOverDue";
+ 
 
 export default function DashRentalGraph({ title }) {
-  var data = {
-    title: "Previous Payments",
+  //const [isLoading, setIsLoading] = React.useState(false);
+  // const [rentalStats, set_rentalStats] = React.useState(null);
+  const appContext = React.useContext(AppContext);
+  
+    var tenantRentalPaymentStats = appContext.settings.tenantRentalPaymentStats;
+ 
+  var infoCardData = {
+    title: "Overdue Payments",
     body: "",
     address: "payables",
     color: "red",
   };
-
-  const appContext = React.useContext(AppContext);
-  var financialData = appContext.settings.unitFinancials;
-  const result = getTenantRentalPaymentStats(financialData);
-
-  if (result) {
-    var previousNotPaidCount = result.previousNotPaidCount;
+ 
+  if (tenantRentalPaymentStats) {
+    var previousNotPaidCount = tenantRentalPaymentStats.previousNotPaidCount;
 
     if (previousNotPaidCount > 0) {
-      data.body = `You have ${previousNotPaidCount} payment${previousNotPaidCount > 0 ? "s" : ""} from previous year`;
+      infoCardData.title = "Previous Payments";
+      infoCardData.body = `Tenant have ${previousNotPaidCount} unpaid payment${previousNotPaidCount > 0 ? "s" : ""} from previous year`;
     }
   }
-
+ 
   return (
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-          <Link  to="/landlord/bills/rental">
-            {title}
-          </Link>
+          <Link to="/landlord/bills/rental">{title}</Link>
         </h5>
       </div>
       <div className="ibox-content">
-        <RentalDonut {...result} />
-        {data.body !== "" ? <InfoCardItem {...data} /> : ""}
+        {/* {isLoading === true ? (
+          <Loading />
+        ) : ( */}
+          <React.Fragment>
+            <RentalDonut {...tenantRentalPaymentStats} />
+            {infoCardData.body !== "" ? <InfoCardItem {...infoCardData} /> : <NoOverdue title="No Overdue" />}
+          </React.Fragment>
+        {/* )} */}
       </div>
     </div>
   );

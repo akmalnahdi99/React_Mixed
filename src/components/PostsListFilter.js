@@ -46,7 +46,7 @@ export default function PostsListFilter() {
 
    const filterSelection = (filter) => {
  
-     appContext.setPostsFilter(filter);
+     appContext.updateAppContext({postsFilter:filter});
   };
 
   return (
@@ -54,7 +54,7 @@ export default function PostsListFilter() {
       {Filters.map((filter) => {
         return (
           <div key={filter.id} className="widthfitcontent">
-            <div to="" className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
+            <div   className={selectedFilter === filter.name ? "btnfiltermain btnfilter m-1 current" : "btnfiltermain btnfilter m-1"} value="rental" onClick={() => filterSelection(filter.name)}>
               <i className={filter.iconClass}></i> {filter.name}
             </div>
           </div>

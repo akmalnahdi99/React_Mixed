@@ -6,7 +6,6 @@ import { config } from "./../../constants";
 import Cookies from "js-cookie";
 
 export default function Login() {
- 
   const { updateAppContext, settings } = React.useContext(AppContext);
 
   const [user, setUser] = React.useState({ userId: "", password: "" });
@@ -25,7 +24,6 @@ export default function Login() {
 
   // handle from submit button
   const handleSubmit = (e) => {
-   
     e.preventDefault();
     if (user.userId !== "" && user.password !== "") {
       authenticate();
@@ -34,14 +32,12 @@ export default function Login() {
     }
   };
 
- 
   // if user already logged redirect him directly to main activites.
   if (isLogged === true && accessToken !== null) {
     return <Redirect to="/landlord/activity"></Redirect>;
   }
 
   const authenticate = () => {
-   
     var userId = user.userId;
     var password = user.password;
 
@@ -50,7 +46,7 @@ export default function Login() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email: userId, password , userType:"tenant"}),
+      body: JSON.stringify({ email: userId, password, userType: "tenant" }),
     };
     setIsLoading(true);
     fetch(apiUrl + "/users/authenticate", requestOptions)
@@ -58,7 +54,7 @@ export default function Login() {
         if (resp.status === 200) {
           var token = await resp.json();
           Cookies.set("jwtToken", token);
-        
+
           var response = await apiCall("/users/info");
 
           var activeUnitId = null;
@@ -69,7 +65,7 @@ export default function Login() {
             quickLinks = response.data.quickLinks;
             notificationsCount = response.data.notificationsCount;
           }
-          updateAppContext({ accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
+          updateAppContext({ postsFilter: "All", accessToken: token, isLogged: true, userInfo: response.data, activeUnitId, quickAccessList: quickLinks, notificationsCount });
         } else {
           throw new Error(resp.statusText);
         }

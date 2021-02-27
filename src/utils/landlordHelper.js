@@ -348,45 +348,6 @@ export function getTenantPayablesDetails(financials) {
   return { overDuePayments, duePayments };
 }
 
-// get tenant rental paid not paid count
-// return example for rental  {paid:2, notpaid:3, previousNotPaidCount:1 // for last year}
-export function getTenantRentalPaymentStats(financials) {
-  var paidCount = 0;
-  var notPaidCount = 0;
-  var previousNotPaidCount = 0;
-
-  var date = new Date();
-  var firstDay = new Date(date.getFullYear(), 0, 1); // 1/1/currentYear
-  var lastDay = new Date(date.getFullYear(), 13, 0); // lastday/12/currentyear
-
-  console.log("Seek Tenant Payments between ", firstDay, lastDay);
-  for (const paymentName in financials) {
-    if (paymentName.toLowerCase() === "rental".toLowerCase()) {
-      const payments = financials[paymentName];
-
-      for (let i = 0; i < payments.length; i++) {
-        const paymentData = payments[i];
-        // handle rentals between first day and last day of this year
-        if (paymentData.paymentDueMillis > firstDay.getTime() && paymentData.paymentDueMillis < lastDay.getTime()) {
-          if (paymentData.paid === true) {
-            paidCount++;
-          } else {
-            notPaidCount++;
-          }
-        }
-        // handle last year non paid invoices
-        else if (paymentData.paymentDueMillis < firstDay.getTime()) {
-          if (paymentData.paid !== true) {
-            previousNotPaidCount++;
-          }
-        }
-      }
-    }
-  }
-    console.log("found:", { paidCount, notPaidCount, previousNotPaidCount });
-  return { paidCount, notPaidCount, previousNotPaidCount };
-}
-
 // get tenant unpaid bills
 export function getTenantUnpaidBills(financials, billsOf) {
   var unpaidBills = [];
@@ -409,8 +370,26 @@ export function getTenantUnpaidBills(financials, billsOf) {
 
 // APIs -----------------------------------
 
-export async function loadFinancials(unitId) {
-  var response = await apiCall("/units/TenantFinancialsPerYearMonths/?unitId=" + unitId);
+export async function apiLoadData(endpointName, data) {
+  endpointName = endpointName.toLowerCase();
+  var response = null;
+  switch (endpointName) {
+    case "loadFinancials".toLowerCase():
+      response = await apiCall("/units/TenantFinancialsPerYearMonths/?unitId=" + data.activeUnitId);
+      break;
+    case "loadRentalStatsPerYear".toLowerCase():
+      response = await apiCall("/units/tenantRentalStatsPerYear?unitId=" + data.activeUnitId);
+      break;
+    case "tenantAppointments".toLowerCase():
+      response = await apiCall("/units/tenantAppointments/" + data.activeUnitId);
+      break;
+    case "xx".toLowerCase():
+      response = await apiCall("/units/tenantAppointments/" + data.activeUnitId);
+      break;
+    default:
+      break;
+  }
+
   if (response.status) {
     return response.data;
   }

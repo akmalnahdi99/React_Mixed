@@ -26,7 +26,7 @@ export default function InlineUnitInfoCard() {
     // eslint-disable-next-line
   }, [activeUnitId]);
 
-  if (unit === null) return "";
+  if (unit === null) return <></>;
   return (
     <Link className="media align-items-center" style={{ cursor: "pointer" }} to="/landlord/unitInfo/Unit">
       <img src={unit.urlThumb} className="rounded-circle boxshadow align-self-center mr-3" style={{ width: "70px", height: "70px" }} alt="" />

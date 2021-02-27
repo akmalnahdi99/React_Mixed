@@ -10,7 +10,7 @@ export default function Logout() {
   //   }, []);
    
   if (isLogged === true) {
-    updateAppContext({ accessToken: null, isLogged: false });
+    updateAppContext({ accessToken: null, isLogged: false, unitFinancials:null,tenantRentalPaymentStats:null });
     clearSettings();
   }
   
