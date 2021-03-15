@@ -61,7 +61,7 @@ export const apiCall = async (url, method, data) => {
         apiResult = await resp.json();
         result.status = true;
       } else {
-          apiResult = await resp.json();
+        apiResult = await resp.json();
         result.status = false;
         throw new Error(resp.statusText);
       }
@@ -73,7 +73,6 @@ export const apiCall = async (url, method, data) => {
   result.data = apiResult;
   return result;
 };
-
 
 export const DateDiff = {
   inDays: function (d1, d2) {
@@ -98,7 +97,7 @@ export const DateDiff = {
 
     return d2M + 12 * d2Y - (d1M + 12 * d1Y);
   },
- 
+
   inYears: function (d1, d2) {
     return d2.getFullYear() - d1.getFullYear();
   },
@@ -110,9 +109,6 @@ export const appointment_status_cancelled = "Cancelled";
 export const overDueDaysThreshold = 15;
 export const role_tenant = "tenant";
 export const role_landlord = "landlord";
-
-
-
 
 // get financial value per month or per year
 export function getFinancialValueRoot(financialData, financialMonth, userRole, paymentOf) {
@@ -318,3 +314,52 @@ export const UnitKitsIcons = {
   "Remote Controls": { img: "/imgs/remote-control.svg" },
   "Vehicle Stickers": { img: "/imgs/car.svg" },
 };
+
+// get tenant payables grouped into due, overdue
+export function getTenantPayablesDetails(financials) {
+  var overDuePayments = {};
+  var duePayments = {};
+
+  for (const paymentName in financials) {
+    const payments = financials[paymentName];
+
+    for (let i = 0; i < payments.length; i++) {
+      const paymentData = payments[i];
+
+      paymentData.icon = (CompanyServicesIcons[paymentName] && CompanyServicesIcons[paymentName].img) || "";
+
+      if (paymentData.status === "due") {
+        if (!duePayments[paymentName]) duePayments[paymentName] = [];
+
+        duePayments[paymentName].push(paymentData);
+      } else if (paymentData.status === "overdue") {
+        if (!overDuePayments[paymentName]) overDuePayments[paymentName] = [];
+
+        overDuePayments[paymentName].push(paymentData);
+      }
+    }
+  }
+  return { overDuePayments, duePayments };
+}
+
+// get tenant rental paid not paid count
+export function getTenantRentalPaymentStats(financials) {
+  var paidCount = 0;
+  var notPaidCount = 0;
+  for (const paymentName in financials) {
+    if (paymentName.toLowerCase() === "rental".toLowerCase()) {
+      const payments = financials[paymentName];
+
+      for (let i = 0; i < payments.length; i++) {
+        const paymentData = payments[i];
+
+        if (paymentData.paid === true) {
+          paidCount++;
+        } else {
+          notPaidCount++;
+        }
+      }
+    }
+  }
+  return { paidCount, notPaidCount };
+}

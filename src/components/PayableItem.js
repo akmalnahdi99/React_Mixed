@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function PayableItem({ date, title, icon, color, address }) {
+
   var colorClassName = "text-darkblue";
   if (color === "red") {
     colorClassName = "text-danger";
