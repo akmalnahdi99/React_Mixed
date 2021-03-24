@@ -5,7 +5,7 @@ import InvoiceUtilities from "./InvoiceUtilities";
 
 
 
-const InvoiceCabletv = () => {
+const InvoiceCableTV = () => {
   var invoice = [
   {
     id: 0,
@@ -27,4 +27,4 @@ const InvoiceCabletv = () => {
   );
 };
 
-export default InvoiceCabletv;
+export default InvoiceCableTV;

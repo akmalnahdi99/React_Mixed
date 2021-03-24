@@ -77,7 +77,7 @@ export default function BillOf() {
     { key: "Electricity", text: "Electricity", icon: "/imgs/electricity.svg", url: "" },
     { key: "Sewage", text: "Sewage", icon: "/imgs/sewage.svg", url: "" },
     { key: "Internet", text: "Internet", icon: "/imgs/wifi.svg", url: "" },
-    { key: "Cabletv", text: "Cabletv", icon: "/imgs/tv.svg", url: "" },
+    { key: "CableTV", text: "CableTV", icon: "/imgs/tv.svg", url: "" },
     { key: "Gas", text: "Gas", icon: "/imgs/gas.svg", url: "" },
     { key: "Rental", text: "Rental", icon: "/imgs/gas.svg", url: "" },
   ];
@@ -101,7 +101,7 @@ export default function BillOf() {
       {billType === "Electricity" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
       {billType === "Sewage" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
       {billType === "Internet" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
-      {billType === "Cabletv" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
+      {billType === "CableTV" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
       {billType === "Gas" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
     </React.Fragment>
   ));
@@ -122,7 +122,7 @@ export default function BillOf() {
                   {billType === "Electricity" ? <InfoElectricityDetails expand={false} title="Electricity Rate" {...utilityDetails} /> : ""}
                   {billType === "Sewage" ? <InfoSewageDetails expand={false} title="Sewage" {...utilityDetails} /> : ""}
                   {billType === "Internet" ? <InfoInternetDetails expand={false} title="Internet" {...utilityDetails} /> : ""}
-                  {billType === "Cabletv" ? <InfoCableTvDetails expand={false} title="Cable TV" {...utilityDetails} /> : ""}
+                  {billType === "CableTV" ? <InfoCableTvDetails expand={false} title="Cable TV" {...utilityDetails} /> : ""}
                   {billType === "Gas" ? <InfoGasDetails expand={false} title="Gas Rate" {...utilityDetails} /> : ""}
                   {bills}
                 </React.Fragment>

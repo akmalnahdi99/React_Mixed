@@ -31,7 +31,7 @@ export default function DashBills({ title }) {
      {
        icon: "/imgs/tv.svg",
        text: "Cable Tv",
-       url: "/landlord/bills/Cabletv",
+       url: "/landlord/bills/CableTV",
      },
    ];
   return <DashIconsBox title={title} data={data} returnLink="/landlord/bills" />;

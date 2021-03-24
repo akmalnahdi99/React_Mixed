@@ -67,7 +67,7 @@ import ResetPassword from "./pages/Landlord/ResetPassword";
 import ForgotPassword from "./pages/Landlord/ForgotPassword";
 import Appointment from "./pages/Landlord/Appointment";
 import AppointmentDetails from "./pages/Landlord/AppointmentDetails";
-import InvoiceCabletv from "./pages/Landlord/InvoiceCabletv.js";
+import InvoiceCableTV from "./pages/Landlord/InvoiceCableTV";
 import InvoiceElectricity from "./pages/Landlord/InvoiceElectricity.js";
 import InvoiceGas from "./pages/Landlord/InvoiceGas.js";
 import InvoiceInternet from "./pages/Landlord/InvoiceInternet.js";
@@ -319,9 +319,9 @@ export default function App() {
                     <InvoiceWater siteMap={"Invoice Water"} />
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/InvoiceCabletv">
+                <Route path="/landlord/InvoiceCableTV">
                   <StandardPage>
-                    <InvoiceCabletv siteMap={"Invoice Cable TV"} />
+                    <InvoiceCableTV siteMap={"Invoice Cable TV"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceElectricity">

@@ -1,13 +1,13 @@
 import React from "react";
 import Footer from "../components/static/Footer";
 
-import CabletvDetails from "./CabletvDetails";
+import CableTVDetails from "./CableTVDetails";
 
-export default function BillsCabletv() {
+export default function BillsCableTV() {
   return (
     <div className="wrapper wrapper-content animated fadeInRight">
             <div className="ibox ">
-              <CabletvDetails title="Cable Tv" />
+              <CableTVDetails title="Cable Tv" />
             </div>
       <Footer />
     </div>

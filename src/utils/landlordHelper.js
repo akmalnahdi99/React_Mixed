@@ -228,7 +228,7 @@ export function getConditionReportsOflocation(conditionReports, inventoryOf, loc
 
 export const allQuickLinks = {
   bill_AssessmentRate: { id: "bill_AssessmentRate", type: "bill", label: "Assessment Rate", img: "/imgs/assessment.svg", link: "/landlord/bills/AssessmentRate" },
-  bill_Cabletv: { id: "bill_Cabletv", type: "bill", label: "Cabletv", img: "/imgs/tv.svg", link: "/landlord/bills/Cabletv" },
+  bill_CableTV: { id: "bill_CableTV", type: "bill", label: "CableTV", img: "/imgs/tv.svg", link: "/landlord/bills/CableTV" },
   bill_Electricity: { id: "bill_Electricity", type: "bill", label: "Electricity", img: "/imgs/electricity.svg", link: "/landlord/bills/Electricity" },
   bill_Gas: { id: "bill_Gas", type: "bill", label: "Gas", img: "/imgs/gas.svg", link: "/landlord/bills/Gas" },
   bill_Insurance: { id: "bill_Insurance", type: "bill", label: "Insurance", img: "/imgs/insurance.svg", link: "/landlord/bills/Insurance" },
@@ -254,7 +254,7 @@ export const allQuickLinks = {
 // get icons based on the service/bill
 export const CompanyServicesIcons = {
   AssessmentRate: { img: "/imgs/assessment.svg" },
-  Cabletv: { img: "/imgs/tv.svg" },
+  CableTV: { img: "/imgs/tv.svg" },
   CableTV: { img: "/imgs/tv.svg" },
   Rental: { img: "/imgs/subscription.svg" },
   Electricity: { img: "/imgs/electricity.svg" },

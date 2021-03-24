@@ -10,19 +10,19 @@ export default function DashAppoinment() {
       title: "Date: 10/28/2020",
       body: "Pipe leak maintenance",
       color: "green",
-      link: "appointmentdetails"
+      link: "appointmentdetails",
     },
     {
       title: "Date: 10/28/2020",
       body: "Pay cash to agent",
       color: "blue",
-      link: "appointmentdetails"
+      link: "appointmentdetails",
     },
     {
       title: "Date: 10/28/2020",
       body: "Meeting in Office",
       color: "yellow",
-      link: "appointmentdetails"
+      link: "appointmentdetails",
     },
   ];
   return (
@@ -40,9 +40,8 @@ export default function DashAppoinment() {
 
       <div className="ibox-content bg-white">
         <ul className="sortable-list connectList agile-list ui-sortable"></ul>
-        {data.length * 0 > 0 ? data.map((item, index) => <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} link={item.link} />) : <EmptyDashboard />}
+        {data.length > 0 ? data.map((item, index) => <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} link={item.link} />) : <EmptyDashboard />}
       </div>
     </div>
   );
 }
-    

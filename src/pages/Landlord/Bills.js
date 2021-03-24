@@ -11,7 +11,7 @@ export default function Bills() {
     { key: "Electricity", text: "Electricity", icon: "/imgs/electricity.svg", url: "" },
     { key: "Sewage", text: "Sewage", icon: "/imgs/sewage.svg", url: "" },
     { key: "Internet", text: "Internet", icon: "/imgs/wifi.svg", url: "" },
-    { key: "Cabletv", text: "Cabletv", icon: "/imgs/tv.svg", url: "" },
+    { key: "CableTV", text: "CableTV", icon: "/imgs/tv.svg", url: "" },
     { key: "Gas", text: "Gas", icon: "/imgs/gas.svg", url: "" },
   ];
 

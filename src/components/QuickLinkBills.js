@@ -16,7 +16,7 @@ import BillsWater from "../bills_component/BillsWater";
 import BillsElectricity from "../bills_component/BillsElectricity";
 import BillsSewage from "../bills_component/BillsSewage";
 import BillsInternet from "../bills_component/BillsInternet";
-import BillsCabletv from "../bills_component/BillsCabletv";
+import BillsCableTV from "../bills_component/BillsCableTV";
 import BillsGas from "../bills_component/BillsGas";
 
 export default function BillOf() {
@@ -39,7 +39,7 @@ export default function BillOf() {
     { key: "Electricity", text: "Electricity", icon: "/imgs/electricity.svg", url: "" },
     { key: "Sewage", text: "Sewage", icon: "/imgs/sewage.svg", url: "" },
     { key: "Internet", text: "Internet", icon: "/imgs/wifi.svg", url: "" },
-    { key: "Cabletv", text: "Cabletv", icon: "/imgs/tv.svg", url: "" },
+    { key: "CableTV", text: "CableTV", icon: "/imgs/tv.svg", url: "" },
     { key: "Gas", text: "Gas", icon: "/imgs/gas.svg", url: "" },
   ];
 
@@ -57,7 +57,7 @@ export default function BillOf() {
       {billType === "Electricity" ? <BillsElectricity /> : ""}
       {billType === "Sewage" ? <BillsSewage /> : ""}
       {billType === "Internet" ? <BillsInternet /> : ""}
-      {billType === "Cabletv" ? <BillsCabletv /> : ""}
+      {billType === "CableTV" ? <BillsCableTV /> : ""}
       {billType === "Gas" ? <BillsGas /> : ""}
  
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const CabletvDetails = ({ title }) => {
+const CableTVDetails = ({ title }) => {
   var details = {
     ref_no: "N/A",
     name: "Astro",
@@ -66,4 +66,4 @@ const CabletvDetails = ({ title }) => {
   );
 };
 
-export default CabletvDetails;
+export default CableTVDetails;

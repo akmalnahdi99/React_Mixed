@@ -44,7 +44,7 @@ export default function UtilitiesOf() {
     { key: "Electricity", text: "Electricity", icon: "/imgs/electricity.svg", url: "" },
     { key: "Sewage", text: "Sewage", icon: "/imgs/sewage.svg", url: "" },
     { key: "Internet", text: "Internet", icon: "/imgs/wifi.svg", url: "" },
-    { key: "Cabletv", text: "Cabletv", icon: "/imgs/tv.svg", url: "" },
+    { key: "CableTV", text: "CableTV", icon: "/imgs/tv.svg", url: "" },
     { key: "Gas", text: "Gas", icon: "/imgs/gas.svg", url: "" },
   ];
 
@@ -73,7 +73,7 @@ export default function UtilitiesOf() {
             {utilityType === "Electricity" ? <InfoElectricityDetails expand={true} icon={selectedIcon} title="Electricity Rate" {...utilityDetails} /> : ""}
             {utilityType === "Sewage" ? <InfoSewageDetails expand={true} icon={selectedIcon} title="Sewage" {...utilityDetails} /> : ""}
             {utilityType === "Internet" ? <InfoInternetDetails expand={true} icon={selectedIcon} title="Internet" {...utilityDetails} /> : ""}
-            {utilityType === "Cabletv" ? <InfoCableTvDetails expand={true} icon={selectedIcon} title="Cable TV" {...utilityDetails} /> : ""}
+            {utilityType === "CableTV" ? <InfoCableTvDetails expand={true} icon={selectedIcon} title="Cable TV" {...utilityDetails} /> : ""}
             {utilityType === "Gas" ? <InfoGasDetails expand={true} icon={selectedIcon} title="Gas Rate" {...utilityDetails} /> : ""}
           </div>
         </div>
