@@ -15,6 +15,7 @@ import InfoGasDetails from "../../components/propertyInfoComponent/InfoGasDetail
 import Loading from "../../components/static/Loading";
 import { AppContext } from "../../context/settings";
 import { apiCall } from "../../utils/landlordHelper";
+import RentalPayables from "./../../bills_component/RentalPayables";
 
 export default function BillOf() {
   var t = useParams();
@@ -78,6 +79,7 @@ export default function BillOf() {
     { key: "Internet", text: "Internet", icon: "/imgs/wifi.svg", url: "" },
     { key: "Cabletv", text: "Cabletv", icon: "/imgs/tv.svg", url: "" },
     { key: "Gas", text: "Gas", icon: "/imgs/gas.svg", url: "" },
+    { key: "Rental", text: "Rental", icon: "/imgs/gas.svg", url: "" },
   ];
 
   var allowed = false;
@@ -87,11 +89,22 @@ export default function BillOf() {
       break;
     }
   }
-
+  debugger;
   if (!allowed) {
     // if billtype is not exist we go back
     return <Redirect to="/landlord/bills" />;
   }
+
+  var bills = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((x, index) => (
+    <React.Fragment key={index}>
+      {billType === "Water" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
+      {billType === "Electricity" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
+      {billType === "Sewage" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
+      {billType === "Internet" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
+      {billType === "Cabletv" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
+      {billType === "Gas" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
+    </React.Fragment>
+  ));
 
   return isLoading === true ? (
     <Loading />
@@ -101,23 +114,19 @@ export default function BillOf() {
         <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-lg-8 mb-3 px-0">
-              {billType === "Water" ? <InfoWaterDetails expand={false} title="Water Rate" {...utilityDetails} /> : ""}
-              {billType === "Electricity" ? <InfoElectricityDetails expand={false} title="Electricity Rate" {...utilityDetails} /> : ""}
-              {billType === "Sewage" ? <InfoSewageDetails expand={false} title="Sewage" {...utilityDetails} /> : ""}
-              {billType === "Internet" ? <InfoInternetDetails expand={false} title="Internet" {...utilityDetails} /> : ""}
-              {billType === "Cabletv" ? <InfoCableTvDetails expand={false} title="Cable TV" {...utilityDetails} /> : ""}
-              {billType === "Gas" ? <InfoGasDetails expand={false} title="Gas Rate" {...utilityDetails} /> : ""}
-
-              {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((x,index) => (
-                <React.Fragment key={index}>
-                  {billType === "Water" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
-                  {billType === "Electricity" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
-                  {billType === "Sewage" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
-                  {billType === "Internet" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
-                  {billType === "Cabletv" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
-                  {billType === "Gas" ? <BillsUnpaid title={x} {...BillsUnpaid} /> : ""}
+              {billType === "Rental" ? (
+                <RentalPayables siteMap={"Rental Payables"} />
+              ) : (
+                <React.Fragment>
+                  {billType === "Water" ? <InfoWaterDetails expand={false} title="Water Rate" {...utilityDetails} /> : ""}
+                  {billType === "Electricity" ? <InfoElectricityDetails expand={false} title="Electricity Rate" {...utilityDetails} /> : ""}
+                  {billType === "Sewage" ? <InfoSewageDetails expand={false} title="Sewage" {...utilityDetails} /> : ""}
+                  {billType === "Internet" ? <InfoInternetDetails expand={false} title="Internet" {...utilityDetails} /> : ""}
+                  {billType === "Cabletv" ? <InfoCableTvDetails expand={false} title="Cable TV" {...utilityDetails} /> : ""}
+                  {billType === "Gas" ? <InfoGasDetails expand={false} title="Gas Rate" {...utilityDetails} /> : ""}
+                  {bills}
                 </React.Fragment>
-              ))}
+              )}
             </div>
           </div>
         </div>

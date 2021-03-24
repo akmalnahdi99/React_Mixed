@@ -39,7 +39,7 @@ export default function PayCashList(props) {
                     </div>
                   </div>
                   <div className="row justify-content-center mt-5">
-                    <Link to="/landlord/rentalpayables">
+                    <Link to="/landlord/bills/rental">
                       <button className="btn btn-primary">Return to rental payables page</button>
                     </Link>
                   </div>
@@ -56,7 +56,7 @@ export default function PayCashList(props) {
             <br />
             <span>Pay to agent</span>
           </Button>
-          <Link to="/landlord/PayCDM" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
+          <Link to="/landlord/PayRentalCDM" className="btn btn-dashboardicon  btn-default width160 btn-lg m-2">
             <img src="/imgs/atm-machine.svg" width="30px" alt="" />
             <br />
             <span>Pay via CDM</span>

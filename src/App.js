@@ -25,7 +25,7 @@ import TenantPayables from "./pages/Landlord/TenantPayables";
 import QuickLinks from "./pages/Landlord/QuickLinks";
 
 import PropertyInfoOf from "./pages/Landlord/PropertyInfoOf";
-import PropertyInfo from "./pages/Landlord/PropertyInfo";
+import UnitInfo from "./pages/Landlord/UnitInfo";
 import PropertyCondition from "./pages/Landlord/PropertyCondition";
 import Profile from "./pages/Landlord/Profile";
 import Payables from "./pages/Landlord/Payables";
@@ -72,11 +72,10 @@ import InvoiceElectricity from "./pages/Landlord/InvoiceElectricity.js";
 import InvoiceGas from "./pages/Landlord/InvoiceGas.js";
 import InvoiceInternet from "./pages/Landlord/InvoiceInternet.js";
 import InvoiceSewage from "./pages/Landlord/InvoiceSewage.js";
-import InvoiceWater from "./pages/Landlord/InvoiceWater.js";
-import RentalPayables from "./pages/Landlord/RentalPayables.js";
-import TenantInvoice from "./pages/Landlord/TenantInvoice.js";
-import PayCash from "./pages/Landlord/PayCash.js";
-import PayCDM from "./pages/Landlord/PayCDM.js";
+import InvoiceWater from "./pages/Landlord/InvoiceWater.js"; 
+import TenantInvoice from "./pages/Landlord/TenantInvoice";
+import PayCash from "./bills_component/PayCash";
+import PayCDM from "./bills_component/PayCDM";
 
 export default function App() {
   return (
@@ -191,19 +190,14 @@ export default function App() {
                     <UtilityOf siteMap={"Utilities"} />
                   </StandardPage>
                 </Route>
-                <Route exact path="/landlord/propertyInfo">
-                  <StandardPage>
-                    <PropertyInfo siteMap={"Property Info"} />
-                  </StandardPage>
-                </Route>
-                <Route path="/landlord/propertyInfo/:propertyinfoType">
+                <Route path="/landlord/unitInfo/:propertyinfoType">
                   <StandardPage>
                     <PropertyInfoOf siteMap={"Property Info"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/UnitInfo">
                   <StandardPage>
-                    <PropertyInfo siteMap={"Unit Info"} />
+                    <UnitInfo siteMap={"Unit Info"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/UnitViewings">
@@ -311,63 +305,59 @@ export default function App() {
 
                 <Route path="/landlord/appointment">
                   <StandardPage>
-                    <Appointment siteMap={"Appointment"}/>
+                    <Appointment siteMap={"Appointment"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/appointmentdetails/:appointmentId">
                   <StandardPage>
-                    <AppointmentDetails siteMap={"Appointment Details"}/>
+                    <AppointmentDetails siteMap={"Appointment Details"} />
                   </StandardPage>
                 </Route>
 
                 <Route path="/landlord/InvoiceWater">
                   <StandardPage>
-                    <InvoiceWater siteMap={"Invoice Water"}/>
+                    <InvoiceWater siteMap={"Invoice Water"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceCabletv">
                   <StandardPage>
-                    <InvoiceCabletv siteMap={"Invoice Cable TV"}/>
+                    <InvoiceCabletv siteMap={"Invoice Cable TV"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceElectricity">
                   <StandardPage>
-                    <InvoiceElectricity siteMap={"Invoice Electricity"}/>
+                    <InvoiceElectricity siteMap={"Invoice Electricity"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceGas">
                   <StandardPage>
-                    <InvoiceGas siteMap={"Invoice Gas"}/>
+                    <InvoiceGas siteMap={"Invoice Gas"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceInternet">
                   <StandardPage>
-                    <InvoiceInternet siteMap={"Invoice Internet"}/>
+                    <InvoiceInternet siteMap={"Invoice Internet"} />
                   </StandardPage>
                 </Route>
                 <Route path="/landlord/InvoiceSewage">
                   <StandardPage>
-                    <InvoiceSewage siteMap={"Invoice Sewage"}/>
+                    <InvoiceSewage siteMap={"Invoice Sewage"} />
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/RentalPayables">
-                  <StandardPage>
-                    <RentalPayables siteMap={"Rental Payables"}/>
-                  </StandardPage>
-                </Route>
+
                 <Route path="/landlord/TenantInvoice">
                   <StandardPage>
                     <TenantInvoice />
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/PayCash">
+                <Route path="/landlord/PayRentalCash">
                   <StandardPage>
-                    <PayCash siteMap={"Pay Cash"}/>
+                    <PayCash siteMap={"Pay Cash"} />
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/PayCDM">
+                <Route path="/landlord/PayRentalCDM">
                   <StandardPage>
-                    <PayCDM siteMap={"Pay CDM"}/>
+                    <PayCDM siteMap={"Pay CDM"} />
                   </StandardPage>
                 </Route>
 

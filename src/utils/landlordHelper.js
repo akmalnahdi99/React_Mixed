@@ -240,15 +240,15 @@ export const allQuickLinks = {
   bill_SubscriptionFees: { id: "bill_SubscriptionFees", type: "bill", label: "Subscription Fees", img: "/imgs/subscription.svg", link: "/landlord/bills/Subscription" },
   bill_Water: { id: "bill_Water", type: "bill", label: "Water", img: "/imgs/water-drop.svg", link: "/landlord/bills/Water" },
 
-  unit_AssessmentRate: { id: "unit_AssessmentRate", type: "unit", label: "Assessment Rate", img: "/imgs/assessment.svg", link: "/landlord/propertyinfo/AssessmentRate" },
-  unit_Building: { id: "unit_Building", type: "unit", label: "Building", img: "/imgs/company.svg", link: "/landlord/propertyinfo/Building" },
-  unit_Insurance: { id: "unit_Insurance", type: "unit", label: "Insurance", img: "/imgs/insurance.svg", link: "/landlord/propertyinfo/Insurance" },
-  unit_QuitRent: { id: "unit_QuitRent", type: "unit", label: "Quit Rent", img: "/imgs/quitrent.svg", link: "/landlord/propertyinfo/QuitRent" },
+  unit_AssessmentRate: { id: "unit_AssessmentRate", type: "unit", label: "Assessment Rate", img: "/imgs/assessment.svg", link: "/landlord/unitInfo/AssessmentRate" },
+  unit_Building: { id: "unit_Building", type: "unit", label: "Building", img: "/imgs/company.svg", link: "/landlord/unitInfo/Building" },
+  unit_Insurance: { id: "unit_Insurance", type: "unit", label: "Insurance", img: "/imgs/insurance.svg", link: "/landlord/unitInfo/Insurance" },
+  unit_QuitRent: { id: "unit_QuitRent", type: "unit", label: "Quit Rent", img: "/imgs/quitrent.svg", link: "/landlord/unitInfo/QuitRent" },
   unit_RateAndTaxes: { id: "unit_RateAndTaxes", type: "unit", label: "Rate & Taxes", img: "/imgs/pie-chart.svg", link: "" },
-  unit_Tenancy: { id: "unit_Tenancy", type: "unit", label: "Tenancy", img: "/imgs/family.svg", link: "/landlord/propertyinfo/Tenancy" },
-  unit_Unit: { id: "unit_Unit", type: "unit", label: "Unit", img: "/imgs/tenant.svg", link: "/landlord/propertyinfo/Unit" },
-  unit_HomeAppliance: { id: "unit_HomeAppliance", type: "unit", label: "Home Appliances", img: "/imgs/guide.svg", link: "/landlord/propertyinfo/HomeAppliance" },
-  unit_Utilities: { id: "unit_Utilities", type: "unit", label: "Utilities", img: "/imgs/utilities.svg", link: "/landlord/propertyinfo/Utilities" },
+  unit_Tenancy: { id: "unit_Tenancy", type: "unit", label: "Tenancy", img: "/imgs/family.svg", link: "/landlord/unitInfo/Tenancy" },
+  unit_Unit: { id: "unit_Unit", type: "unit", label: "Unit", img: "/imgs/tenant.svg", link: "/landlord/unitInfo/Unit" },
+  unit_HomeAppliance: { id: "unit_HomeAppliance", type: "unit", label: "Home Appliances", img: "/imgs/guide.svg", link: "/landlord/unitInfo/HomeAppliances" },
+  unit_Utilities: { id: "unit_Utilities", type: "unit", label: "Utilities", img: "/imgs/utilities.svg", link: "/landlord/unitInfo/Utilities" },
 };
 
 // get icons based on the service/bill
@@ -274,6 +274,7 @@ export const CompanyServicesIcons = {
   Tenancy: { img: "/imgs/family.svg" },
   Unit: { img: "/imgs/tenant.svg" },
   HomeAppliance: { img: "/imgs/guide.svg" },
+  HomeAppliances: { img: "/imgs/guide.svg" },
   Utilities: { img: "/imgs/utilities.svg" },
 };
 

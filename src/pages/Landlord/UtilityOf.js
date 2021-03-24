@@ -36,7 +36,7 @@ export default function UtilitiesOf() {
 
   if (!utilityType) {
     // if you don't have bill type we redirect back /land/bills/water
-    return <Redirect to="/landlord/propertyinfo" />;
+    return <Redirect to="/landlord/UnitInfo" />;
   }
 
   const data = [
@@ -59,12 +59,12 @@ export default function UtilitiesOf() {
   var selectedIcon = data.filter((x) => x.key === utilityType)[0].icon || "";
   if (!allowed) {
     // if billtype is not exist we go back
-    return <Redirect to="/landlord/propertyinfo" />;
+    return <Redirect to="/landlord/UnitInfo" />;
   }
  
   return isLoading === true ? (
     <Loading />
-  ) : (
+  ) : ( 
     <div className="wrapper wrapper-content animated fadeInRight py-5 pb-5">
       <div className="container-fluid">
         <div className="row justify-content-center">

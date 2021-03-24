@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function PropertyInfo() {
+export default function UnitInfo() {
   return (
     <div className="container container-xs pt-5 pb-5 gray-bg">
       <div className="row text-center">

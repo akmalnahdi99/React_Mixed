@@ -10,7 +10,7 @@ import Maintenance from "../../components/DashMaintenance";
 import Calendar from "../../components/DashCalendar";
 // import Financials from "../../components/DashFinancials"; // for version 2
 import Bills from "../../components/DashBills";
-import PropertyInfo from "../../components/DashPropertyInfo.js";
+import UnitInfo from "../../components/DashPropertyInfo.js";
 import DashAppointment from "../../components/DashAppointment";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -49,7 +49,7 @@ export default function Dashboard() {
 
           <div className="row">
             <div className="col-lg-4 px-2">
-              <PropertyInfo title="Property Info" />
+              <UnitInfo title="Property Info" />
             </div>
           </div>
           

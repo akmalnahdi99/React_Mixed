@@ -49,7 +49,17 @@ export default function PayablesList() {
 
       {overDuePayments.length > 0 ? (
         overDuePayments.map((item, index) => {
-          return <PayableItem key={index} {...item} title={item.paymentOf} link={"/landlord/bills/" + item.paymentOf} color="red" />;
+          var link = "";
+          if (item.paymentOf.toLowerCase() === "rental".toLocaleLowerCase())
+          {
+     link = "/landlord/bills/" + item.paymentOf;
+          }
+          else
+          {            
+            link= "/landlord/bills/" + item.paymentOf;
+          }
+
+          return <PayableItem key={index} {...item} title={item.paymentOf} link={link} color="red" />;
         })
       ) : (
         <Empty />
@@ -57,6 +67,7 @@ export default function PayablesList() {
       <strong className="text-doorcase3">Payment Due</strong>
       {duePayments.length > 0 ? (
         duePayments.map((item, index) => {
+            var link = "/landlord/bills/" + item.paymentOf;
           return <PayableItem key={index} {...item} title={item.paymentOf} link={"/landlord/bills/" + item.paymentOf} color="blue" />;
         })
       ) : (

@@ -1,8 +1,8 @@
 // #newPage
 import React from 'react'
-import RentalTable from '../../components/RentalTable';
-import TenantHeader from "../../components/TenantHeader";
-import RentalDetails from "../../components/RentalDetails";
+import RentalTable from '../components/RentalTable';
+import TenantHeader from "../components/TenantHeader";
+import RentalDetails from "../components/RentalDetails";
 import { Link } from "react-router-dom";
 
  export default function Financials() {
@@ -30,7 +30,7 @@ import { Link } from "react-router-dom";
                 </Link>
                 </div>
                 <div className="col-md-6 col-xs-12">
-                <Link to="./paycash"><button className="btn btn-primary float-right" style={{width: "100%"}}>
+                <Link to="/landlord/payRentalCash"><button className="btn btn-primary float-right" style={{width: "100%"}}>
                   Pay Cash
                 </button>
                 </Link>

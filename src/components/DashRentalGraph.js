@@ -17,7 +17,7 @@ export default function DashRentalGraph({ title }) {
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-          <Link Link to="/landlord/rentalpayables">{title}</Link>
+          <Link Link to="/landlord/bills/rental">{title}</Link>
         </h5>
       </div>
       <div className="ibox-content">

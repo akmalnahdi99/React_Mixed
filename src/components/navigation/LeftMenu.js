@@ -119,7 +119,7 @@ export default function LeftMenu() {
                 </Link>
               </li>
               <li>
-                <Link to="/landlord/propertyInfo" onClick={() => updateLeftMenu()}>
+                <Link to="/landlord/UnitInfo" onClick={() => updateLeftMenu()}>
                   <FaIcons.FaInfoCircle />
                   <span className="nav-label">Property Info</span>
                 </Link>

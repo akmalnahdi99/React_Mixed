@@ -1,7 +1,7 @@
 // #newPage
 //TASK under Review
 import React from "react";
-import PayCDMList from "../../components/PayCDMList";
+import PayCDMList from "../bills_component/PayCDMList";
 
 
 export default function Offers() {
