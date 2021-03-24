@@ -89,7 +89,7 @@ export default function BillOf() {
       break;
     }
   }
-  debugger;
+ 
   if (!allowed) {
     // if billtype is not exist we go back
     return <Redirect to="/landlord/bills" />;

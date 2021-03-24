@@ -18,7 +18,7 @@ export default function PayablesList() {
 
     for (const paymentName in curMonthFinancials) {
       if (curMonthFinancials[paymentName].paid !== true) {
-        debugger;
+      
         const paymentDue = new Date(curMonthFinancials[paymentName].paymentDueMillis);
         const paymentOverDueDays = DateDiff.inDays(paymentDue, curDate);
 

@@ -19,7 +19,7 @@ import UtilityOf from "./pages/Landlord/UtilityOf";
 import Utilities from "./pages/Landlord/Utilities";
 import UnitViewings from "./pages/Landlord/UnitViewings";
 import TodoList from "./pages/Landlord/TodoList";
-import TenantTenancy from "./pages/Landlord/TenantTenancy";
+ 
 import TenantPayables from "./pages/Landlord/TenantPayables";
 // import TenancyDocs from "./pages/Landlord/TenancyDocs";
 import QuickLinks from "./pages/Landlord/QuickLinks";
@@ -250,11 +250,7 @@ export default function App() {
                     <MaintenanceChatInteraction siteMap={"Maintenance Chat"} />
                   </StandardPage>
                 </Route>
-                <Route path="/landlord/tenanttenancy">
-                  <StandardPage>
-                    <TenantTenancy siteMap={"Tenant Tenancy"} />
-                  </StandardPage>
-                </Route>
+                
                 {/*  <Route path="/landlord/tenancydocs">
               <StandardPage>
                 <TenancyDocs siteMap={"Tenancy Documents"} />
