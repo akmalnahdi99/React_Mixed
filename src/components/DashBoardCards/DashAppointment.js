@@ -1,7 +1,7 @@
 // #newPage
 import React from "react";
 import { Link } from "react-router-dom";
-import NoToDo from "../EmptyTodoList";
+import EmptyDashboard from "../EmptyDashboard";
 import InfoCardItem from "../InfoCardItem";
 
 export default function DashAppoinment() {
@@ -40,13 +40,7 @@ export default function DashAppoinment() {
 
       <div className="ibox-content bg-white">
         <ul className="sortable-list connectList agile-list ui-sortable"></ul>
-        {data.length > 0 ? (
-          data.map((item, index) => 
-             <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} link={item.link} />
-          )
-        ) : (
-          <NoToDo />
-        )}
+        {data.length * 0 > 0 ? data.map((item, index) => <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} link={item.link} />) : <EmptyDashboard />}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import RentalDonut from "../RentalDonut";
 import InfoCardItem from "../InfoCardItem";
-import NoOverdue from "./../../components/EmptyOverdue";
+import EmptyDashBoard from "./../../components/EmptyDashboard";
 import { Link } from "react-router-dom";
 
 export default function DashRentalGraph({ title }) {
@@ -17,7 +17,9 @@ export default function DashRentalGraph({ title }) {
     <div className="ibox">
       <div className="ibox-title">
         <h5>
-          <Link Link to="/landlord/bills/rental">{title}</Link>
+          <Link Link to="/landlord/bills/rental">
+            {title}
+          </Link>
         </h5>
       </div>
       <div className="ibox-content">
@@ -27,8 +29,8 @@ export default function DashRentalGraph({ title }) {
             return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} link={item.link} />;
           })
         ) : (
-            <NoOverdue />
-          )}
+          <EmptyDashBoard title={"No Rental Data"} />
+        )}
       </div>
     </div>
   );

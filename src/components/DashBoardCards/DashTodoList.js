@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NoToDo from "./../../components/EmptyTodoList";
+import EmptyDashboard from "../EmptyDashboard";
 import InfoCardItem from "./../InfoCardItem";
 
 export default function DashTodoList() {
@@ -41,7 +41,7 @@ export default function DashTodoList() {
             return <InfoCardItem key={index} title={item.title} body={item.body} color={item.color} />;
           })
         ) : (
-          <NoToDo />
+          <EmptyDashboard />
         )}
       </div>
     </div>
