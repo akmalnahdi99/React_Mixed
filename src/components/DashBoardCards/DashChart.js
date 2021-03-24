@@ -1,11 +1,11 @@
 import React from "react";
-import ChartDonut from "../components/DonutChart";
+import ChartDonut from "./DonutChart";
 
 export default function DashChart({ data }) {
   // const total = data[0].value + data[1].value + data[2].value;
   
   return (
-    <React.Fragment>
+    <React.Fragment> 
         <div className="ibox-content">
           <div className="statistic-box mt-0">
             <div className="row text-center justify-content-center">

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AppContext } from "../context/settings";
-import RentalOffersDonutChart from "./RentalOfferDonutChart";
+import { AppContext } from "../../context/settings";
+import RentalOffersDonutChart from "../RentalOfferDonutChart";
 
 export default function DashboardRentalOffers({ title }) {
   const [offersStats, set_offersStats] = React.useState({ New: 0, Negotiation: 0, Rejected: 0 });

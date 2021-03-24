@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AppContext } from "../context/settings";
-import { allQuickLinks as allQuickLinkss } from "../utils/landlordHelper";
+import { AppContext } from "../../context/settings";
+import { allQuickLinks as allQuickLinkss } from "../../utils/landlordHelper";
 // import Loading from "./static/Loading";
 
 export default function Quicklinks({ title }) {

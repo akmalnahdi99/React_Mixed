@@ -1,5 +1,5 @@
 import React from "react";
-import DashIconsBox from "./DashIconsBox";
+import DashIconsBox from "../../components/DashBoardCards/DashIconsBox";
 
 export default function DashBills({ title }) {
    const data = [

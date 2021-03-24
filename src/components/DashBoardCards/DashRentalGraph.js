@@ -1,7 +1,7 @@
 import React from "react";
-import RentalDonut from "./RentalDonut";
-import InfoCardItem from "./InfoCardItem";
-import NoOverdue from "./EmptyOverdue";
+import RentalDonut from "../RentalDonut";
+import InfoCardItem from "../InfoCardItem";
+import NoOverdue from "./../../components/EmptyOverdue";
 import { Link } from "react-router-dom";
 
 export default function DashRentalGraph({ title }) {

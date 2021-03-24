@@ -1,8 +1,8 @@
 // #newPage
 import React from "react";
 import { Link } from "react-router-dom";
-import NoToDo from "./EmptyTodoList";
-import InfoCardItem from "./InfoCardItem";
+import NoToDo from "../EmptyTodoList";
+import InfoCardItem from "../InfoCardItem";
 
 export default function DashAppoinment() {
   const data = [

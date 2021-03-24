@@ -100,7 +100,7 @@ export default function InventoryOfRoom() {
                           <div className="col-md-12">
                             <div className="demo-gallery">
                               <ul id="lightgallery" className="list-unstyled row">
-                                <img src={item.urlPhoto} alt="123" />
+                                <img src={item.urlPhoto} alt="item " />
                               </ul>
                             </div>
                           </div>

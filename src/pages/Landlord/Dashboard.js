@@ -5,16 +5,16 @@ import React from "react";
 // import PostsListFilter from "../../components/PostsListFilter";
 
 // import Quicklinks from "../../components/DashQuicklinks";
-import TodoList from "../../components/DashTodoList.js";
-import Maintenance from "../../components/DashMaintenance";
-import Calendar from "../../components/DashCalendar";
+import TodoList from "../../components/DashBoardCards/DashTodoList.js";
+import Maintenance from "../../components/DashBoardCards/DashMaintenance";
+import Calendar from "../../components/DashBoardCards/DashCalendar";
 // import Financials from "../../components/DashFinancials"; // for version 2
-import Bills from "../../components/DashBills";
-import UnitInfo from "../../components/DashPropertyInfo.js";
-import DashAppointment from "../../components/DashAppointment";
+import Bills from "../../components/DashBoardCards/DashBills";
+import UnitInfo from "../../components/DashBoardCards/DashPropertyInfo.js";
+import DashAppointment from "../../components/DashBoardCards/DashAppointment";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
-import DashRentalGraph from "../../components/DashRentalGraph";
+import DashRentalGraph from "../../components/DashBoardCards/DashRentalGraph";
 
 export default function Dashboard() {
   return (

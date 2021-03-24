@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FinancialChart from "../components/FinancialChart";
-import { AppContext } from "../context/settings";
-import { calculate_3_financials_per_month } from "../utils/landlordHelper";
+import FinancialChart from "../FinancialChart";
+import { AppContext } from "../../context/settings";
+import { calculate_3_financials_per_month } from "../../utils/landlordHelper";
  
 export default function DashFinancials() {
   const appContext = React.useContext(AppContext);

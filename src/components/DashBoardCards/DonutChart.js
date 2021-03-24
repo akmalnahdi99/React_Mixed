@@ -24,7 +24,7 @@ const DonutChart = () => {
       subTitle="Total"
       style={{
         data: {
-          fill: (d) => d.slice.data.fill
+          fill: (d) => d.slice.data.fill 
         }
       }}
     />

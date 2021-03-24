@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import NoOverdue from "./EmptyOverdue";
-import InfoCardItem from "./InfoCardItem";
+import NoOverdue from "../EmptyOverdue";
+import InfoCardItem from "../InfoCardItem";
 
 export default function DashTenantPayables() {
   let history = useHistory();

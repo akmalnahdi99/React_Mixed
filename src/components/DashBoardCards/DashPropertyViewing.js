@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AppContext } from "../context/settings";
-import UnitViewingChartDonut from "../components/UnitViewingChartDonut";
+import { AppContext } from "../../context/settings";
+import UnitViewingChartDonut from "../UnitViewingChartDonut";
 
 export default function DashboardUnitViewing({ title }) {
   const [viewingStats, set_viewingStats] = React.useState({ New: 0, Negotiation: 0, Rejected: 0 });
